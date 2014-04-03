@@ -3,7 +3,7 @@ import flask
 """
 Main view panel
 """
-home = True
+home = False
 
 if home:
     ipaddress = '10.0.2.15'
@@ -15,7 +15,7 @@ app = flask.Flask(__name__)
 
 @app.route('/')
 def index():
-    flask.render_template('index.html')
+    return flask.render_template('index.html')
 
 
 if __name__ == '__main__':
