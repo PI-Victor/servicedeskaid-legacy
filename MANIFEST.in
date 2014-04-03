@@ -1,0 +1,2 @@
+recursive-include viewpanel/templates *
+recursive-include viewpanel/static *
