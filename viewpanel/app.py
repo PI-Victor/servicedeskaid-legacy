@@ -1,17 +1,22 @@
-__author__ = 'vectra'
-from flask import Flask
+import flask
 
 """
-Main viewpanel
+Main view panel
 """
+home = True
 
-app = Flask(__name__)
+if home:
+    ipaddress = '10.0.2.15'
+else:
+    ipaddress = '192.168.15.106'
+
+app = flask.Flask(__name__)
 
 
 @app.route('/')
 def index():
-    return "Hello World"
+    flask.render_template('index.html')
 
 
 if __name__ == '__main__':
-    app.run(host='10.0.2.15', debug=True)
+    app.run(host=ipaddress, debug=True)
