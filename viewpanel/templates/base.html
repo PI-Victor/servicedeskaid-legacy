@@ -1,28 +1,25 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <title>
-        {% block title %}
-        Service Desk Aid - view panel
+    <head>
+        <title>
+            {% block title %}
+            Service Desk Aid
+            {% endblock %}
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}"/>
+        <!--styles-->
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.css') }}"/>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap-responsive.css') }}"/>
+        <!--link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}"/-->
+    </head>
+
+    <body>
+        <!--scripts-->
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='bootstrap.js') }}"></script>
+        {% block body %}
         {% endblock %}
-    </title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}"/>
-
-    <!--styles-->
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.css') }}"/>
-    <!--link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}"/-->
-</head>
-
-<body>
-<!--scripts-->
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script type="text/javascript" src="{{ url_for('static', filename='bootstrap.js') }}"></script>
-
-{% block body %}
-{% endblock %}
-</body>
+    </body>
 </html>
