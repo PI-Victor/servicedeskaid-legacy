@@ -1,6 +1,7 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
     <head>
+        <meta charset="utf-8">
         <title>
             {% block title %}
             Service Desk Aid
@@ -19,9 +20,9 @@
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.js') }}"></script>
         <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
-        <center>
+
             {% block body %}
             {% endblock %}
-        </center>
+
     </body>
 </html>
