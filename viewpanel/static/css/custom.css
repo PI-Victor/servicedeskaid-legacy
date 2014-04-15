@@ -1,4 +1,7 @@
-.icon-logo {
-    background-image: url("img/favicon.ico");
-    background-position: center center;
+#menubar-logo {
+    margin-top:10px;
+    margin-bottom:20px;
+    margin-right:10px;
+    width:10px;
+    height:10px;
 }
