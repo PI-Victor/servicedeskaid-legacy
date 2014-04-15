@@ -1,7 +1,9 @@
-#menubar-logo {
+.menubar-logo {
     margin-top:10px;
     margin-bottom:20px;
     margin-right:10px;
-    width:10px;
-    height:10px;
+    width:30px;
+    height:25px;
+        float: left;
+
 }
