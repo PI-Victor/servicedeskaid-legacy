@@ -19,8 +19,9 @@
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.js') }}"></script>
         <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
-
-        {% block body %}
-        {% endblock %}
+        <center>
+            {% block body %}
+            {% endblock %}
+        </center>
     </body>
 </html>
