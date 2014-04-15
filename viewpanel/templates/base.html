@@ -23,25 +23,5 @@
         <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.js') }}"></script>
         <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
         <script type="text/javascript" src="{{ url_for('static', filename='js/flipclock.min.js') }}"></script>
-        <script type="text/javascript">
-		var clock;
-
-		$(document).ready(function() {
-			var clock;
-
-			clock = $('.clock').FlipClock(10, {
-		        clockFace: 'MinuteCounter',
-		        countdown: true,
-		        callbacks: {
-		        	stop: function() {
-		        		$('.message').html('The clock has stopped!')
-		        	}
-		        }
-		    });
-
-		});
-
-
-        </script>
     </body>
 </html>
