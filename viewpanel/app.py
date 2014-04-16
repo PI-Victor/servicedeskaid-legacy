@@ -18,5 +18,10 @@ def index():
     return flask.render_template('index.html')
 
 
+@app.route('/timezones')
+def timezones():
+    return flask.render_template('flipclock.html')
+
+
 if __name__ == '__main__':
     app.run(host=ipaddress, debug=True)
