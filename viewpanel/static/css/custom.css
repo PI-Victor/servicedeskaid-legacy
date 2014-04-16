@@ -7,3 +7,21 @@
     float: left;
         padding-left:2px;
 }
+
+.clock {
+position: relative !important;
+padding-top: 0px;
+margin-left: -194px;
+height:150px;
+width: 150px;
+/zoom: .3;/
+transform: scale(.14);
+-ms-transform: scale(.14); /* IE 9 /
+-webkit-transform: scale(.14); / Safari and Chrome /
+-o-transform: scale(.14); / Opera /
+-moz-transform: scale(.14); / Firefox */
+
+}
+.flip-clock-wrapper {
+position: relative;
+}

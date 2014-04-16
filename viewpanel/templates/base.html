@@ -18,10 +18,13 @@
     <body>
         {% block body %}
         {% endblock %}
+
         <!--scripts-->
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) Added at the end so the page loads faster-->
         <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.js') }}"></script>
         <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
         <script type="text/javascript" src="{{ url_for('static', filename='js/flipclock.min.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/clock.js') }}"></script>
+
     </body>
 </html>
