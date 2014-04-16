@@ -3,7 +3,7 @@ import flask
 """
 Main view panel
 """
-home = False
+home = True
 
 if home:
     ipaddress = '10.0.2.15'
