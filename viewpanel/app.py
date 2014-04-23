@@ -3,12 +3,12 @@ import flask
 """
 Main view panel
 """
-home = False
+home = True
 
 if home:
-    ipaddress = '10.0.2.15'
-else:
     ipaddress = '192.168.15.106'
+else:
+    ipaddress = '10.0.2.15'
 
 app = flask.Flask(__name__)
 
