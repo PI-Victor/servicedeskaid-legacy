@@ -1,5 +1,5 @@
+from lib import app
 import flask
-
 """
 Main view panel
 """
@@ -10,17 +10,16 @@ if home:
 else:
     ipaddress = '10.0.2.15'
 
-app = flask.Flask(__name__)
-
 
 @app.route('/')
 def index():
-    return flask.render_template('index.html')
+    return flask.render_template('/templates/index.html')
 
 
 @app.route('/timezones')
 def timezones():
-    return flask.render_template('flipclock.html')
+    return flask.render_template('/templates/flipclock.html')
+
 
 
 if __name__ == '__main__':
