@@ -31,12 +31,12 @@ class Users(ma.Document):
     query_class = UsersQuery
 
     class OtherInfo(ma.Document):
-        email_address = ma.fields.StringField()
+        email_address = ma.fields.StringField(required=True)
         password = ma.fields.StringField() #TODO : have to see if there's a different type of field to use for encr
         admin = ma.fields.BoolField(default=False)
 
-    timestamp = ma.fields.DateTimeField()
-    userid = ma.fields.StringField()
+    timestamp = ma.fields.DateTimeField(required=True)
+    userid = ma.fields.StringField(required=True)
     other_info = ma.fields.DocumentField(OtherInfo)
 
 

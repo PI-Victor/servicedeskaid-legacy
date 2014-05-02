@@ -17,7 +17,7 @@
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/projx$schema.coverage" NAME="schema Coverage Results" MODIFIED="1399055236693" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/viewpanel/collection" />
-    <SUITE FILE_PATH="coverage/projx$app.coverage" NAME="app Coverage Results" MODIFIED="1399065632078" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/viewpanel" />
+    <SUITE FILE_PATH="coverage/projx$app.coverage" NAME="app Coverage Results" MODIFIED="1399068910660" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/viewpanel" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -31,10 +31,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="app.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="app.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/viewpanel/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="50" selection-start="63" selection-end="63" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="684">
+            <state line="8" column="55" selection-start="163" selection-end="163" vertical-scroll-proportion="0.24615385" vertical-offset="0" max-vertical-offset="684">
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
@@ -42,10 +42,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="schema.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="schema.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/viewpanel/collection/schema.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="8" selection-start="850" selection-end="850" vertical-scroll-proportion="0.84615386" vertical-offset="153" max-vertical-offset="1242">
+            <state line="12" column="3" selection-start="309" selection-end="309" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1242">
               <folding />
             </state>
           </provider>
@@ -65,8 +65,8 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/viewpanel/collection/__init__.py" />
-        <option value="$PROJECT_DIR$/viewpanel/app.py" />
         <option value="$PROJECT_DIR$/viewpanel/collection/schema.py" />
+        <option value="$PROJECT_DIR$/viewpanel/app.py" />
       </list>
     </option>
   </component>
@@ -432,7 +432,11 @@
       <created>1399064162659</created>
       <updated>1399064162659</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added nested document mapping, added basequery for users table">
+      <created>1399066945363</created>
+      <updated>1399066945363</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -473,7 +477,8 @@
       <TodoPanelSettings />
     </option>
     <MESSAGE value="refactored schema, added mongoalchemy structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactored schema, added mongoalchemy structure" />
+    <MESSAGE value="added nested document mapping, added basequery for users table" />
+    <option name="LAST_COMMIT_MESSAGE" value="added nested document mapping, added basequery for users table" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -563,19 +568,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/viewpanel/app.py">
+    <entry file="file://$PROJECT_DIR$/viewpanel/collection/schema.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="50" selection-start="63" selection-end="63" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="684">
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-          </folding>
+        <state line="12" column="3" selection-start="309" selection-end="309" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1242">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/viewpanel/collection/schema.py">
+    <entry file="file://$PROJECT_DIR$/viewpanel/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="8" selection-start="850" selection-end="850" vertical-scroll-proportion="0.84615386" vertical-offset="153" max-vertical-offset="1242">
-          <folding />
+        <state line="8" column="55" selection-start="163" selection-end="163" vertical-scroll-proportion="0.24615385" vertical-offset="0" max-vertical-offset="684">
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
