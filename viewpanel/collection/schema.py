@@ -1,4 +1,3 @@
-import datetime as dt
 import flask.ext.mongoalchemy as ma
 
 '''
@@ -14,22 +13,27 @@ Document Structure:
 '''
 
 
-class Users(Document):
-    __database__ = 'deskdb'
-    __collection__ = 'userdata'
+class SessionHandler(object):
+    """
+    CRUD Session base
+    """
+    def __init__(self, app_obj):
+        self.app = app_obj
 
-    timestamp = ma.DateTimeField()
-    admin = ma.BoolField()
-    userid = ma.StringField()
-    email_address = ma.StringField()
-    password = ma.StringField() #TODO : have to see if there's a different type of field to use for encr
+
+class Users(ma.Document):
+
+    timestamp = ma.fields.DateTimeField()
+    admin = ma.fields.BoolField(default=False)
+    userid = ma.fields.StringField()
+    email_address = ma.fields.StringField()
+    password = ma.fields.StringField() #TODO : have to see if there's a different type of field to use for encr
 
 
 
 # class UserData(mk.Document):
 #     __database__ = 'deskdb'
 #     __collection__ = 'userdata'
-l
 #     structure = {
 #         '_id': basestring,
 #         'timestamp': dt.datetime,
