@@ -1,5 +1,5 @@
 import datetime as dt
-
+import flask.ext.mongoalchemy as ma
 
 '''
 Uses flask-mongokit
@@ -13,29 +13,38 @@ Installing MongoDb on OpenSuse 13.1
 Document Structure:
 '''
 
-class Users(db.Document):
-    __
 
-
-class UserData(mk.Document):
+class Users(Document):
     __database__ = 'deskdb'
     __collection__ = 'userdata'
 
-    structure = {
-        '_id': basestring,
-        'timestamp': dt.datetime,
-        'userid': basestring,
-        'detailed': {'email_address': basestring,
-                     'password': basestring,
-                     'admin': bool, }
-    }
+    timestamp = ma.DateTimeField()
+    admin = ma.BoolField()
+    userid = ma.StringField()
+    email_address = ma.StringField()
+    password = ma.StringField() #TODO : have to see if there's a different type of field to use for encr
 
-    required_fields = ['_id',
-                       'detailed.email_address',
-                       'detailed.password'
-                       'userid', ]
 
-    indexes = [{'fields': '_id'},
-               {'fields': 'timestamp'}]
 
-    default_values = {'timestamp': dt.datetime.utcnow, 'detailed.admin': 'False'}
+# class UserData(mk.Document):
+#     __database__ = 'deskdb'
+#     __collection__ = 'userdata'
+l
+#     structure = {
+#         '_id': basestring,
+#         'timestamp': dt.datetime,
+#         'userid': basestring,
+#         'detailed': {'email_address': basestring,
+#                      'password': basestring,
+#                      'admin': bool, }
+#     }
+
+#     required_fields = ['_id',
+#                        'detailed.email_address',
+#                        'detailed.password'
+#                        'userid', ]
+
+#     indexes = [{'fields': '_id'},
+#                {'fields': 'timestamp'}]
+
+#     default_values = {'timestamp': dt.datetime.utcnow, 'detailed.admin': 'False'}
