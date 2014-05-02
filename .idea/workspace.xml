@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13435553-4989-4479-96be-81f014796782" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/vectra.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewpanel/app.py" afterPath="$PROJECT_DIR$/viewpanel/app.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewpanel/collection/schema.py" afterPath="$PROJECT_DIR$/viewpanel/collection/schema.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -18,7 +17,7 @@
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/projx$schema.coverage" NAME="schema Coverage Results" MODIFIED="1399055236693" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/viewpanel/collection" />
-    <SUITE FILE_PATH="coverage/projx$app.coverage" NAME="app Coverage Results" MODIFIED="1399063857947" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/viewpanel" />
+    <SUITE FILE_PATH="coverage/projx$app.coverage" NAME="app Coverage Results" MODIFIED="1399065632078" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/viewpanel" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -32,10 +31,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="app.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="app.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/viewpanel/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="26" selection-start="181" selection-end="181" vertical-scroll-proportion="0.2769231" vertical-offset="0" max-vertical-offset="792">
+            <state line="1" column="50" selection-start="63" selection-end="63" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="684">
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
@@ -43,19 +42,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="schema.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="schema.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/viewpanel/collection/schema.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="0" selection-start="36" selection-end="36" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1080">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/venv/lib/python2.7/site-packages/flask/app.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="220" column="38" selection-start="10020" selection-end="10020" vertical-scroll-proportion="0.0" vertical-offset="3294" max-vertical-offset="32814">
+            <state line="36" column="8" selection-start="850" selection-end="850" vertical-scroll-proportion="0.84615386" vertical-offset="153" max-vertical-offset="1242">
               <folding />
             </state>
           </provider>
@@ -75,8 +65,8 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/viewpanel/collection/__init__.py" />
-        <option value="$PROJECT_DIR$/viewpanel/collection/schema.py" />
         <option value="$PROJECT_DIR$/viewpanel/app.py" />
+        <option value="$PROJECT_DIR$/viewpanel/collection/schema.py" />
       </list>
     </option>
   </component>
@@ -438,12 +428,18 @@
       <created>1399019701269</created>
       <updated>1399019701269</updated>
     </task>
+    <task id="LOCAL-00001" summary="refactored schema, added mongoalchemy structure">
+      <created>1399064162659</created>
+      <updated>1399064162659</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="51" y="24" width="1549" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -476,6 +472,8 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
+    <MESSAGE value="refactored schema, added mongoalchemy structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactored schema, added mongoalchemy structure" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -558,26 +556,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/viewpanel/collection/schema.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="36" selection-end="36" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1080">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/lib/python2.7/site-packages/flask/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="220" column="38" selection-start="10020" selection-end="10020" vertical-scroll-proportion="0.0" vertical-offset="3294" max-vertical-offset="32814">
+        <state line="220" column="38" selection-start="10020" selection-end="10020" vertical-scroll-proportion="0.36923078" vertical-offset="3294" max-vertical-offset="32814">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/viewpanel/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="26" selection-start="181" selection-end="181" vertical-scroll-proportion="0.2769231" vertical-offset="0" max-vertical-offset="792">
+        <state line="1" column="50" selection-start="63" selection-end="63" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="684">
           <folding>
             <element signature="e#0#12#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viewpanel/collection/schema.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="8" selection-start="850" selection-end="850" vertical-scroll-proportion="0.84615386" vertical-offset="153" max-vertical-offset="1242">
+          <folding />
         </state>
       </provider>
     </entry>

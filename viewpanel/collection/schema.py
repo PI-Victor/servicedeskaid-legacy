@@ -17,18 +17,27 @@ class SessionHandler(object):
     """
     CRUD Session base
     """
-    def __init__(self, app_obj):
-        self.app = app_obj
+    def bind_to_app(self, app_obj):
+        return ma.MongoAlchemy(app_obj)
+
+
+class UsersQuery(ma.BaseQuery):
+
+    def with_id(self, userid):
+        pass
 
 
 class Users(ma.Document):
+    query_class = UsersQuery
+
+    class OtherInfo(ma.Document):
+        email_address = ma.fields.StringField()
+        password = ma.fields.StringField() #TODO : have to see if there's a different type of field to use for encr
+        admin = ma.fields.BoolField(default=False)
 
     timestamp = ma.fields.DateTimeField()
-    admin = ma.fields.BoolField(default=False)
     userid = ma.fields.StringField()
-    email_address = ma.fields.StringField()
-    password = ma.fields.StringField() #TODO : have to see if there's a different type of field to use for encr
-
+    other_info = ma.fields.DocumentField(OtherInfo)
 
 
 # class UserData(mk.Document):
