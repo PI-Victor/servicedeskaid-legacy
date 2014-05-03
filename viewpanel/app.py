@@ -28,5 +28,4 @@ def timezones():
 
 if __name__ == '__main__':
     app.run(host=ipaddress)
-    print dir(app)
 

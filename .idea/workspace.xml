@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="13435553-4989-4479-96be-81f014796782" name="Default" comment="">
+    <list default="true" id="13435553-4989-4479-96be-81f014796782" name="Default" comment="corrected crash error">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewpanel/app.py" afterPath="$PROJECT_DIR$/viewpanel/app.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="projx.iws" />
@@ -29,19 +30,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="app.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="app.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/viewpanel/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="0" selection-start="462" selection-end="462" vertical-scroll-proportion="0.0" vertical-offset="378" max-vertical-offset="684">
+            <state line="29" column="27" selection-start="613" selection-end="613" vertical-scroll-proportion="0.6520052" vertical-offset="0" max-vertical-offset="773">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="schema.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="schema.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/viewpanel/collection/schema.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="18" selection-start="257" selection-end="257" vertical-scroll-proportion="0.1862872" vertical-offset="0" max-vertical-offset="1242">
+            <state line="38" column="49" selection-start="960" selection-end="960" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1242">
               <folding />
             </state>
           </provider>
@@ -61,8 +62,8 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/viewpanel/collection/__init__.py" />
-        <option value="$PROJECT_DIR$/viewpanel/app.py" />
         <option value="$PROJECT_DIR$/viewpanel/collection/schema.py" />
+        <option value="$PROJECT_DIR$/viewpanel/app.py" />
       </list>
     </option>
   </component>
@@ -436,19 +437,24 @@
       <created>1399069095928</created>
       <updated>1399069095928</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="corrected crash error">
+      <created>1399076719826</created>
+      <updated>1399076719826</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="51" y="24" width="1549" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32989025" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14654616" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14654616" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.087153" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -458,7 +464,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -479,7 +484,8 @@
     <MESSAGE value="refactored schema, added mongoalchemy structure" />
     <MESSAGE value="added nested document mapping, added basequery for users table" />
     <MESSAGE value="fixed object app, removed insertion, added required fields in schema file" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed object app, removed insertion, added required fields in schema file" />
+    <MESSAGE value="corrected crash error" />
+    <option name="LAST_COMMIT_MESSAGE" value="corrected crash error" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -571,16 +577,16 @@
         <state line="220" column="38" selection-start="10020" selection-end="10020" vertical-scroll-proportion="0.36923078" vertical-offset="3294" max-vertical-offset="32814" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/viewpanel/app.py">
+    <entry file="file://$PROJECT_DIR$/viewpanel/collection/schema.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="462" selection-end="462" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="684">
+        <state line="38" column="49" selection-start="960" selection-end="960" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1242">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/viewpanel/collection/schema.py">
+    <entry file="file://$PROJECT_DIR$/viewpanel/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="18" selection-start="257" selection-end="257" vertical-scroll-proportion="0.1862872" vertical-offset="0" max-vertical-offset="1242">
+        <state line="29" column="27" selection-start="613" selection-end="613" vertical-scroll-proportion="0.6520052" vertical-offset="0" max-vertical-offset="773">
           <folding />
         </state>
       </provider>
