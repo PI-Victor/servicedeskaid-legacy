@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13435553-4989-4479-96be-81f014796782" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewpanel/app.py" afterPath="$PROJECT_DIR$/viewpanel/app.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewpanel/collection/schema.py" afterPath="$PROJECT_DIR$/viewpanel/collection/schema.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewpanel/templates/login.html" afterPath="$PROJECT_DIR$/viewpanel/templates/login.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="projx.iws" />
@@ -18,7 +17,7 @@
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/projx$schema.coverage" NAME="schema Coverage Results" MODIFIED="1399055236693" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/viewpanel/collection" />
-    <SUITE FILE_PATH="coverage/projx$app.coverage" NAME="app Coverage Results" MODIFIED="1399068910660" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/viewpanel" />
+    <SUITE FILE_PATH="coverage/projx$app.coverage" NAME="app Coverage Results" MODIFIED="1399228306037" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/viewpanel" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -35,10 +34,8 @@
       <file leaf-file-name="app.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/viewpanel/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="31" selection-start="887" selection-end="887" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="954">
-              <folding>
-                <element signature="e#0#12#0" expanded="true" />
-              </folding>
+            <state line="39" column="16" selection-start="1006" selection-end="1006" vertical-scroll-proportion="0.0" vertical-offset="159" max-vertical-offset="882">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -46,7 +43,7 @@
       <file leaf-file-name="schema.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/viewpanel/collection/schema.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="28" selection-start="752" selection-end="752" vertical-scroll-proportion="0.44278076" vertical-offset="162" max-vertical-offset="1278">
+            <state line="34" column="33" selection-start="787" selection-end="787" vertical-scroll-proportion="0.47302905" vertical-offset="270" max-vertical-offset="1278">
               <folding />
             </state>
           </provider>
@@ -55,7 +52,7 @@
       <file leaf-file-name="login.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/viewpanel/templates/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="49" selection-start="622" selection-end="636" vertical-scroll-proportion="-7.3333335" vertical-offset="0" max-vertical-offset="1620">
+            <state line="71" column="26" selection-start="4251" selection-end="4251" vertical-scroll-proportion="-47.333332" vertical-offset="0" max-vertical-offset="1620">
               <folding />
             </state>
           </provider>
@@ -75,14 +72,17 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/viewpanel/collection/__init__.py" />
-        <option value="$PROJECT_DIR$/viewpanel/app.py" />
         <option value="$PROJECT_DIR$/viewpanel/collection/schema.py" />
+        <option value="$PROJECT_DIR$/viewpanel/app.py" />
+        <option value="$PROJECT_DIR$/viewpanel/templates/login.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="1600" />
+    <option name="y" value="24" />
     <option name="width" value="1920" />
-    <option name="height" value="1055" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -126,7 +126,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -179,11 +178,12 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="FullScreen" value="false" />
-    <property name="options.lastSelected" value="preferences.keymap" />
+    <property name="options.lastSelected" value="com.jetbrains.python.configuration.PythonSdkConfigurable" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
@@ -235,6 +235,26 @@
       <option name="PARAMETERS" value="" />
       <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="projx" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="py.test">
@@ -322,6 +342,9 @@
       <option name="PUREUNITTEST" value="true" />
       <option name="PARAMS" value="" />
       <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -423,28 +446,28 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1055" extended-state="6" />
+    <frame x="1600" y="24" width="1920" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32989025" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14635417" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14583333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.087153" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23412204" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23397762" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32981676" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32989025" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -472,26 +495,36 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/viewpanel/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="30" selection-start="468" selection-end="468" vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="702">
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-          </folding>
+        <state line="24" column="16" selection-start="623" selection-end="623" vertical-scroll-proportion="0.0" vertical-offset="432" max-vertical-offset="954">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/viewpanel/collection/schema.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="310" selection-end="310" vertical-scroll-proportion="0.0" vertical-offset="234" max-vertical-offset="1242">
+        <state line="27" column="0" selection-start="559" selection-end="559" vertical-scroll-proportion="0.0" vertical-offset="486" max-vertical-offset="1278">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/viewpanel/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="39" selection-start="383" selection-end="383" vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="648">
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-          </folding>
+        <state line="24" column="16" selection-start="505" selection-end="505" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="666">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viewpanel/collection/schema.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="33" selection-start="1109" selection-end="1109" vertical-scroll-proportion="0.0" vertical-offset="792" max-vertical-offset="1242">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viewpanel/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="39" selection-start="383" selection-end="383" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="648">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -505,9 +538,7 @@
     <entry file="file://$PROJECT_DIR$/viewpanel/app.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="0" selection-start="462" selection-end="462" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="684">
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -521,9 +552,7 @@
     <entry file="file://$PROJECT_DIR$/viewpanel/app.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="0" selection-start="13" selection-end="13" vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="648">
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -537,9 +566,7 @@
     <entry file="file://$PROJECT_DIR$/viewpanel/app.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="0" selection-start="81" selection-end="81" vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="630">
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -594,25 +621,23 @@
         <state line="220" column="38" selection-start="10020" selection-end="10020" vertical-scroll-proportion="0.36923078" vertical-offset="3294" max-vertical-offset="32814" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/viewpanel/templates/login.html">
+    <entry file="file://$PROJECT_DIR$/viewpanel/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="49" selection-start="622" selection-end="636" vertical-scroll-proportion="-7.3333335" vertical-offset="0" max-vertical-offset="1620">
+        <state line="39" column="16" selection-start="1006" selection-end="1006" vertical-scroll-proportion="0.0" vertical-offset="159" max-vertical-offset="882">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/viewpanel/app.py">
+    <entry file="file://$PROJECT_DIR$/viewpanel/templates/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="31" selection-start="887" selection-end="887" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="954">
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-          </folding>
+        <state line="71" column="26" selection-start="4251" selection-end="4251" vertical-scroll-proportion="-47.333332" vertical-offset="0" max-vertical-offset="1620">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/viewpanel/collection/schema.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="28" selection-start="752" selection-end="752" vertical-scroll-proportion="0.44278076" vertical-offset="162" max-vertical-offset="1278">
+        <state line="34" column="33" selection-start="787" selection-end="787" vertical-scroll-proportion="0.47302905" vertical-offset="270" max-vertical-offset="1278">
           <folding />
         </state>
       </provider>
