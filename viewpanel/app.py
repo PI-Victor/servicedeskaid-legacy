@@ -1,6 +1,7 @@
 import flask
 from collection.schema import SessionHandler as Sh
-
+from flask.ext.login import LoginManager
+from collection.schema import Users
 
 home = True
 
@@ -8,12 +9,27 @@ app = flask.Flask(__name__)
 
 #TODO have to move the below to a config file later on
 app.config['MONGOALCHEMY_DATABASE'] = 'deskdb'
-app.config['DEBUG'] = False
+app.config['DEBUG'] = True
 app.config['SECRET_KEY'] = '!b@n@n@s are very ch3ap!'
-ipaddress = ['10.0.2.15', '192.168.15.107'][home]
+app.config['IPADRESS'] = ['10.0.2.15', '192.168.15.107'][home]
 
 
 session_handler = Sh().bind_to_app(app)
+
+
+login_manager = LoginManager()
+
+@app.route('/login', methods=['GET','POST'])
+def user_login():
+    if flask.request.method == 'GET':
+        return flask.render_template('login.html')
+    user_login = session_handler.
+    user_name = flask.request.form['login-username']
+    user_pass = flask.request.form['login-password']
+    user_remember = flask.request.formp['login-remember']
+    session_handler.query(Users)
+
+
 
 
 @app.route('/')
@@ -27,5 +43,5 @@ def timezones():
 
 
 if __name__ == '__main__':
-    app.run(host=ipaddress)
+    app.run(host=app.config['IPADRESS'], debug=app.configp['DEBUG'])
 

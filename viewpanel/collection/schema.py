@@ -17,17 +17,19 @@ class SessionHandler(object):
     """
     CRUD Session base
     """
-    def bind_to_app(self, app_obj):
+    @staticmethod
+    def bind_to_app(app_obj):
         return ma.MongoAlchemy(app_obj)
 
 
 class UsersQuery(ma.BaseQuery):
 
-    def with_id(self, userid):
-        pass
+    def user_auth(self, login_username, user_password):
+        return self.filter(self.type.userid == login_username, self.type.password == user_password)
 
 
 class Users(ma.Document):
+    config_collection_name = 'Users'
     query_class = UsersQuery
 
     class OtherInfo(ma.Document):
