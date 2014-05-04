@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="13435553-4989-4479-96be-81f014796782" name="Default" comment="corrected crash error">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewpanel/app.py" afterPath="$PROJECT_DIR$/viewpanel/app.py" />
+    <list default="true" id="13435553-4989-4479-96be-81f014796782" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="projx.iws" />
@@ -33,7 +32,7 @@
       <file leaf-file-name="app.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/viewpanel/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="27" selection-start="613" selection-end="613" vertical-scroll-proportion="0.6520052" vertical-offset="0" max-vertical-offset="773">
+            <state line="15" column="39" selection-start="383" selection-end="383" vertical-scroll-proportion="0.3260026" vertical-offset="0" max-vertical-offset="773">
               <folding />
             </state>
           </provider>
@@ -161,21 +160,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="collection" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="projx" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="projx" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="venv" />
+              <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -441,12 +426,16 @@
       <created>1399076719826</created>
       <updated>1399076719826</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="removed print dir(app) from app.py, it was causing confusion">
+      <created>1399079411016</created>
+      <updated>1399079411016</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="51" y="24" width="1549" height="876" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -454,7 +443,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32989025" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14654616" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14654616" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.087153" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -485,7 +474,8 @@
     <MESSAGE value="added nested document mapping, added basequery for users table" />
     <MESSAGE value="fixed object app, removed insertion, added required fields in schema file" />
     <MESSAGE value="corrected crash error" />
-    <option name="LAST_COMMIT_MESSAGE" value="corrected crash error" />
+    <MESSAGE value="removed print dir(app) from app.py, it was causing confusion" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed print dir(app) from app.py, it was causing confusion" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -586,7 +576,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/viewpanel/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="27" selection-start="613" selection-end="613" vertical-scroll-proportion="0.6520052" vertical-offset="0" max-vertical-offset="773">
+        <state line="15" column="39" selection-start="383" selection-end="383" vertical-scroll-proportion="0.3260026" vertical-offset="0" max-vertical-offset="773">
           <folding />
         </state>
       </provider>
