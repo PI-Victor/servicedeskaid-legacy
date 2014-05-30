@@ -14,6 +14,7 @@ config = {
         'flask',
         'flask-restful',
         'flask-mongoalchemy',
+        'flask-login',
     ],
 }
 
