@@ -11,10 +11,9 @@ config = {
     'zip_safe' : False,
     'packages' : s.find_packages(),
     'install_requires': [
-        'mysql-connector-python',
-        'sqlalchemy',
         'flask',
-        'flask-restful'
+        'flask-restful',
+        'flask-mongoalchemy',
     ],
 }
 
