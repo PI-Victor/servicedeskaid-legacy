@@ -3,3 +3,6 @@ activate
 ac
 *~
 *pyc
+*.egg-info
+*build
+*dist
