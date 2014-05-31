@@ -11,7 +11,7 @@ config = {
     'version': '0.1.0',
     'author': 'thecodeflavour.org',
     'url': 'http://codeflavour.github.io/servicedeskaid/',
-    'long_description' : open('README.md').read()
+    'long_description' : open('README.md').read(),
     'zip_safe': False,
     'packages': s.find_packages(),
     'install_requires':[

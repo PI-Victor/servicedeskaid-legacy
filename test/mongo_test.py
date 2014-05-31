@@ -1,6 +1,6 @@
-import viewpanel.application
+from viewpanel.collection import schema as sc
+import flask.ext.mongoalchemy as ma
 
-
-schema_class = sc.SessionHandler()
-
-print dir(schema_class)
+def test_user_insert():
+	users_doc = sc.Users()
+	
