@@ -1,4 +1,4 @@
-from viewpanel import collection as sc
+import viewpanel.application
 
 
 schema_class = sc.SessionHandler()
