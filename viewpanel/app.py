@@ -11,7 +11,7 @@ app = flask.Flask(__name__)
 app.config['MONGOALCHEMY_DATABASE'] = 'deskdb'
 app.config['DEBUG'] = True
 app.config['SECRET_KEY'] = '!b@n@n@s are very ch3ap!'
-app.config['IPADRESS'] = ['10.0.2.15', '192.168.15.107'][home]
+app.config['IPADRESS'] = ['10.0.2.15', '192.168.15.106'][home]
 
 
 session_handler = Sh().bind_to_app(app)
