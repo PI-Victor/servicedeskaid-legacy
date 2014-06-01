@@ -1,7 +1,8 @@
 import flask.ext.mongoalchemy as ma
-from viewpanel.collection import session_handler as db
+from viewpanel import session_handler as db
 from flask.ext.mongoalchemy import BaseQuery
 import datetime as dt
+
 '''
 Uses flask-mongokit
 must have mongodb installed:
@@ -13,21 +14,6 @@ Installing MongoDb on OpenSuse 13.1
 
 Document Structure:
 '''
-
-class Returndb(object):
-    def returndb(self):
-        return db
-
-class SessionHandler(object):
-    """
-    CRUD Session base
-    """
-    def create_session(self, db):
-        return ma.session.Session.connect(db)
-
-    @staticmethod
-    def bind_to_app(app_obj):
-        return ma.MongoAlchemy(app_obj)
 
 
 class UsersQuery(BaseQuery):
@@ -41,13 +27,13 @@ class Users(db.Document):
     query_class = UsersQuery
 
     class OtherInfo(db.Document):
-        email_address = db.fields.StringField(required = True)
-        password = db.fields.StringField() #TODO : have to see if there's a different type of field to use for encr
-        admin = db.fields.BoolField(default = False)
+        email_address = db.fields.StringField(required=True)
+        password = db.fields.StringField()  # TODO : have to see if there's a different type of field to use for encr
+        admin = db.fields.BoolField(default=False)
         put = db.fields.StringField(default='entry')
 
-    timestamp = db.fields.DateTimeField(required = False, default = dt.datetime.utcnow())
-    userid = db.fields.StringField(required = True)
+    timestamp = db.fields.DateTimeField(required = False, default=dt.datetime.utcnow())
+    userid = db.fields.StringField(required=True)
     other_info = db.DocumentField(OtherInfo)
 
 
