@@ -1,5 +1,5 @@
 import flask.ext.mongoalchemy as ma
-from . import session_handler as db
+from viewpanel.collection import session_handler as db
 from flask.ext.mongoalchemy import BaseQuery
 import datetime as dt
 '''
@@ -14,8 +14,9 @@ Installing MongoDb on OpenSuse 13.1
 Document Structure:
 '''
 
-
-print dir(db)
+class Returndb(object):
+    def returndb(self):
+        return db
 
 class SessionHandler(object):
     """
