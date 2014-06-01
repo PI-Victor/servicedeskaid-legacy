@@ -35,27 +35,3 @@ class Users(db.Document):
     timestamp = db.fields.DateTimeField(required = False, default=dt.datetime.utcnow())
     userid = db.fields.StringField(required=True)
     other_info = db.DocumentField(OtherInfo)
-
-
-
-# class UserData(mk.Document):
-#     __database__ = 'deskdb'
-#     __collection__ = 'userdata'
-#     structure = {
-#         '_id': basestring,
-#         'timestamp': dt.datetime,
-#         'userid': basestring,
-#         'detailed': {'email_address': basestring,
-#                      'password': basestring,
-#                      'admin': bool, }
-#     }
-
-#     required_fields = ['_id',
-#                        'detailed.email_address',
-#                        'detailed.password'
-#                        'userid', ]
-
-#     indexes = [{'fields': '_id'},
-#                {'fields': 'timestamp'}]
-
-#     default_values = {'timestamp': dt.datetime.utcnow, 'detailed.admin': 'False'}
