@@ -9,6 +9,6 @@ How to install Mongo on Opensuse 13.1
 ===============
 
 Installing MongoDb on OpenSuse 13.1
-    zypper addrepo http://download.opensuse.org/repositories/server:database/openSUSE_13.1/server:database.repo
-    zypper refresh
-    zypper install mongodb
+*   zypper addrepo http://download.opensuse.org/repositories/server:database/openSUSE_13.1/server:database.repo
+*    zypper refresh
+*    zypper install mongodb  
