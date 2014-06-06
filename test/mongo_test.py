@@ -29,5 +29,7 @@ def test_metrics_insert():
 
     metrics_doc = Metrics(user_dataseries=usermetrics, os_dataseries=osmetrics)
     metrics_doc.save()
-    result_set = Metrics.query.filter(Metrics.UserDataSeries.timestamp == usermetrics.timestamp).first()
-    assert result_set == usermetrics
+    user_resultset = Metrics.query.filter(Metrics.UserDataSeries.timestamp == usermetrics.timestamp).first()
+    os_resultset = Metrics.query.filter(Metrics.OsDataSeries.timestamp == osmetrics.timestamp).first()
+    assert user_resultset == usermetrics
+    assert os_resultset == osmetrics

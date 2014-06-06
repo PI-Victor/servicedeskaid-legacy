@@ -1,6 +1,6 @@
 from flask.ext.mongoalchemy import MongoAlchemy
 import flask
-
+import pymongo
 home = True
 
 app = flask.Flask(__name__)
@@ -11,7 +11,10 @@ app.config['MONGOALCHEMY_DATABASE'] = 'deskdb'
 app.config['SECRET_KEY'] = '!b@n@n@s are very ch3ap!'
 app.config['DEBUG'] = True
 app.config['IPADRESS'] = ['10.0.2.15', '192.168.15.106'][home]
-session_handler = MongoAlchemy(app)
+try:
+    session_handler = MongoAlchemy(app)
+except:
+    raise
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -29,6 +32,9 @@ def user_login():
 def index():
     return flask.render_template('index.html')
 
+@app.route('/graphs')
+def graphing():
+    return flask.render_template('graphs.html')
 
 @app.route('/timezones')
 def timezones():
