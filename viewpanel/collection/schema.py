@@ -49,5 +49,5 @@ class Metrics(db.Document):
         closed_issues = db.fields.NumberField(required=True)
         worked_issues = db.fields.NumberField(required=True)
 
-    osdata = db.DocumentField(OsDataSeries)
-    userdata = db.DocumentField(UserDataSeries)
+    os_dataseries = db.DocumentField(OsDataSeries)
+    user_dataseries = db.DocumentField(UserDataSeries)
