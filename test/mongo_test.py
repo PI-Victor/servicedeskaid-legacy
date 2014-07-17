@@ -17,15 +17,15 @@ def test_user_insert():
 
 
 def test_metrics_insert():
-
     usermetrics = Metrics.UserDataSeries(timestamp=dt.datetime.utcnow(),
                                          worked_issues=30,
                                          opened_issues=20,
-                                         closed_issues=50,)
+                                         closed_issues=50)
+
     osmetrics = Metrics.OsDataSeries(timestamp=dt.datetime.utcnow(),
                                      cpu_usage=30.2,
                                      virtual_mem=50,
-                                     swap_memory=30,)
+                                     swap_memory=30)
 
     metrics_doc = Metrics(user_dataseries=usermetrics, os_dataseries=osmetrics)
     metrics_doc.save()

@@ -34,6 +34,7 @@ class MetricsQuery(BaseQuery):
 
 
 class Metrics(db.Document):
+
     config_collection_name = 'osmetrics'
     query_class = MetricsQuery
 
@@ -45,7 +46,7 @@ class Metrics(db.Document):
 
     class UserDataSeries(db.Document):
         timestamp = db.fields.DateTimeField(required=True, default=dt.datetime.utcnow())
-        opened_issues = db.fields.NumberField(required=True)
+        open_issues = db.fields.NumberField(required=True)
         closed_issues = db.fields.NumberField(required=True)
         worked_issues = db.fields.NumberField(required=True)
 
