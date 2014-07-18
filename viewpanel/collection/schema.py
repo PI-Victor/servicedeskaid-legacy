@@ -15,7 +15,8 @@ class Users(db.Document):
 
     class OtherInfo(db.Document):
         email_address = db.fields.StringField(required=True)
-        password = db.fields.StringField()  # TODO : have to see if there's a different type of field to use for encr
+        # TODO : have to see if there's a different type of field to use for encr
+        password = db.fields.StringField()  
         admin = db.fields.BoolField(default=False)
         put = db.fields.StringField(default='entry')
 
@@ -26,8 +27,8 @@ class Users(db.Document):
 
 class MetricsQuery(BaseQuery):
 
-    def get_system_metric(self,timestamp):
-        return self.fiter(self.type.timestamp == timestamp)
+#    def get_system_metric(self,timestamp):
+#        return self.fiter(self.type.timestamp == timestamp)
 
     def get_user_perf(self, timestamp):
         return self.filter(self.type.timestamp == timestamp)
@@ -38,17 +39,18 @@ class Metrics(db.Document):
     config_collection_name = 'osmetrics'
     query_class = MetricsQuery
 
-    class OsDataSeries(db.Document):
-        timestamp = db.fields.DateTimeField(required=True, default=dt.datetime.utcnow())
-        cpu_usage = db.fields.FloatField(required=True)
-        virtual_mem = db.fields.FloatField(required=True)
-        swap_memory = db.fields.FloatField(required=True)
+#Osdataseries has no place here
+#    class OsDataSeries(db.Document):
+#        timestamp = db.fields.DateTimeField(required=True, default=dt.datetime.utcnow())
+#        cpu_usage = db.fields.FloatField(required=True)
+#        virtual_mem = db.fields.FloatField(required=True)
+#        swap_memory = db.fields.FloatField(required=True)
 
     class UserDataSeries(db.Document):
         timestamp = db.fields.DateTimeField(required=True, default=dt.datetime.utcnow())
-        open_issues = db.fields.NumberField(required=True)
-        closed_issues = db.fields.NumberField(required=True)
-        worked_issues = db.fields.NumberField(required=True)
+        open_issues = db.fields.IntField(min_value=0,required=True)
+        closed_issues = db.fields.IntField(min_value=0, required=True)
+        worked_issues = db.fields.IntField(min_value=0,required=True)
 
-    os_dataseries = db.DocumentField(OsDataSeries)
+ #   os_dataseries = db.DocumentField(OsDataSeries)
     user_dataseries = db.DocumentField(UserDataSeries)
