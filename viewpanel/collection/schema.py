@@ -1,56 +1,25 @@
-from viewpanel import session_handler as db
-from flask.ext.mongoalchemy import BaseQuery
+import mongoengine
 import datetime as dt
 
 
-class UsersQuery(BaseQuery):
+class Users(mongoengine.Document):
 
-    def user_auth(self, login_username, user_password):
-        return self.filter(self.type.userid == login_username, self.type.password == user_password)
+    class OtherInfo(mongoengine.EmbeddedDocument):
+        email_address = mongoengine.StringField(required=True)
+        password = mongoengine.StringField(required=True)  
+        admin = mongoengines.BoolField(default=False)
 
-
-class Users(db.Document):
-    config_collection_name = 'Users'
-    query_class = UsersQuery
-
-    class OtherInfo(db.Document):
-        email_address = db.fields.StringField(required=True)
-        # TODO : have to see if there's a different type of field to use for encr
-        password = db.fields.StringField()  
-        admin = db.fields.BoolField(default=False)
-        put = db.fields.StringField(default='entry')
-
-    timestamp = db.fields.DateTimeField(required=False, default=dt.datetime.utcnow())
-    userid = db.fields.StringField(required=True)
-    other_info = db.DocumentField(OtherInfo)
+    created = mongoengine.DateTimeField(required=False, default=dt.datetime.utcnow())
+    userid = mongoengine.StringField(required=True)
+    other_info = mongoengine.EmbeddedDocumentField(OtherInfo)
 
 
-class MetricsQuery(BaseQuery):
+class Metrics(mongoengine.Document):
 
-#    def get_system_metric(self,timestamp):
-#        return self.fiter(self.type.timestamp == timestamp)
-
-    def get_user_perf(self, timestamp):
-        return self.filter(self.type.timestamp == timestamp)
-
-
-class Metrics(db.Document):
-
-    config_collection_name = 'osmetrics'
-    query_class = MetricsQuery
-
-#Osdataseries has no place here
-#    class OsDataSeries(db.Document):
-#        timestamp = db.fields.DateTimeField(required=True, default=dt.datetime.utcnow())
-#        cpu_usage = db.fields.FloatField(required=True)
-#        virtual_mem = db.fields.FloatField(required=True)
-#        swap_memory = db.fields.FloatField(required=True)
-
-    class UserDataSeries(db.Document):
+    class UserDataSeries(mongoengine.EmbeddedDocument):
         timestamp = db.fields.DateTimeField(required=True, default=dt.datetime.utcnow())
         open_issues = db.fields.IntField(min_value=0,required=True)
         closed_issues = db.fields.IntField(min_value=0, required=True)
         worked_issues = db.fields.IntField(min_value=0,required=True)
 
- #   os_dataseries = db.DocumentField(OsDataSeries)
-    user_dataseries = db.DocumentField(UserDataSeries)
+    user_dataseries = mongoengine.EmbeddedDocumentField(UserDataSeries)
