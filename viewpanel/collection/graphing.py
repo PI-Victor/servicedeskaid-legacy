@@ -1,4 +1,11 @@
 import pygal                                                       # First import pygal
-bar_chart = pygal.Bar()                                            # Then create a bar graph object
-bar_chart.add('Fibonacci', [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55])  # Add some values
-bar_chart.render_to_file('/home/vectra/proj/projx/viewpanel/templates/bar_chart.svg')                          # Save the svg to a file
+
+
+def generate_graph():
+    chart = pygal.StackedLine(fill=True, interpolate='cubic')
+    chart.add('A', [1, 3,  5, 16, 13, 3,  7])
+    chart.add('B', [5, 2,  3,  2,  5, 7, 17])
+    chart.add('C', [6, 10, 9,  7,  3, 1,  0])
+    chart.add('D', [2,  3, 5,  9, 12, 9,  5])
+    chart.add('E', [7,  4, 2,  1,  2, 10, 0])
+    chart.render_to_file('/home/vectra/projects/servicedeskaid/viewpanel/static/graphs/chart.svg')                          # Save the svg to a file and leave it hard coded for now

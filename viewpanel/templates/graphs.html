@@ -1,3 +1,4 @@
-    <figure>
-      <embed type="image/svg+xml" src="/home/vectra/projects/servicedeskaid/viewpanel/templates/bar_chart.svg"/>
-    </figure>
+{% extends 'base.html' %}
+<figure>
+  <embed type="image/svg+xml" src="{{ url_for('static', filename='graphs/chart.svg') }}"/>
+</figure>

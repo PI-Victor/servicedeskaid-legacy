@@ -1,6 +1,7 @@
 import mongoengine
 import flask
 import pymongo
+from collection import graphing as gr
 home = True
 
 app = flask.Flask(__name__)
@@ -20,6 +21,7 @@ def index():
 
 @app.route('/graphs')
 def graphing():
+    gr.generate_graph()
     return flask.render_template('graphs.html')
 
 @app.route('/timezones')
