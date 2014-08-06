@@ -1,6 +1,7 @@
 import pygal                                                       # First import pygal
 
 
+
 def generate_graph():
     chart = pygal.StackedLine(fill=True, interpolate='cubic')
     chart.add('A', [1, 3,  5, 16, 13, 3,  7])
