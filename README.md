@@ -17,5 +17,16 @@ Installing MongoDb on OpenSuse 13.1
 
 Showcase:
 
+The Front, (in construction - will show a summary of open issues and users logged in)  
 
-![servicedeskaid fron](https://github.com/codeflavour/servicedeskaid/blob/develop/showcase/front.png?raw=true "Front")
+![servicedeskaid front](https://github.com/codeflavour/servicedeskaid/blob/develop/showcase/front.png?raw=true "Front")
+
+The issue page (in construction)  
+
+![servicedeskaid issues] (https://github.com/codeflavour/servicedeskaid/blob/develop/showcase/issues.png?raw=true "Issues")
+
+The login/sign up form  
+
+![servicedeskaid login form] (https://github.com/codeflavour/servicedeskaid/blob/develop/showcase/login.png?raw=true "Login form")
+
+![servicedeskaid signup form] (https://github.com/codeflavour/servicedeskaid/blob/develop/showcase/signup.png?raw=true "Sign up form")
