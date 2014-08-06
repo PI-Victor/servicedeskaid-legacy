@@ -8,14 +8,14 @@ app = flask.Flask(__name__)
 
 @app.route('/login', methods=['GET', 'POST'])
 def user_login():
-    if flask.request.method == 'GET':
-        print "something"
-        return flask.render_template('login.html')
     if flask.request.method == 'POST':
-        user_name = flask.request.form['login-username']
-        user_pass = flask.request.form['login-password']
-        user_remember = flask.request.form['login-remember']
-    print user_name, user_pass, user_remember
+        user_name = flask.request.form['loginname']
+        user_pass = flask.request.form['loginpass']
+        user_remember = flask.request.form['loginremember']
+        return flask.render_template('index.html')
+    else:
+        return flask.render_template('login.html')
+
 
 @app.route('/')
 def index():

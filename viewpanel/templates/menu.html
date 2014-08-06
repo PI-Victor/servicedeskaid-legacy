@@ -71,7 +71,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 			  
-			  <i class="glyphicon glyphicon-user"></i> 
+			  <i class="glyphicon glyphicon-user"></i>
 			  {% block body %}
 			      {% set loggedin=false%}
 			      {% if loggedin: %} 
@@ -79,9 +79,10 @@
 			      {% else %}
 			          {% print "Login" %}
 			      {% endif %}
-			  {% endblock%}
+			  {% endblock%} 
 			  <b class="caret"></b></a>
                         <ul class="dropdown-menu">
+			    <li><a href="/login">Login</a></li>
                             <li><a href="#">Customize</a></li>
                             <li><a href="#">Logout</a></li>
                         </ul>
