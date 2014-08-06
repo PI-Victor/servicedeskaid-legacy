@@ -1,6 +1,6 @@
 import mongoengine
 import flask
-from collection import graphing as gr
+from collection import graphing as gr, formvalid
 home = True
 
 app = flask.Flask(__name__)
@@ -8,18 +8,19 @@ app = flask.Flask(__name__)
 
 @app.route('/login', methods=['GET', 'POST'])
 def user_login():
-    if flask.request.method == 'POST':
-        user_name = flask.request.form['loginname']
-        user_pass = flask.request.form['loginpass']
-        user_remember = flask.request.form['loginremember']
+    form = formvalid.LoginForm(flask.request.form)
+    if flask.request.method == 'POST' and form.validate():
         return flask.render_template('index.html')
     else:
         return flask.render_template('login.html')
 
-
 @app.route('/')
 def index():
     return flask.render_template('index.html')
+
+@app.route('/livefeed')
+def livefeed():
+    print "Got here"
 
 @app.route('/graphs')
 def graphing():
@@ -29,4 +30,3 @@ def graphing():
 @app.route('/timezones')
 def timezones():
     return flask.render_template('flipclock.html')
-
