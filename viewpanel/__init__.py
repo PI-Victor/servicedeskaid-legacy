@@ -10,7 +10,7 @@ app = flask.Flask(__name__)
 def user_login():
     form = formvalid.LoginForm(flask.request.form)
     if flask.request.method == 'POST' and form.validate():
-        return flask.render_template('index.html')
+        return flask.render_template('viewpanel.html')
     else:
         return flask.render_template('login.html')
 
@@ -18,9 +18,9 @@ def user_login():
 def index():
     return flask.render_template('index.html')
 
-@app.route('/livefeed')
-def livefeed():
-    print "Got here"
+@app.route('/viewpanel')
+def viewpanel():
+    return flask.render_template('viewpanel.html')
 
 @app.route('/graphs')
 def graphing():
