@@ -6,6 +6,11 @@ More updates will follow
 
 Service desk aid is a service desk delivery tool for call centers and ops alike. It incorporates a fast way to communicate, implements tools that allow you to template and document properly work done, tickets, and much more. You can share snippets, screen shots and other useful data.
 
+####Credit to:
+[Flip Clock JS by @objectivehtml](http://flipclockjs.com/)
+[Login form from Bootsnip.com calvinko](http://http://bootsnipp.com/calvinko)
+
+
 ####How to install Mongo on Opensuse 13.1
 
 Installing MongoDb on OpenSuse 13.1
