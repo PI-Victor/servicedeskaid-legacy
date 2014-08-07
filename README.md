@@ -8,7 +8,7 @@ Service desk aid is a service desk delivery tool for call centers and ops alike.
 
 ####Credit to:
 [Flip Clock JS by @objectivehtml](http://flipclockjs.com/)  
-[Login form from Bootsnip.com calvinko](http://http://bootsnipp.com/calvinko)  
+[Login form from Bootsnip.com calvinko](http://bootsnipp.com/calvinko)  
   
   
 ####How to install Mongo on Opensuse 13.1
