@@ -17,6 +17,11 @@ Installing MongoDb on OpenSuse 13.1
 
 Showcase:
 
+Animated version:
+
+![servicedeskaid animated](https://github.com/codeflavour/servicedeskaid/blob/develop/showcase/servicedeskaid.gif?raw=true "gif")
+
+
 The Front, (in construction - will show a summary of open issues and users logged in)  
 
 ![servicedeskaid front](https://github.com/codeflavour/servicedeskaid/blob/develop/showcase/front.png?raw=true "Front")
