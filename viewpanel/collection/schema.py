@@ -2,7 +2,7 @@ import mongoengine
 import datetime as dt
 
 
-class Users(mongoengine.Document):
+class Users(db.Document):
 
     class OtherInfo(mongoengine.EmbeddedDocument):
         email_address = mongoengine.StringField(required=True)
@@ -14,7 +14,7 @@ class Users(mongoengine.Document):
     other_info = mongoengine.EmbeddedDocumentField(OtherInfo)
 
 
-class Metrics(mongoengine.Document):
+class Metrics(db.Document):
 
     class UserDataSeries(mongoengine.EmbeddedDocument):
         timestamp = mongoengine.DateTimeField(required=True, default=dt.datetime.utcnow())
