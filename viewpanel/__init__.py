@@ -7,11 +7,7 @@ from flask.ext.mongoengine import MongoEngine
 home = True
 
 app = flask.Flask(__name__)
-
-DB_NAME='deskdb'
-HOST='192.168.15.101'
-
-app.config['MONGODB_DB'] = DB_NAME
+app.config['MONGODB_SETTINGS'] = {'DB':'deskdb'} #,'host':'192.168.15.101'}
 
 db = MongoEngine(app)
 
@@ -47,5 +43,6 @@ def timezones():
 
 #leave this messy mess here for now, just need basic login no computer science
 def user_validate(user,password):
+    print "i got here"
     if Users.objects(userid=user):
         print Users.userid
