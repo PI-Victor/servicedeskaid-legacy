@@ -12,8 +12,8 @@ db = MongoEngine(app)
 
 
 def register_blueprints(app):
-    from viewpanel.collection.views import login_page
-    app.register_blueprint(login_page)
+    from viewpanel.collection.views import login
+    app.register_blueprint(login)
 
 register_blueprints(app)
 

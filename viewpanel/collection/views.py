@@ -4,14 +4,14 @@ from flask.views import MethodView
 from viewpanel.collection.schema import Users
 
 
-login_page = flask.Blueprint('login_page', __name__, template_folder='templates')
+login = flask.Blueprint('login', __name__, template_folder='templates')
 
 
-#@login_page.route('/login', defaults={'page': 'login'})
-@login_page.route('/<page>')
+@login.route('/', defaults={'page': 'index'})
+@login.route('/<page>')
 def show(page):
     try:
-        return flask.render_template('pages/%s.html' % page)
+        return flask.render_template('%s.html' % page)
     except jinja2.TemplateNotFound:
         flask.abort(404)
 
