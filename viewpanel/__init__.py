@@ -18,9 +18,12 @@ db = MongoEngine(app)
 @app.route('/login', methods=['GET', 'POST'])
 def user_login():
     form = formvalid.LoginForm(flask.request.form)
-    if flask.request.method == 'POST' and form.validate():
-        if user_validate(flask.request.form['loginname'], flask.request.form['loginpass']):
-            return flask.render_template('viewpanel.html')
+    if flask.request.method == 'POST':
+        if form.validate():
+            if user_validate(flask.request.form['loginname'], flask.request.form['loginpass']):
+                return flask.render_template('viewpanel.html')
+        else:
+            flask.flash("Invalid chars in the login")
     else:
         return flask.render_template('login.html')
 
