@@ -7,7 +7,7 @@ manager = Manager(app)
 manager.add_command('runserver', Server(
     use_debugger=True,
     use_reloader=True,
-    host='192.168.15.101')
+    host='127.0.0.1')
 )
 
 if __name__ == '__main__':

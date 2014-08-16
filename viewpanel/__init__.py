@@ -7,7 +7,7 @@ from flask.ext.mongoengine import MongoEngine
 home = True
 
 app = flask.Flask(__name__)
-app.config['MONGODB_SETTINGS'] = {'db': 'deskdb',  'host': '192.168.15.101'}
+app.config['MONGODB_SETTINGS'] = {'db': 'deskdb',  'host': '127.0.0.1'}
 db = MongoEngine(app)
 
 
