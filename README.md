@@ -6,6 +6,12 @@ Service desk aid is a service desk delivery tool in active development for call 
 [Flip Clock JS by @objectivehtml](http://flipclockjs.com/)  
 [Login form from Bootsnip.com calvinko](http://bootsnipp.com/calvinko)  
   
+
+####Demo version
+
+You can get a demo version of this simply by cloning the project and running **pip setup install . ** and then ** python server.py runserver ** make sure you use virtualenv for this.
+
+
   
 ####How to install Mongo on Opensuse 13.1
 
