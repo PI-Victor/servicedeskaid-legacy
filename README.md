@@ -13,6 +13,9 @@ For a stable demo version use the master branch
 You can get a demo version of this simply by cloning the project and running **pip setup install .** and then **python server.py runserver** make sure you use virtualenv for this.
 The demo version will be available on http://localhost:5000 or http://127.0.0.1:5000
 
+Functionality so far is limited to just displaying the web interface and navigating trough a few pages.
+Coming soon:
+User sign up and login functionality
   
 ####How to install Mongo on Opensuse 13.1
 
