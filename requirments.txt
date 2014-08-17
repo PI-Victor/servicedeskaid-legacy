@@ -1,11 +1,12 @@
 Flask==0.10.1
 Flask-Login==0.2.11
+Flask-OpenID==1.2.1
 Flask-RESTful==0.2.12
 Flask-Script==2.0.5
 Flask-WTF==0.10.0
 Jinja2==2.7.3
 MarkupSafe==0.23
--e git+git@github.com:codeflavour/servicedeskaid.git@ac958674e5cc83ac9e978955f5ccce2f479894d3#egg=ServiceDeskAid-origin/develop
+PIL==1.1.7
 WTForms==2.0.1
 Werkzeug==0.9.6
 aniso8601==0.82
@@ -18,6 +19,7 @@ py==1.4.23
 pygal==1.4.6
 pymongo==2.7.2
 pytest==2.6.0
+python-openid==2.2.5
 pytz==2014.4
 six==1.7.3
 wsgiref==0.1.2

@@ -10,17 +10,36 @@ class Users(db.Document):
     """ User information document"""
 
     class OtherInfo(db.EmbeddedDocument):
-        email_address = db.StringField(required=True)
+        roles = (('admin', 1),
+                 ('user', 2),
+                 ('reader', 3)
+        )
+        email_address = db.EmailField(required=True)
         password = db.StringField(required=True)  
-        admin = db.BooleanField(default=False)
+        #admin = db.BooleanField(default=False)
+        role = db.IntField(choices=roles)
+        avatar = db.ImageField(size=(200, 200, True))
 
     created = db.DateTimeField(required=True, default=dt.datetime.utcnow())
-    userid = db.StringField(required=True)
+    userid = db.StringField(required=True, unique=True)
     other_info = db.EmbeddedDocumentField(OtherInfo)
+    
+    def is_active(self):
+        return True
+    
+    def is_authenticated(self):
+        return True
+        
+    def get_id(self):
+        return self.userid
+
+    def __repr__(self):
+        return self._id
 
 
 class Metrics(db.Document):
     """User and system performance metrics """
+
     class UserDataSeries(db.EmbeddedDocument):
         timestamp = db.DateTimeField(required=True, default=dt.datetime.utcnow())
         open_issues = db.IntField(min_value=0, required=True)

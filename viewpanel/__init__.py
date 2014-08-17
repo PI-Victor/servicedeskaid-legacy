@@ -1,5 +1,4 @@
 import flask
-#from collection.schema import Users
 from collection import graphing as gr
 from collection import formvalid
 from flask.ext.mongoengine import MongoEngine
@@ -7,7 +6,7 @@ from flask.ext.mongoengine import MongoEngine
 home = True
 
 app = flask.Flask(__name__)
-app.config['MONGODB_SETTINGS'] = {'db': 'deskdb',  'host': '127.0.0.1'}
+app.config['MONGODB_SETTINGS'] = {'db': 'deskdb'}  # 'host': '127.0.0.1'}
 db = MongoEngine(app)
 
 
