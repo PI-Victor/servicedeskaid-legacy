@@ -3,10 +3,8 @@ from collection import graphing as gr
 from collection import formvalid
 from flask.ext.mongoengine import MongoEngine
 
-home = True
-
 app = flask.Flask(__name__)
-app.config['MONGODB_SETTINGS'] = {'db': 'deskdb'}  # 'host': '127.0.0.1'}
+app.config['MONGODB_SETTINGS'] = {'db': 'deskdb'}  # have to create config for the application
 db = MongoEngine(app)
 
 
@@ -18,5 +16,3 @@ register_blueprints(app)
 
 if __name__ == '__main__':
     app.run()
-
-

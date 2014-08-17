@@ -12,8 +12,7 @@ class Users(db.Document):
     class OtherInfo(db.EmbeddedDocument):
         roles = (('admin', 1),
                  ('user', 2),
-                 ('reader', 3)
-        )
+                 ('reader', 3))
         email_address = db.EmailField(required=True)
         password = db.StringField(required=True)  
         #admin = db.BooleanField(default=False)
@@ -34,7 +33,7 @@ class Users(db.Document):
         return self.userid
 
     def __repr__(self):
-        return self._id
+        return self.userid
 
 
 class Metrics(db.Document):
