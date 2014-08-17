@@ -52,9 +52,9 @@ coverage.xml
 # Sphinx documentation
 docs/_build/
 
-=======
-.venv
+#=======
 venv
+.venv
 activate
 ac
 *~
@@ -63,8 +63,9 @@ ac
 *.egg-info
 *build
 *dist
-__pycache__/
 *.sublime-*
 *.pyo
 tmp/
-
+*out
+#*#
+*.db

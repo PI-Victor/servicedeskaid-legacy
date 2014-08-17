@@ -9,7 +9,7 @@ Service desk aid is a service desk delivery tool in active development for call 
 
 ####Demo version
 
-For a stable demo version use the master branch
+For a stable demo version use the master branch  
 You can get a demo version of this simply by cloning the project and running `pip setup install .` and then `python server.py runserver` make sure you use virtualenv for this.
 The demo version will be available on http://localhost:5000 or http://127.0.0.1:5000
 
