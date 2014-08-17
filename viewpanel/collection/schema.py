@@ -62,7 +62,6 @@ class Issues(db.Document):
         closed = db.DateTimeField(default=dt.datetime.utcnow())
 
     created = db.DateTimeField(required=True, default=dt.datetime.utcnow())
-    closed = db.DateTimeField()
     comments = db.EmbeddedDocumentField(Comments)
     
     meta = {
