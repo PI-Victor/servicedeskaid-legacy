@@ -1,1 +1,2 @@
 sudo yum install libxslt-devel libxml2-devel
+pip install PIL --allow-unverified PIL
