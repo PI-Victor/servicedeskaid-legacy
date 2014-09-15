@@ -1,4 +1,4 @@
-from viewpanel.collection.schema import Users, Metrics, Issues
+from viewpanel.collection.models import Users, Metrics, Issues
 import datetime as dt
 import random
 

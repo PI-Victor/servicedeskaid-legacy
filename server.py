@@ -1,9 +1,9 @@
 from flask.ext.script import Manager
 from flask.ext.script import Server
-from viewpanel import app
+from viewpanel import app, db
+from viewpanel.collection import views
 
 manager = Manager(app)
-
 manager.add_command('runserver',
                     Server(
                         use_debugger=True,

@@ -14,9 +14,12 @@ config = {
     'packages': s.find_packages(),
     'install_requires':[
         'flask',
-        'flask-restful',
-        'mongoengine',
+        'flask-mongoengine',
         'flask-login',
+        'flask-openid',
+        'flask-script',
+        'flask-wtf',
+        'jinja2',
         'pygal',
     ],
 }
