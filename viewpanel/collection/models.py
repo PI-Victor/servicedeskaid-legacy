@@ -28,8 +28,8 @@ class Users(db.Document):
     def get_id(self):
         return self.userid
 
-    #def __repr__(self):
-    #    return self.userid
+    def __repr__(self):
+        return self.userid
     
     meta = {
         'ordering': ['+userid'],
@@ -56,6 +56,7 @@ class Metrics(db.Document):
 
     meta = {
         'ordering': ['+user_dataseries.timestamp'],
+        'indexes': ['user_dataseries.timestamp']
     }
 
 

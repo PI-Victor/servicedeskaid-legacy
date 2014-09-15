@@ -22,35 +22,35 @@ long_comment = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem "
 
 
 def test_user_insert():
-    otherinfo = Users.OtherInfo(email_address='victor@scifi.thecodeflavour.org',
+    info = Users.OtherInfo(email_address='victor@scifi.thecodeflavour.org',
                                 password='123123')
     user_rand = 'testuser_{}'.format(str(random.random()))
-    users_doc = Users(userid=user_rand,
-                      other_info=otherinfo,
-                      timestamp=dt.datetime.utcnow())
-    users_doc.save()
+    users = Users(userid=user_rand,
+                  other_info=info,
+                  timestamp=dt.datetime.utcnow())
+    users.save()
     db_user = Users.objects(userid=user_rand).first()
-    assert db_user.get_id() == users_doc.get_id()
-    users_doc.delete()
+    assert db_user.get_id() == users.get_id()
+    users.delete()
 
 
 def test_metrics_insert():
-    usermetrics = Metrics.UserDataSeries(timestamp=dt.datetime.utcnow(),
-                                         worked_issues=1,
-                                         open_issues=3,
-                                         closed_issues=4)
-    metrics_doc = Metrics(user_dataseries=usermetrics)
+    metrics = Metrics.UserDataSeries(timestamp=dt.datetime.utcnow(),
+                                     worked_issues=1,
+                                     open_issues=3,
+                                     closed_issues=4)
+    metrics_doc = Metrics(user_dataseries=metrics)
     metrics_doc.save()
-    user_resultset = Metrics.objects(user_dataseries=usermetrics).first()
-    assert user_resultset.get_dataseries() == metrics_doc.get_dataseries()
+    resultset = Metrics.objects(user_dataseries=metrics).first()
+    assert resultset.get_dataseries() == metrics_doc.get_dataseries()
     metrics_doc.delete()
 
 
 def test_issues_insert():
-    test_comments = Issues.Comments(created=dt.datetime.utcnow(),
-                                    comment=long_comment)
-    issues_test = Issues(comments=test_comments)
-    issues_test.save()
-    issues_resultset = Issues(comments=test_comments)
-    assert issues_test.comments.comment == issues_resultset.comments.comment
-    issues_test.delete()
+    comments = Issues.Comments(created=dt.datetime.utcnow(),
+                               comment=long_comment)
+    issues = Issues(comments=comments)
+    issues.save()
+    resultset = Issues.objects(comments=comments).first()
+    assert issues.comments.comment == resultset.comments.comment
+    issues.delete()
