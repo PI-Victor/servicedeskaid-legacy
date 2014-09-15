@@ -23,7 +23,7 @@ long_comment = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem "
 
 def test_user_insert():
     info = Users.OtherInfo(email_address='victor@scifi.thecodeflavour.org',
-                                password='123123')
+                           password='123123')
     user_rand = 'testuser_{}'.format(str(random.random()))
     users = Users(userid=user_rand,
                   other_info=info,

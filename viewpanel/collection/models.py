@@ -15,7 +15,8 @@ class Users(db.Document):
                  ('reader', 3))
         email_address = db.EmailField(required=True)
         password = db.StringField(required=True)  
-        role = db.IntField(choices=roles)
+        role = db.IntField(choices=roles, default=2)
+        full_name = db.StringField(required=True)
         avatar = db.ImageField(size=(200, 200, True))
 
     created = db.DateTimeField(required=True, default=dt.datetime.utcnow())
