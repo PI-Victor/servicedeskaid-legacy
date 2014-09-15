@@ -29,7 +29,7 @@ def test_user_insert():
     users_doc.save()
     db_user = Users.objects(userid=user_rand).first()
     assert db_user.get_id() == users_doc.get_id()
-#    users_doc.remove()
+    users_doc.delete()
 
 
 def test_metrics_insert():
@@ -41,7 +41,7 @@ def test_metrics_insert():
     metrics_doc.save()
     user_resultset = Metrics.objects(user_dataseries=usermetrics).first()
     assert user_resultset.get_dataseries() == metrics_doc.get_dataseries()
-
+    metrics_doc.delete()
 
 def test_issues_insert():
     test_comments = Issues.Comments(created=dt.datetime.utcnow(),
@@ -49,4 +49,5 @@ def test_issues_insert():
     issues_test = Issues(comments=test_comments)
     issues_test.save()
     issues_resultset = Issues(comments=test_comments)
-    assert issues_test
+    assert issues_test.comments.comment == issues_resultset.comments.comment
+    issues_test.delete()
