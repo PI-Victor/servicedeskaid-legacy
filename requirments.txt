@@ -7,3 +7,4 @@ flask-mongoengine==0.7.1
 --allow-external PIL
 --allow-unverified PIL
 PIL
+-e .

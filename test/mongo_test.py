@@ -1,4 +1,5 @@
 from viewpanel.collection.models import Users, Issues, Metrics
+
 import datetime as dt
 import random
 
@@ -27,7 +28,7 @@ def test_user_insert():
                       timestamp=dt.datetime.utcnow())
     users_doc.save()
     db_user = Users.objects(userid=user_rand).first()
-    assert db_user == users_doc
+    assert db_user.get_id() == users_doc.get_id()
 #    users_doc.remove()
 
 
@@ -38,9 +39,8 @@ def test_metrics_insert():
                                          closed_issues=4)
     metrics_doc = Metrics(user_dataseries=usermetrics)
     metrics_doc.save()
-    #user_resultset = Metrics.objects().first()
-    user_resultset = Metrics.objects(user_dataseries=usermetrics)
-    assert user_resultset == usermetrics
+    user_resultset = Metrics.objects(user_dataseries=usermetrics).first()
+    assert user_resultset.get_dataseries() == metrics_doc.get_dataseries()
 
 
 def test_issues_insert():

@@ -28,8 +28,8 @@ class Users(db.Document):
     def get_id(self):
         return self.userid
 
-    def __repr__(self):
-        return self.userid
+    #def __repr__(self):
+    #    return self.userid
     
     meta = {
         'ordering': ['+userid'],
@@ -47,6 +47,12 @@ class Metrics(db.Document):
         worked_issues = db.IntField(min_value=0, required=True)
 
     user_dataseries = db.EmbeddedDocumentField(UserDataSeries)
+
+    def get_dataseries(self):
+        return {self.UserDataSeries.timestamp,
+                self.UserDataSeries.closed_issues,
+                self.UserDataSeries.open_issues,
+                self.UserDataSeries.worked_issues, }
 
     meta = {
         'ordering': ['+user_dataseries.timestamp'],
