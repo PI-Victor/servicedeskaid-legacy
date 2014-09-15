@@ -10,6 +10,3 @@ app.config['MONGODB_SETTINGS'] = {
 }
 app.config['WORKING_DIRECTORY'] = os.path.join(os.path.sep, os.path.dirname(os.path.realpath(__file__)))
 db = MongoEngine(app)
-
-if __name__ == '__main__':
-    app.run()

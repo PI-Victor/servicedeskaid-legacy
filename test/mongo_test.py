@@ -1,4 +1,4 @@
-from viewpanel.collection.models import Users, Metrics, Issues
+from viewpanel.collection.models import Users, Issues, Metrics
 import datetime as dt
 import random
 
@@ -21,7 +21,7 @@ def test_user_insert():
     """ """
     otherinfo = Users.OtherInfo(email_address='victor@scifi.thecodeflavour.org',
                                 password='123123')
-    user_rand = ''.join(['testuser_', str(random.random())])
+    user_rand = 'testuser_{}'.format(str(random.random()))
     users_doc = Users(userid=user_rand,
                       other_info=otherinfo,
                       timestamp=dt.datetime.utcnow())
