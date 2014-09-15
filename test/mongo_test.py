@@ -1,7 +1,10 @@
 from viewpanel.collection.models import Users, Issues, Metrics
-
 import datetime as dt
 import random
+
+"""Test insertion into the DB, save document, assert it's the document
+inserted upon select and then delete the entry to avoid unwanted entries
+"""
 
 long_comment = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem " \
                "accusantium doloremque laudantium, totam rem aperiam, eaque ipsa " \
@@ -19,7 +22,6 @@ long_comment = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem "
 
 
 def test_user_insert():
-    """ """
     otherinfo = Users.OtherInfo(email_address='victor@scifi.thecodeflavour.org',
                                 password='123123')
     user_rand = 'testuser_{}'.format(str(random.random()))
@@ -42,6 +44,7 @@ def test_metrics_insert():
     user_resultset = Metrics.objects(user_dataseries=usermetrics).first()
     assert user_resultset.get_dataseries() == metrics_doc.get_dataseries()
     metrics_doc.delete()
+
 
 def test_issues_insert():
     test_comments = Issues.Comments(created=dt.datetime.utcnow(),
