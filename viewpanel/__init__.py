@@ -1,13 +1,25 @@
 import flask
-from mongoengine import register_connection
-from viewpanel.collection.schema import Users
+import random
+from flask.ext.mongoengine import MongoEngine
+
 
 app = flask.Flask(__name__)
-db = register_connection('deskdb', app)
+app.config['MONGODB_SETTINGS'] = {
+    'db': 'deskdb',
+    'host': '127.0.0.1',
+    'port': 27017
+}
 
+db = MongoEngine(app)
 
-users = Users(userid='testest')
-users.save()
+print dir(db)
+
+@app.route('/')
+def user_get():
+    pass    
+
+#users = Users(userid='testest {}'.format(random.randrange(111000)))
+#users.save()
 
 
 

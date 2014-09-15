@@ -1,24 +1,26 @@
 import datetime as dt
-from mongoengine import *
+from viewpanel import db
+
 
 ''' ODM for Mongo, this is the sketch structure of the collections docs
 '''
 
-class Users(Document):
+
+class Users(db.Document):
     """ User information document"""
 
-    class OtherInfo(EmbeddedDocument):
+    class OtherInfo(db.EmbeddedDocument):
         roles = (('admin', 1),
                  ('user', 2),
                  ('reader', 3))
-        email_address = EmailField(required=True)
-        password = StringField(required=True)  
-        role = IntField(choices=roles)
-        avatar = ImageField(size=(200, 200, True))
+        email_address = db.EmailField(required=True)
+        password = db.StringField(required=True)  
+        role = db.IntField(choices=roles)
+        avatar = db.ImageField(size=(200, 200, True))
 
-    created = DateTimeField(required=True, default=dt.datetime.utcnow())
-    userid = StringField(required=True, unique=True)
-    other_info = EmbeddedDocumentField(OtherInfo)
+    created = db.DateTimeField(required=True, default=dt.datetime.utcnow())
+    userid = db.StringField(required=True, unique=True)
+    other_info = db.EmbeddedDocumentField(OtherInfo)
     
     def is_active(self):
         return True
@@ -29,37 +31,40 @@ class Users(Document):
     def __repr__(self):
         return self.userid
     
-    meta = {'ordering': ['+userid'],
-            'indexes': ['userid']
+    meta = {
+        'ordering': ['+userid'],
+        'indexes': ['userid'],
     }
 
 
-class Metrics(Document):
+class Metrics(db.Document):
     """User and system performance metrics """
 
-    class UserDataSeries(EmbeddedDocument):
-        timestamp = DateTimeField(required=True, default=dt.datetime.utcnow())
-        open_issues = IntField(min_value=0, required=True)
-        closed_issues = IntField(min_value=0, required=True)
-        worked_issues = IntField(min_value=0, required=True)
+    class UserDataSeries(db.EmbeddedDocument):
+        timestamp = db.DateTimeField(required=True, default=dt.datetime.utcnow())
+        open_issues = db.IntField(min_value=0, required=True)
+        closed_issues = db.IntField(min_value=0, required=True)
+        worked_issues = db.IntField(min_value=0, required=True)
 
-    user_dataseries = EmbeddedDocumentField(UserDataSeries)
+    user_dataseries = db.EmbeddedDocumentField(UserDataSeries)
 
-    meta = {'ordering': ['+user_dataseries.timestamp']}
+    meta = {
+        'ordering': ['+user_dataseries.timestamp'],
+    }
 
 
-class Issues(Document):
+class Issues(db.Document):
     """Issue information collection"""
 
-    class Comments(EmbeddedDocument):
-        created = DateTimeField(required=True, default=dt.datetime.utcnow())
-        comment = StringField(required=True)
-        updated = DateTimeField(default=dt.datetime.utcnow())
-        closed = DateTimeField(default=dt.datetime.utcnow())
+    class Comments(db.EmbeddedDocument):
+        created = db.DateTimeField(required=True, default=dt.datetime.utcnow())
+        comment = db.StringField(required=True)
+        updated = db.DateTimeField(default=dt.datetime.utcnow())
+        closed = db.DateTimeField(default=dt.datetime.utcnow())
 
-    created = DateTimeField(required=True, default=dt.datetime.utcnow())
-    comments = EmbeddedDocumentField(Comments)
+    created = db.DateTimeField(required=True, default=dt.datetime.utcnow())
+    comments = db.EmbeddedDocumentField(Comments)
     
     meta = {
-        'ordering': ['+created']
+        'ordering': ['+created'],
     }
