@@ -6,7 +6,7 @@ def user_login():
     if flask.request.method == 'POST':
         pass
     else:
-        return flask.render_template('login.html')
+        return flask.render_template('login.html', error=True)
 
 @app.route('/')
 def index():
@@ -21,3 +21,9 @@ def viewpanel():
 @app.route('/timezones')
 def timezones():
     return flask.render_template('flipclock.html')
+
+
+@app.route('/users')
+def show_users():
+    from viewpanel.collection.models import Users
+    return flask.render_template('users.html', Users=Users)

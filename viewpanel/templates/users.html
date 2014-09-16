@@ -1,0 +1,27 @@
+{%extends 'base.html'%}
+{%include 'menu.html'%}
+{%block body%}
+
+<div class="container-fluid">
+  <h1> Users </h1>
+  <table class="table table-hover table-condensed">
+    <thead>
+      <th>User ID</th>
+      <th>Full Name</th>
+      <th>Email</th>
+      <th>Logged in</th>
+    </thead>
+    <tbody>
+      {%for user in Users.objects %}
+      <tr>
+	<td><a href="#">{{user.get_id()}}</a></td>
+	<td>{{user.other_info.full_name}}</td>
+	<td><a href="mailto:" >{{user.other_info.email_address}}</a></td>
+	<td><p>Active</p>
+      </tr>
+      {%endfor%}
+     </tdbody>
+   </table>
+</div>
+{%include 'flipclock.html'%}
+{%endblock%}

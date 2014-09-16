@@ -21,7 +21,7 @@ def insert_users():
 
     users = { 'John': 'john@testcase.com' ,
           'Anna': 'anna@testcase.com',
-          'Julya': 'july@testcase',
+          'Julya': 'july@testcase.com',
           'Andrew': 'andrew@testcase.com', 
           'Jack': 'jack@testcase.com',
           'Mona': 'mona@testcase.com',
@@ -32,10 +32,15 @@ def insert_users():
       }
 
     for person, email in users.items():
-        genid = ''.join([person,'_',str(random.random())])
+        genid = person+ str(random.randrange(9999))
         info = Users.OtherInfo(email_address=email,
-                               password='xAasfsdAsdfX12',)
-        users = Users(userid=genid, other_infor=info)
+                               password='testcase',
+                               role='user',
+                               full_name=person
+        )
+        users = Users(userid=genid, other_info=info)
         users.save()
-
+    
+    for issue in range(records):
+        
 insert_users()

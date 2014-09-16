@@ -10,12 +10,10 @@ class Users(db.Document):
     """ User information document"""
 
     class OtherInfo(db.EmbeddedDocument):
-        roles = (('admin', 1),
-                 ('user', 2),
-                 ('reader', 3))
+        roles = (('admin',1), ('user',2), ('reader',3))
         email_address = db.EmailField(required=True)
         password = db.StringField(required=True)  
-        role = db.IntField(choices=roles, default=2)
+        role = db.StringField(choices=roles, required=True, default=roles[2])
         full_name = db.StringField(required=True)
         avatar = db.ImageField(size=(200, 200, True))
 

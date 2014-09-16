@@ -7,9 +7,10 @@ from mongoengine import ConnectionError
 
 app = flask.Flask(__name__)
 
-app.config['WORKING_DIRECTORY'] = os.path.join(os.path.sep, os.path.dirname(os.path.realpath(__file__)))
-#app.config['TMP_DIRECTORY'] = 
-#app.config[]
+app.config['WORK_DIR'] = os.path.join(os.path.sep, os.path.dirname(os.path.realpath(__file__)))
+app.config['TMP_DIR'] = '/home/vectra/projects/servicedeskaid/tmp'  #   Leave this hardcoded until config is in place
+app.config['LOG_DIR'] = '/home/vectra/projects/servicedeskaid/log'
+app.config['SECRET_KEY'] = 't3st Patience'
 app.config['MONGODB_SETTINGS'] = {
     'db': 'deskdb',
     'host': '127.0.0.1',
@@ -23,4 +24,4 @@ except ConnectionError as e:
 
 loginman = LoginManager()
 loginman.init_app(app)
-opid = OpenID(app, )
+opid = OpenID(app, app.config['LOG_DIR'])
