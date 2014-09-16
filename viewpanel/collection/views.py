@@ -1,11 +1,12 @@
 import flask
 from viewpanel import app
 
-
 @app.route('/login', methods=['GET', 'POST'])
 def user_login():
-    return flask.render_template('login.html')
-
+    if flask.request.method == 'POST':
+        pass
+    else:
+        return flask.render_template('login.html')
 
 @app.route('/')
 def index():
