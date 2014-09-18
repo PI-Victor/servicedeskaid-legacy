@@ -41,6 +41,13 @@ def insert_users():
         users = Users(userid=genid, other_info=info)
         users.save()
     
-    for issue in range(records):
-        
+#    for issue in range(records):
+
+def drop_db():
+    
+    return True
+
+if drop_db():
+    
+
 insert_users()
