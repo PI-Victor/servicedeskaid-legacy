@@ -51,7 +51,8 @@ def drop_db():
 if drop_db():
     print "Dropping the database"
     con = mongoengine.connect('deskdb')
-    con.drop_database('deskdb')
+    db = mongoengine.connection._get_db()  #using it because it's good to know
+    db.connection.drop_database(db)
 else:
     print "Continuing as normal"
 
