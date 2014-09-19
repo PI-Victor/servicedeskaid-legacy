@@ -1,6 +1,7 @@
 from viewpanel.collection.models import Users, Metrics, Issues
 import sys
 import random
+import mongoengine
 
 '''generated bogus data and inserts into monbodb 
 to make testing easier
@@ -44,10 +45,14 @@ def insert_users():
 #    for issue in range(records):
 
 def drop_db():
-    
-    return True
+    dbdrop = raw_input("Do you want to drop the database? [y/n]")
+    return [False, True][dbdrop == 'y']
 
 if drop_db():
-    
+    print "Dropping the database"
+    con = mongoengine.connect('deskdb')
+    con.drop_database('deskdb')
+else:
+    print "Continuing as normal"
 
 insert_users()
