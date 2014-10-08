@@ -61,13 +61,17 @@ class Metrics(db.Document):
 
 class Issues(db.Document):
     """Issue information collection"""
+    
+    created_by = db.StringField(required=False) #required=True)
+    status = db.StringField(required=True, default='Open')
+    severity = db.StringField(required=True, default='Low')
 
     class Comments(db.EmbeddedDocument):
         created = db.DateTimeField(required=True, default=dt.datetime.utcnow())
         comment = db.StringField(required=True)
-        updated = db.DateTimeField(default=dt.datetime.utcnow())
-        closed = db.DateTimeField(default=dt.datetime.utcnow())
-
+        last_updated = db.ListField(db.DateTimeField())
+        closed = db.DateTimeField()
+    
     created = db.DateTimeField(required=True, default=dt.datetime.utcnow())
     comments = db.EmbeddedDocumentField(Comments)
     
