@@ -13,7 +13,7 @@ def user_login():
 
 @app.route('/')
 def index():
-    return flask.render_template('index.html')
+    return flask.render_template('wall.html')
 
 
 @app.route('/viewpanel')
@@ -23,7 +23,7 @@ def viewpanel():
 
 @app.route('/timezones')
 def timezones():
-    return flask.render_template('flipclock.html')
+    return flask.render_template('timezones.html')
 
 
 @app.route('/users')
@@ -32,6 +32,6 @@ def show_users():
     return flask.render_template('users.html', Users=Users)
 
 
-@app.route('/wall')
-def wall():
-    return flask.render_template('wall.html')
+@app.route('/statistic')
+def statistic():
+    return flask.render_template('statistic.html')

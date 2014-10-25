@@ -1,4 +1,7 @@
 {% extends 'base.html' %}
+{% include 'menu.html' %}
+{% block body %}
 <figure>
   <embed type="image/svg+xml" src="{{ url_for('static', filename='graphs/chart.svg') }}"/>
 </figure>
+{% endblock %}
