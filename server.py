@@ -6,6 +6,8 @@ from viewpanel.collection import views, DEFAULTHOST
 
 
 manager = Manager(app)
+application = app
+
 manager.add_command('runserver', Server(
     use_debugger=True,
     use_reloader=True,
@@ -14,3 +16,4 @@ manager.add_command('runserver', Server(
 
 if __name__ == '__main__':
     manager.run()
+
