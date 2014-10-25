@@ -1,5 +1,7 @@
 Service Desk Aid
 ==============
+https://travis-ci.org/PI-Victor/servicedeskaid.svg
+
 Service desk aid is a service desk delivery tool in active development for call centers and ops alike. It incorporates a fast way to communicate, implements tools that allow you to template and document properly work done, tickets, and much more. You can share snippets, screen shots and other useful data.
 
 ####Credit to:
