@@ -3,8 +3,8 @@ import sys
 import random
 import mongoengine
 
-'''generated bogus data and inserts into monbodb 
-to make testing easier
+'''generated bogus data and inserts into mongodb 
+for testing
 '''
 
 records = 1000 #default number of records to be inserted
@@ -13,7 +13,7 @@ if len(sys.argv) == 2 and type(sys.argv[1]):
     try:
         records = int(sys.argv[1])
     except:
-        print "Not an integer switching to default no of entries: " + str(records)
+        print "Not an integer switching to default no of entries: %s" % str(records)
 
 print "Inserting {}  of records into the database".format(str(records))
 
