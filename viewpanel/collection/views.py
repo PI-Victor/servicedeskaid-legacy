@@ -4,9 +4,12 @@ from viewpanel import app
 @app.route('/login', methods=['GET', 'POST'])
 def user_login():
     if flask.request.method == 'POST':
-        pass
-    else:
+        return flask.render_template('login.html', error=False)
+    elif flask.request.method == 'GET':
+        print "Got here"
         return flask.render_template('login.html', error=True)
+    else:
+        print "You screwed up"
 
 @app.route('/')
 def index():
