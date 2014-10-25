@@ -1,19 +1,20 @@
 language: python
+
+python:
+  - "2.7"
+
 branches: 
   only:
     - develop
     - master
-
 install:
+    pip install -r requirements.txt
+    pip install -r dev-requirements.txt
 
-	pip install -r requirements.txt
-	pip install -r dev-requirements.txt
-python:
-  - "2.7"
+
 
 services:
-	- mongodb
-	- sleep 15
-
+    - mongodb
+    - sleep 15
 
 script: py.test
