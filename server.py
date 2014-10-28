@@ -1,12 +1,13 @@
 from flask.ext.script import Manager
 from flask.ext.script import Server
-from viewpanel import app, db
+from viewpanel import app_factory
 from viewpanel.collection import views, DEFAULTHOST
 
 
 
+app = app_factory()
 manager = Manager(app)
-application = app
+
 
 manager.add_command('runserver', Server(
     use_debugger=True,

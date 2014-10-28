@@ -7,23 +7,38 @@ from mongoengine import ConnectionError
 import collection
 
 
-app = flask.Flask(__name__)
+#need to hold somewhere a config that bypasses the
+#check for the mongodb instance
 
-app.config['WORK_DIR'] = collection.WORKDIR
-app.config['TMP_DIR'] = collection.TMPDIR
-app.config['LOG_DIR'] = collection.LOGDIR
-app.config['SECRET_KEY'] = collection.SECRETKEY
-app.config['MONGODB_SETTINGS'] = {
-    'db': collection.DESKDB,
-    'host': collection.DEFAULTHOST,
-    'port': 27017
-}
+pages = flask.Blueprint('pages', __name__)
 
-try:
-    db = MongoEngine(app)
-except ConnectionError as e:
-    exit(["Error, couldn't connect to the MongoDB instance. ",e])
+def app_factory():
+    app = flask.Flask(__name__)
+    app.config['WORK_DIR'] = collection.WORKDIR
+    app.config['TMP_DIR'] = collection.TMPDIR
+    app.config['LOG_DIR'] = collection.LOGDIR
+    app.config['SECRET_KEY'] = collection.SECRETKEY
+    app.config['MONGODB_SETTINGS'] = {
+        'db': collection.DBNAME,
+        'host': collection.DBHOST,
+        'port': collection.DBPORT
+    }
+    app.register_blueprint(pages)
+    return app 
 
-loginman = LoginManager()
-loginman.init_app(app)
-opid = OpenID(app, app.config['LOG_DIR'])
+def db_factory():
+
+    try:
+        db = MongoEngine(app)
+    except ConnectionError as e:
+        db = None
+        exit(["Error, couldn't connect to the MongoDB instance. ",e])
+
+    return db
+
+app = app_factory()
+db = db_factory()
+
+#loginman = LoginManager()
+#loginman.init_app(app)
+#opid = OpenID(app, app.config['LOG_DIR'])

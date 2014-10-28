@@ -8,8 +8,9 @@ WORKDIR = os.path.join(os.path.sep,
 TMPDIR = os.path.join(os.path.sep, WORKDIR, 'tmp')
 LOGDIR = os.path.join(os.path.sep, WORKDIR, 'log')
 
-
 #mongodb settings
-DESKDB = 'deskdb'
+DBNAME = 'deskdb'
 SECRETKEY = 't3st Patience'   #this should easy to configure 
 DEFAULTHOST = '127.0.0.1'
+DBHOST = '127.0.0.1'
+DBPORT = 27017
