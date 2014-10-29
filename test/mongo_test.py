@@ -2,9 +2,16 @@ from viewpanel.collection.models import Users, Issues, Metrics
 import datetime as dt
 import random
 
+from viewpanel import db_factory
+
 """Test insertion into the DB, save document, assert it's the document
 inserted upon select and then delete the entry to avoid unwanted entries
 """
+
+def test_db():
+    db = db_factory()
+    assert db is not None
+
 
 long_comment = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem " \
                "accusantium doloremque laudantium, totam rem aperiam, eaque ipsa " \

@@ -12,7 +12,7 @@ import collection
 
 pages = flask.Blueprint('pages', __name__)
 
-def app_factory():
+def app_factory(config=None):
     app = flask.Flask(__name__)
     app.config['WORK_DIR'] = collection.WORKDIR
     app.config['TMP_DIR'] = collection.TMPDIR
@@ -27,7 +27,6 @@ def app_factory():
     return app 
 
 def db_factory():
-
     try:
         db = MongoEngine(app)
     except ConnectionError as e:
