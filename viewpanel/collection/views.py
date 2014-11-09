@@ -6,10 +6,8 @@ from viewpanel.collection.models import Users
 @pages.route('/login', methods=['GET', 'POST'])
 def user_login():
     if flask.request.method == 'POST':
-        print "This is a post"
         return flask.render_template('login.html', error=False)
     elif flask.request.method == 'GET':
-        print "This is a get"
         return flask.render_template('login.html', error=True)
     else:
         print "You screwed up"
