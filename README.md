@@ -4,6 +4,9 @@ Master Branch Build : [![Build Status](https://travis-ci.org/PI-Victor/servicede
 Develop Branch Build: [![Build Status](https://travis-ci.org/PI-Victor/servicedeskaid.svg?branch=develop)](https://travis-ci.org/PI-Victor/servicedeskaid)    
 
 
+[A live demo version of the latest build from the develop branch can be found live here](http://servicedeskaid.thecodeflavour.org)
+
+
 Service desk aid is a service desk delivery tool in active development for call centers and ops alike. It incorporates a fast way to communicate, implements tools that allow you to template and document properly work done, tickets, and much more. You can share snippets, screen shots and other useful data.
 
 ####Credit to:
