@@ -1,1 +1,3 @@
-*.py linguist-language=python
+*.js linguist-language=python
+viewpanel/static/* linguist-vendored=true
+viewpanel/collection/* linguist-vendored=false
