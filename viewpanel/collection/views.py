@@ -1,6 +1,6 @@
 import flask
 from viewpanel import pages
-
+from viewpanel.collection.models import Users 
 
 
 @pages.route('/login', methods=['GET', 'POST'])
@@ -31,7 +31,7 @@ def timezones():
 
 @pages.route('/users')
 def show_users():
-    from viewpanel.collection.models import Users  # <---- wtf, might wanna move the import out of here
+
     return flask.render_template('users.html', Users=Users)
 
 

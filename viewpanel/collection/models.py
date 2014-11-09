@@ -33,7 +33,7 @@ class Users(db.Document):
         return self.userid
     
     meta = {
-        'ordering': ['+userid'],
+        'ordering': ['-userid'],
         'indexes': ['userid'],
     }
 
@@ -57,7 +57,7 @@ class Metrics(db.Document):
                 self.UserDataSeries.worked_issues, }
 
     meta = {
-        'ordering': ['+user_dataseries.timestamp'],
+        'ordering': ['-user_dataseries.timestamp'],
         'indexes': ['user_dataseries.timestamp']
     }
 
@@ -81,5 +81,5 @@ class Issues(db.Document):
     comments = db.EmbeddedDocumentField(Comments)
     
     meta = {
-        'ordering': ['+created'],
+        'ordering': ['-created'],
     }
