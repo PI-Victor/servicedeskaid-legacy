@@ -34,16 +34,14 @@ def insert_users():
 
     for person, email in users.items():
         genid = person+ str(random.randrange(9999))
-        info = Users.OtherInfo(email_address=email,
-                               password='testcase',
-                               role='user',
-                               full_name=person
-        )
-        users = Users(userid=genid, other_info=info)
+        users = Users(userid=genid,
+                      email=email,
+                      password='testcase',
+                      role='user',
+                      fullname=person,
+                  )
         users.save()
     
-#    for issue in range(records):
-
 def drop_db():
     dbdrop = raw_input("Do you want to drop the database? [y/n]")
     return [False, True][dbdrop == 'y']

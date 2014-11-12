@@ -29,36 +29,32 @@ long_comment = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem "
 
 
 def test_user_insert():
-    info = Users.OtherInfo(email_address='victor@scifi.thecodeflavour.org',
-                           password='123123',
-                           role = 'admin',
-                           full_name = 'test1',
-    )
     user_rand = 'testuser_{}'.format(str(random.random()))
     users = Users(userid=user_rand,
-                  other_info=info,
-                  timestamp=dt.datetime.utcnow())
+                  email='victor@scifi.thecodeflavour.org',
+                  fullname='Administrator',
+                  password='123123',
+                  role = 'admin',
+                  full_name = 'test1',
+              )
     users.save()
-    db_user = Users.objects(userid=user_rand).first()
+    db_user = Users.objects(userid=user_rand).get()
     assert db_user.get_id() == users.get_id()
     users.delete()
 
 
 def test_metrics_insert():
-    metrics = Metrics.UserDataSeries(timestamp=dt.datetime.utcnow(),
-                                     worked_issues=1,
-                                     open_issues=3,
-                                     closed_issues=4)
-    metrics_doc = Metrics(user_dataseries=metrics)
-    metrics_doc.save()
-    resultset = Metrics.objects(user_dataseries=metrics).first()
-    assert resultset.get_dataseries() == metrics_doc.get_dataseries()
-    metrics_doc.delete()
+    metrics = Metrics(worked_issues=155055,
+                      open_issues=3,
+                      closed_issues=4)
+    metrics.save()
+    resultset = Metrics.objects(worked_issues=155055).first()
+    assert resultset.get_dataseries() == metrics.get_dataseries()
+    metrics.delete()
 
 
 def test_issues_insert():
-    comments = Issues.Comments(created=dt.datetime.utcnow(),
-                               comment=long_comment)
+    comments = Issues.Comments(comment=long_comment)
     issues = Issues(comments=comments)
     issues.save()
     resultset = Issues.objects(comments=comments).first()
