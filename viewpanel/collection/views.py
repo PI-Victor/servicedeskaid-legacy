@@ -5,8 +5,12 @@ from
 
 @pages.route('/login', methods=['GET', 'POST'])
 def user_login():
-    form = LoginForm
-    if flask.request.method == 'POST':
+    form = LoginForm(request.POST)
+    if flask.request.method == 'POST' and form.validate():
+        user = Users(form.username, form.password)
+        if user not None:
+            
+        
         return flask.render_template('login.html', error=False)
     elif flask.request.method == 'GET':
         return flask.render_template('login.html', error=True)
