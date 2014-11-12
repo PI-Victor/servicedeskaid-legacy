@@ -1,17 +1,18 @@
 import flask
 from viewpanel import pages
 from viewpanel.collection.models import Users 
-from 
+from forms import LoginForm
 
 @pages.route('/login', methods=['GET', 'POST'])
 def user_login():
-    form = LoginForm(request.POST)
+    form = LoginForm()
     if flask.request.method == 'POST' and form.validate():
-        user = Users(form.username, form.password)
-        if user not None:
-            
-        
-        return flask.render_template('login.html', error=False)
+        print form.username.data
+        user = Users.objects(form.username.data, form.password.data).get()
+        print user
+        if user is not None:
+            print "I got here for some reason"
+            return flask.render_template('wall.html')
     elif flask.request.method == 'GET':
         return flask.render_template('login.html', error=True)
     else:
