@@ -14,8 +14,8 @@
       {%for user in Users.objects %}
       <tr>
 	<td><a href="#">{{user.get_id()}}</a></td>
-	<td>{{user.other_info.full_name}}</td>
-	<td><a href="mailto:" >{{user.other_info.email_address}}</a></td>
+	<td>{{user.fullname}}</td>
+	<td><a href="mailto:" >{{user.email}}</a></td>
 	<td><p>Active</p>
       </tr>
       {%endfor%}
