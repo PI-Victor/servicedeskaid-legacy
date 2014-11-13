@@ -38,6 +38,6 @@ def db_factory():
 app = app_factory()
 db = db_factory()
 
-#loginman = LoginManager()
-#loginman.init_app(app)
-#opid = OpenID(app, app.config['LOG_DIR'])
+loginman = LoginManager()
+loginman.init_app(app)
+opid = OpenID(app, app.config['LOG_DIR'])
