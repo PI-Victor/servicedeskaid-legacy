@@ -5,9 +5,8 @@ from viewpanel.collection import views, DEFAULTHOST
 
 
 
-app, application = app_factory()
-manager = Manager(app)
-
+application = app_factory()
+manager = Manager(application)
 
 manager.add_command('runserver', Server(
     use_debugger=True,
