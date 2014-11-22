@@ -3,7 +3,7 @@ Description=uWSGI for Service desk aid
 After=syslog.target                                                                                          
                                                                                                              
 [Service]                                                                                                    
-ExecStart=/usr/bin/sda --ini /srv/servicedeskaid/viewpanel/conf/config.ini                                        
+ExecStart=/usr/bin/sda --ini /opt/servicedeskaid/viewpanel/conf/config.ini
 Restart=always                                                                                               
 KillSignal=SIGQUIT                                                                                           
 Type=notify                                                                                                  
