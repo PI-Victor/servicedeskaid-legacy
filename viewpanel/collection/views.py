@@ -11,7 +11,7 @@ def get_user(user, password):
         user = Users.objects(userid=user, password=password).get()
     except Users.DoesNotExist as err:
         user = None
-    return
+    return user
     
 @pages.route('/login', methods=['GET', 'POST'])
 @opid.loginhandler

@@ -1,23 +1,18 @@
-'''Config for the main menu
+'''Configuration shouldn't be kept in dictionaries since it's
+a pain in the ass to sort them
 '''
 
-main_menu = { "Live Feed": { 1 : 'View open',
-                             2: 'Recently closed',
-                         }
-             "Users": { 1: "View Users",
-                        2: "Wall",
-             }
-             "Statistics": {1: "View",
-                            2: "Customize",
-             }
-             "Time Zones": {1: "View",
-                            2: "Customize",
-             }
-}
 
-login_menu = { "Login": { 1: "Login",
-                          2: "Customize",
-                          3: "logout",
-    
-                      }
-}
+
+def login_menu():
+    item1 = 'Login'
+    item2 = 'Customize'
+    item3 = 'Logout'
+
+
+def main_menu():
+    item1 = 'Live Feed'
+    item2 = 'Users'
+    item3 = 'Statistics'
+    item4 = 'Administration'
+    item5 = 'Time Zones'

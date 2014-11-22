@@ -6,10 +6,6 @@ from flask.ext.openid import OpenID
 from mongoengine import ConnectionError
 import collection
 
-
-#need to hold somewhere a config that bypasses the
-#check for the mongodb instance
-
 pages = flask.Blueprint('pages', __name__)
 
 def app_factory(config=None):
