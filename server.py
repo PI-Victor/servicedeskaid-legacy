@@ -5,7 +5,7 @@ from viewpanel.collection import views, DEFAULTHOST
 
 
 
-app = app_factory()
+app, application = app_factory()
 manager = Manager(app)
 
 
