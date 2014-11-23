@@ -17,10 +17,9 @@ def get_user(user, password):
 @opid.loginhandler
 def user_login():
     form = LoginForm(request.form)
-    if request.method == 'POST' and form.validate():
-        user = get_user(form.loginname.data, form.loginpass.data)
-        if user is not None:
-            return redirect('viewpanel')
+    user = get_user(form.loginname.data, form.loginpass.data)
+    if request.method == 'POST' and form.validate() and user is not None:
+        return redirect('viewpanel')
     elif request.method == 'GET':
         return render_template('login.html', error='')
     else:
