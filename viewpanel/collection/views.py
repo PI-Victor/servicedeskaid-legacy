@@ -16,6 +16,7 @@ def get_user(user, password):
 @pages.route('/login', methods=['GET', 'POST'])
 @opid.loginhandler
 def user_login():
+    print 
     form = LoginForm(request.form)
     user = get_user(form.loginname.data, form.loginpass.data)
     if request.method == 'POST' and form.validate() and user is not None:
@@ -25,6 +26,11 @@ def user_login():
     else:
         error = "Invalid username or password"
         return render_template('login.html', error=error)
+
+@pages.route('/signup', methods=['POST'])
+def signup():
+    return redirect('login')
+    
 
 @pages.route('/')
 def index():
