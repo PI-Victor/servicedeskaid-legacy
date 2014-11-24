@@ -8,12 +8,27 @@
         padding-left:2px;
 }
 
+#chatbar {
+    position: absolute;
+    top: 380;
+    rows: 3;
+    resize: none;
+    bottom: 0;
+    left: 0;
+    width: 900px;
+}
+
+
+#menubar {
+    height: 15px;
+}
+
 .clock {
 position: relative !important;
 padding-top: 0px;
 margin-left: -194px;
-height:110px;
-width: 110px;
+height:90px;
+width: 100px;
 /zoom: .3;/
 transform: scale(.14);
 -ms-transform: scale(.14); /* IE 9 /
