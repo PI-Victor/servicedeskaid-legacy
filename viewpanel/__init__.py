@@ -1,6 +1,7 @@
 import flask
 import os
-from flask.ext.mongoengine import MongoEngine, ConnectionError
+from flask.ext.mongoengine import MongoEngine
+from mongoengine import ConnectionError
 from flask.ext.login import LoginManager
 from flask.ext.openid import OpenID
 import collection
