@@ -1,9 +1,8 @@
 import flask
 import os
-from flask.ext.mongoengine import MongoEngine
+from flask.ext.mongoengine import MongoEngine, ConnectionError
 from flask.ext.login import LoginManager
 from flask.ext.openid import OpenID
-from mongoengine import ConnectionError
 import collection
 
 pages = flask.Blueprint('pages', __name__)
