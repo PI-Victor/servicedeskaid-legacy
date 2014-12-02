@@ -1,4 +1,4 @@
-from flask import g, request, render_template, flash, abort, redirect
+from flask import g, request, render_template, flash, abort, redirect, url_for
 from viewpanel import pages
 from viewpanel.collection.models import Users 
 from forms import LoginForm
@@ -10,17 +10,18 @@ def get_user(user, password):
     try:
         user = Users.objects(userid=user, password=password).get()
     except Users.DoesNotExist as err:
-        user = None
+        user = False
     return user
 
-    
+
 @pages.route('/login', methods=['GET', 'POST'])
 @opid.loginhandler
 def user_login():
     form = LoginForm(request.form)
     user = get_user(form.loginname.data, form.loginpass.data)
     if request.method == 'POST' and form.validate() and user is not None:
-        return redirect('viewpanel')
+        g.user = user.userid
+        return redirect(url_for('viewpanel'))
     elif request.method == 'GET':
         return render_template('login.html', error='')
     else:
