@@ -12,11 +12,11 @@ def get_user(user, password):
     except Users.DoesNotExist as err:
         user = None
     return user
+
     
 @pages.route('/login', methods=['GET', 'POST'])
 @opid.loginhandler
 def user_login():
-    print 
     form = LoginForm(request.form)
     user = get_user(form.loginname.data, form.loginpass.data)
     if request.method == 'POST' and form.validate() and user is not None:
@@ -26,6 +26,7 @@ def user_login():
     else:
         error = "Invalid username or password"
         return render_template('login.html', error=error)
+
 
 @pages.route('/signup', methods=['POST'])
 def signup():
