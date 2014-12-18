@@ -1,5 +1,6 @@
-import flask
 import os
+import sys
+import flask
 from flask.ext.mongoengine import MongoEngine
 from mongoengine import ConnectionError
 from flask.ext.login import LoginManager
@@ -22,6 +23,7 @@ def app_factory(config=None):
     app.register_blueprint(pages)
     return app 
 
+
 def db_factory():
     try:
         db = MongoEngine(app)
@@ -29,7 +31,6 @@ def db_factory():
         db = None
         print "Mongodb instance error: ", e
         sys.exit(1)
-        
     return db
 
 

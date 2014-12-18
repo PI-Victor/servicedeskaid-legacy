@@ -4,7 +4,6 @@ from viewpanel import app_factory
 from viewpanel.collection import views, DEFAULTHOST
 
 
-
 application = app_factory()
 manager = Manager(application)
 
