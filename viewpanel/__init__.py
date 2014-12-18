@@ -27,13 +27,14 @@ def db_factory():
         db = MongoEngine(app)
     except ConnectionError as e:
         db = None
-        exit(["Error, couldn't connect to the MongoDB instance. ",e])
-
+        print "Mongodb instance error: ", e
+        sys.exit(1)
+        
     return db
+
 
 app = app_factory()
 db = db_factory()
-
 loginman = LoginManager()
 loginman.init_app(app)
 opid = OpenID(app, app.config['LOG_DIR'])

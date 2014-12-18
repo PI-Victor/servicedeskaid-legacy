@@ -2,9 +2,6 @@
 a pain in the ass to sort them
 '''
 
-login_menu = ['Login',['Login', 'Customize', 'Logout']]
-
-
 
 def menu_factory(menu=''):
     pass

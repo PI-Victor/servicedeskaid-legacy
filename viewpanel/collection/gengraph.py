@@ -24,7 +24,9 @@ def plot_test_light_theme():
     chart.add('C', [6, 10, 9,  7,  3, 1,  0])
     chart.add('D', [2,  3, 5,  9, 12, 9,  5])
     chart.add('E', [7,  4, 2,  1,  2, 10, 0])
-    chart.render_to_file('/home/vectra/projects/servicedeskaid/viewpanel/static/graphs/style.svg')
+    chart.render_to_file(
+        '/home/vectra/projects/servicedeskaid/viewpanel/static/graphs/style.svg'
+    )
 
 
 def plot_bar_chart():
@@ -35,7 +37,9 @@ def plot_bar_chart():
     horizontalbar_chart.add('John', 36.3)
     horizontalbar_chart.add('Walter', 4.5)
     horizontalbar_chart.add('Jack', 2.3)
-    horizontalbar_chart.render_to_file('/home/vectra/projects/servicedeskaid/viewpanel/static/graphs/plot.svg')
+    horizontalbar_chart.render_to_file(
+        '/home/vectra/projects/servicedeskaid/viewpanel/static/graphs/plot.svg'
+    )
 
 plot_bar_chart()
 plot_test_light_theme()

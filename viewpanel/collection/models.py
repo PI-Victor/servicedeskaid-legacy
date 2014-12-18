@@ -1,13 +1,12 @@
+''' ODM for Mongo, this is the sketch structure of the collections docs
+'''
 import datetime as dt
 from viewpanel import db
 
 
-''' ODM for Mongo, this is the sketch structure of the collections docs
-'''
-
-
 class Users(db.Document):
     """ User information document"""
+
     roles = (('admin',1), ('user',2), ('reader',3))
     email= db.EmailField(required=True)
     password = db.StringField(required=True)  
@@ -24,7 +23,6 @@ class Users(db.Document):
     
     def get_id(self):
         return self.userid
-
     
     meta = {
         'ordering': ['+userid'],
