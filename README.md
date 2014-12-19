@@ -17,11 +17,20 @@ Service desk aid is a service desk delivery tool in active development for call 
 ####Demo version
 
 For a stable demo version use the master branch  
-You can get a demo version of this simply by cloning the project and running `pip setup install .` and then `python server.py runserver` make sure you use virtualenv for this.
-The demo version will be available on http://localhost:5000 or http://127.0.0.1:5000
+You can get a demo version of this simply by cloning the project and running `pip setup install .` and then `python server.py runserver` make sure you use virtualenv for this.  
+On Redhat distros [centos, fedora, rhel] - pip will complain `ValueError: ('Expected version spec in', '--allow-unverified PIL', 'at', ' PIL')`  
+so i had the line --allow-unverified PIL commented out, if you use any other ditro, then uncomment it.  
+
+
+The demo version will be available on http://localhost:5000 or http://127.0.0.1:5000 
 
 Functionality so far is limited to just displaying the web interface and navigating trough a few pages.
+Some bogus data can be generated wit the `misc/create-data.py`. It will generate only username and password in the mongodb. You can login with the username generated that   
+is displayed in `Users-View Users` and the password `testcase`  
+
+
 Coming soon:
+
 User sign up and login functionality
   
 ####How to install Mongo on Opensuse 13.1
