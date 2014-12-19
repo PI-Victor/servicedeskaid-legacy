@@ -19,6 +19,7 @@ def get_user(user, password):
 def user_login():
     form = LoginForm(request.form)
     user = get_user(form.loginname.data, form.loginpass.data)
+    print "i got here"
     if request.method == 'POST' and form.validate() and user is not None:
         g.user = user.userid
         return redirect(url_for('viewpanel'))

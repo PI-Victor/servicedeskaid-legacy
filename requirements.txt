@@ -6,6 +6,6 @@ Flask-WTF==0.10.0
 flask-mongoengine==0.7.1
 uWSGI==2.0.7
 --allow-external PIL
-#--allow-unverified PIL
+--allow-unverified PIL
 PIL
 -e .
