@@ -3,11 +3,10 @@ from models import Users
 
 
 class LoginForm(Form):
-    loginname = TextField('Username',
+    loginname = TextField('Username', 
                           [validators.Length(min=4, max=25)])
-    loginpass = PasswordField('New Password',
+    loginpass = PasswordField('New Password', 
                               [validators.Required()])
-    remember = BooleanField('Remember me') 
     
 class RegisterForm(Form):
     username = TextField('Username',

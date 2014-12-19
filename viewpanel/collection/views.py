@@ -22,7 +22,7 @@ def user_login():
     print "i got here"
     if request.method == 'POST' and form.validate() and user is not None:
         g.user = user.userid
-        return redirect(url_for('viewpanel'))
+        return render_template('viewpanel.html')
     elif request.method == 'GET':
         return render_template('login.html', error='')
     else:
