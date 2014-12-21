@@ -66,22 +66,13 @@ class Metrics(db.Document):
         }
 
     meta = {
-        'ordering': ['-timestamp'],
+        'ordering': ['+timestamp'],
         'indexes': ['timestamp']
     }
 
 
 class Issues(db.Document):
     '''Issue information collection'''
-    class Comments(db.EmbeddedDocument):
-        '''Comments embedded doc'''
-        posted = db.DateTimeField(
-            required=True, 
-            default=dt.datetime.utcnow(),
-        )
-        userid = db.StringField(required=True)
-        user_name = db.StringField(required=True)
-        text = db.StringField(required=True)
     created = db.DateTimeField(
         required=True, 
         default=dt.datetime.utcnow(),
@@ -97,8 +88,19 @@ class Issues(db.Document):
     )
     last_updated = db.ListField(db.DateTimeField())
     closed = db.DateTimeField()
-    comments = db.EmbeddedDocumentField(Comments)
+
+    class Comments(db.EmbeddedDocument):
+        '''Comments embedded doc'''
+        posted = db.DateTimeField(
+            required=True, 
+            default=dt.datetime.utcnow(),
+        )
+        userid = db.StringField(required=True)
+        user_name = db.StringField(required=True)
+        content = db.StringField(required=True)
+        
+    comments = db.ListField(db.EmbeddedDocumentField(Comments))
     
     meta = {
-        'ordering': ['-created'],
+        'ordering': ['+created'],
     }
