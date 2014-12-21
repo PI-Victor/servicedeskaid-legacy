@@ -86,7 +86,9 @@ class Issues(db.Document):
         required=True,
         default='Low',
     )
-    last_updated = db.ListField(db.DateTimeField())
+    last_updated = db.ListField(
+        db.DateTimeField(dt.datetime.utcnow())
+    )
     closed = db.DateTimeField()
 
     class Comments(db.EmbeddedDocument):
