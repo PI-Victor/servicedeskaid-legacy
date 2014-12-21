@@ -5,9 +5,8 @@ from viewpanel import db
 
 
 class Users(db.Document):
-    """ User information document"""
-
-    roles = (('admin',1), ('user',2), ('reader',3))
+    ''' User information document'''
+    user_roles = (('admin',1), ('user',2), ('reader',3))
     email= db.EmailField(required=True)
     password = db.StringField(required=True)  
     role = db.StringField(choices=roles, required=True, 
@@ -17,9 +16,6 @@ class Users(db.Document):
     created = db.DateTimeField(required=True, 
                                default=dt.datetime.utcnow())
     userid = db.StringField(required=True, unique=True)
-    
-    def is_active(self):
-        return True
     
     def get_id(self):
         return self.userid
@@ -31,8 +27,7 @@ class Users(db.Document):
 
 
 class Metrics(db.Document):
-    """User and system performance metrics """
-
+    '''User and system performance metrics'''
     timestamp = db.DateTimeField(required=True, 
                                  default=dt.datetime.utcnow())
     open_issues = db.IntField(min_value=0, required=True)
@@ -41,9 +36,11 @@ class Metrics(db.Document):
 
 
     def get_dataseries(self):
-        return {self.closed_issues,
-                self.open_issues,
-                self.worked_issues, }
+        return {
+            self.closed_issues,
+            self.open_issues,
+            self.worked_issues,
+        }
 
     meta = {
         'ordering': ['-timestamp'],
@@ -52,21 +49,22 @@ class Metrics(db.Document):
 
 
 class Issues(db.Document):
-    """Issue information collection"""
-    
-    created_by = db.StringField(required=False) #required=True)
-    status = db.StringField(required=True, default='Open')
-    severity = db.StringField(required=True, default='Low')
-
+    '''Issue information collection'''
     class Comments(db.EmbeddedDocument):
-        created = db.DateTimeField(required=True, 
+        '''Comments embedded doc'''
+        posted = db.DateTimeField(required=True, 
                                    default=dt.datetime.utcnow())
-        comment = db.StringField(required=True)
-        last_updated = db.ListField(db.DateTimeField())
-        closed = db.DateTimeField()
-    
+        userid = db.StringField(required=True)
+        user_name = db.StringField(required=True)
+        text = db.StringField(required=True)
+
     created = db.DateTimeField(required=True, 
                                default=dt.datetime.utcnow())
+    owner = db.StringField(required=True)
+    status = db.StringField(required=True, default='Open')
+    severity = db.StringField(required=True, default='Low')
+    last_updated = db.ListField(db.DateTimeField())
+    closed = db.DateTimeField()
     comments = db.EmbeddedDocumentField(Comments)
     
     meta = {
