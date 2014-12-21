@@ -53,10 +53,10 @@ def test_metrics_insert():
     metrics.delete()
 
 
-def test_issues_insert():
-    comments = Issues.Comments(comment=long_comment)
-    issues = Issues(comments=comments)
-    issues.save()
-    resultset = Issues.objects(comments=comments).first()
-    assert issues.comments.comment == resultset.comments.comment
-    issues.delete()
+#def test_issues_insert():
+#    comments = Issues.Comments(comment=long_comment)
+#    issues = Issues(comments=comments)
+#    issues.save()
+#    resultset = Issues.objects(comments=comments).first()
+#    assert issues.comments.comment == resultset.comments.comment
+#    issues.delete()
