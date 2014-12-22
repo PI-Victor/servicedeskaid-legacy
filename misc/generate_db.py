@@ -10,7 +10,18 @@ import os
 import mongoengine
 from viewpanel.collection.models import Users, Metrics, Issues
 
+if len(sys.argv) < 2:
+    print "You can send the number of records to be generated as parameter \n /
+    Generating 10 records by default, you can run the script again and specify /
+    the number of records then."
+else:
+    print "Generating {} of records"
 
+try:
+    records = int(sys.argv[1])
+except Exception as e:
+    print "Can not convert to int reverting to 10 records", e
+    
 
 def drop_db():
     dbdrop = raw_input("Do you want to drop the database? [y/n]")
