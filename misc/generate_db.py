@@ -11,8 +11,8 @@ import mongoengine
 from viewpanel.collection.models import Users, Metrics, Issues
 
 if len(sys.argv) < 2:
-    print "You can send the number of records to be generated as parameter \n /
-    Generating 10 records by default, you can run the script again and specify /
+    print "You can send the number of records to be generated as parameter \n \
+    Generating 10 records by default, you can run the script again and specify \
     the number of records then."
 else:
     print "Generating {} of records"
@@ -66,8 +66,13 @@ def users_provider():
         user_list.append(user.userid)
         
     return user_list[random.randint(0, 9)]
-        
-        
+
+
+def get_fullname(userid):
+    Users.objects(userid=userid).get_one()
+
+
+
 def comments_provider():
     entry = 3
     lines = ''
