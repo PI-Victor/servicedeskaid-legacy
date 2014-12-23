@@ -10,19 +10,6 @@ import os
 import mongoengine
 from viewpanel.collection.models import Users, Metrics, Issues
 
-if len(sys.argv) < 2:
-    print "You can send the number of records to be generated as parameter \n \
-    Generating 10 records by default, you can run the script again and specify \
-    the number of records then."
-else:
-    print "Generating {} of records"
-
-try:
-    records = int(sys.argv[1])
-except Exception as e:
-    print "Can not convert to int reverting to 10 records", e
-    
-
 def drop_db():
     dbdrop = raw_input("Do you want to drop the database? [y/n]")
     return [False, True][dbdrop == 'y']
@@ -69,7 +56,8 @@ def users_provider():
 
 
 def get_fullname(userid):
-    Users.objects(userid=userid).get_one()
+    user = Users.objects(userid=userid).get()
+    return user.fullname
 
 
 
@@ -88,10 +76,11 @@ def comments_provider():
         with comments :
             for line in comments:
                 if entry == 0:
+                    random_user = users_provider()
                     user_comments.append(
                         Issues.Comments(
-                            userid = users_provider(),
-                            user_name = 'testcase',
+                            userid = random_user,
+                            user_name = get_fullname(random_user),
                             content = lines,
                             )
                     )
@@ -135,6 +124,21 @@ def insert_tickets():
 
     
 if __name__ == '__main__':
+
+    
+    if len(sys.argv) < 2:
+        print "You can send the number of records to be generated as parameter \n \
+        Generating 10 records by default, you can run the script again and specify \
+        the number of records then."
+    else:
+        print "Generating {} of records"
+        
+        try:
+            records = int(sys.argv[1])
+        except Exception as e:
+            print "Can not convert to int reverting to 10 records", e
+
+
     if drop_db():
         print "Dropping the database"
         con = mongoengine.connect('deskdb')
