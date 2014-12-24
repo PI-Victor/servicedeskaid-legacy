@@ -80,7 +80,7 @@ def comments_provider():
                     user_comments.append(
                         Issues.Comments(
                             userid = random_user,
-                            user_name = get_fullname(random_user),
+                            fullname = get_fullname(random_user),
                             content = lines,
                             )
                     )
@@ -116,7 +116,7 @@ def insert_tickets():
             owner = users_provider(),
             status = issue_status[random.randint(0, 2)],
             severity = issue_severity[random.randint(0, 2)],
-            comments = generated_com
+            comments = generated_com,
         )
         issues.save()
 

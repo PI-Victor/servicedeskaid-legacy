@@ -37,25 +37,35 @@ def test_metrics_insert():
     metrics.delete()
 
 
-#def test_issues_insert():
-#long_comment = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem " \
-#               "accusantium doloremque laudantium, totam rem aperiam, eaque ipsa " \
-#               "quae ab illo inventore veritatis et quasi architecto beatae vitae " \
-#               "dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit " \
-#               "aspernatur aut odit aut fugit, sed quia consequuntur magni dolores " \
-#               "eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, " \
-#               "qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, " \
-#               "sed quia non numquam eius modi tempora incidunt ut labore et dolore " \
-#               "magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis " \
-#               "nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut " \
-#               "aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit " \
-#               "qui in ea voluptate velit esse quam nihil molestiae consequatur, " \
-#               "vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
-
-
-#    comments = Issues.Comments(comment=long_comment)
-#    issues = Issues(comments=comments)
-#    issues.save()
-#    resultset = Issues.objects(comments=comments).first()
-#    assert issues.comments.comment == resultset.comments.comment
-#    issues.delete()
+def test_issues_insert():
+    long_comment = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem " \
+                   "accusantium doloremque laudantium, totam rem aperiam, eaque ipsa " \
+                   "quae ab illo inventore veritatis et quasi architecto beatae vitae " \
+                   "dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit " \
+                   "aspernatur aut odit aut fugit, sed quia consequuntur magni dolores " \
+                   "eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, " \
+                   "qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, " \
+                   "sed quia non numquam eius modi tempora incidunt ut labore et dolore " \
+                   "magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis " \
+                   "nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut " \
+                   "aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit " \
+                   "qui in ea voluptate velit esse quam nihil molestiae consequatur, " \
+                   "vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+    
+    comment1 = Issues.Comments(
+        userid = 'Victor123',
+        fullname = 'Victor P',
+        content = long_comment,
+    )
+    
+    issue = Issues(
+        owner = 'Victor123',
+        status = 'Open',
+        severity = 'Critical',
+        comments =  [comment1,]
+    )
+    issue.save()
+    resultset = Issues.objects(comments = comment1).first()
+    assert issue.owner == resultset.owner
+    assert isinstance(issue.comments, list)
+    issue.delete()

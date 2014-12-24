@@ -98,7 +98,7 @@ class Issues(db.Document):
             default=dt.datetime.utcnow(),
         )
         userid = db.StringField(required=True)
-        user_name = db.StringField(required=True)
+        fullname = db.StringField(required=True)
         content = db.StringField(required=True)
         
     comments = db.ListField(db.EmbeddedDocumentField(Comments))
