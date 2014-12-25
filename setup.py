@@ -21,8 +21,8 @@ config = {
         'flask-wtf',
         'jinja2',
         'pygal',
-        'PIL',
-        'uwsgi'
+        'pillow',
+        'uwsgi',
     ],
 }
 
