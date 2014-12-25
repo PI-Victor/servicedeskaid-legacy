@@ -2,18 +2,15 @@
 '''
 
 from flask import Flask
-from viewpanel import db_factory
-from viewpanel import app_factory
+from flask.ext.mongoengine import MongoEngine
+from viewpanel import db
+from viewpanel import app
+
 
 def test_app():
-    app = app_factory()
     assert isinstance(app, Flask)
 
 
 def test_db():
-    db = db_factory()
     assert db is not None
-
-
-
-
+    assert isinstance(db, MongoEngine)
