@@ -17,7 +17,7 @@ def test_user_insert():
         fullname='Administrator',
         password='123123',
         role = 'admin',
-        full_name = 'test1',
+        full_name = 'Pi-Victor',
     )
     users.save()
     db_user = Users.objects(userid=user_rand).get()
@@ -57,15 +57,22 @@ def test_issues_insert():
         fullname = 'Victor P',
         content = long_comment,
     )
+
+    comment2 = Issues.Comments(
+        userid = 'Victor12222',
+        fullname = 'Victor P',
+        content = long_comment,
+    )
     
     issue = Issues(
         owner = 'Victor123',
         status = 'Open',
         severity = 'Critical',
-        comments =  [comment1,]
+        comments =  [comment1, comment2]
     )
+    
     issue.save()
-    resultset = Issues.objects(comments = comment1).first()
-    assert issue.owner == resultset.owner
-    assert isinstance(issue.comments, list)
+    resultset = Issues.objects(owner='Victor123').first()
+    assert resultset.owner == issue.owner
+    assert isinstance(resultset.comments, list)
     issue.delete()
