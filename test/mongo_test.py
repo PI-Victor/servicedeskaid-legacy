@@ -10,7 +10,7 @@ from viewpanel.collection.models import Users, Issues, Metrics
 
 
 def test_user_insert():
-    user_rand = 'testuser_{}'.format(str(random.random()))
+    user_rand = 'testuser_{}'.format(random.random())
     users = Users(
         userid=user_rand,
         email='victor@scifi.thecodeflavour.org',
