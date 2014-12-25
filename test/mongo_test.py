@@ -10,6 +10,9 @@ from viewpanel.collection.models import Users, Issues, Metrics
 
 
 def test_user_insert():
+    
+    user_rand = 'testuser_{}'.format(random.random())
+    
     avatar = os.path.join(
         os.path.sep,
         os.path.dirname(
@@ -21,7 +24,6 @@ def test_user_insert():
         'person2.jpg',
     )
     
-    user_rand = 'testuser_{}'.format(random.random())
     users = Users(
         userid=user_rand,
         email='victor@scifi.thecodeflavour.org',
@@ -31,9 +33,11 @@ def test_user_insert():
         full_name = 'Pi-Victor',
         avatar = avatar,
     )
+    
     users.save()
     db_user = Users.objects(userid=user_rand).get()
     assert db_user.get_id() == users.get_id()
+    assert db_user.avatar == users.avatar
     users.delete()
 
 
