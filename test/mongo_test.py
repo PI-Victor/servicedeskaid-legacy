@@ -4,12 +4,23 @@ inserted upon select and then delete the entry to avoid unwanted entries
 
 
 import random
+import os
 import datetime as dt
 from viewpanel.collection.models import Users, Issues, Metrics
 
 
-
 def test_user_insert():
+    avatar = os.path.join(
+        os.path.sep,
+        os.path.dirname(
+            os.path.dirname(
+                os.path.realpath(__file__)
+            )
+        ),
+        'showcase',
+        'person2.jpg',
+    )
+    
     user_rand = 'testuser_{}'.format(random.random())
     users = Users(
         userid=user_rand,
@@ -18,11 +29,12 @@ def test_user_insert():
         password='123123',
         role = 'admin',
         full_name = 'Pi-Victor',
+        avatar = avatar,
     )
     users.save()
     db_user = Users.objects(userid=user_rand).get()
     assert db_user.get_id() == users.get_id()
-    users.delete()
+#    users.delete()
 
 
 def test_metrics_insert():
