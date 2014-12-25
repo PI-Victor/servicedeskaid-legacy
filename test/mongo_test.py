@@ -34,7 +34,7 @@ def test_user_insert():
     users.save()
     db_user = Users.objects(userid=user_rand).get()
     assert db_user.get_id() == users.get_id()
-#    users.delete()
+    users.delete()
 
 
 def test_metrics_insert():
