@@ -123,3 +123,12 @@ class Issues(db.Document):
     meta = {
         'ordering': ['+created'],
     }
+
+
+class Customers(db.Document):
+    '''Holds the client data'''
+    name = db.StringField(required=True)
+    #could use tel for identifying a customer
+    telephone = db.StringField(required=True)
+    email= db.EmailField(required=True)
+    
