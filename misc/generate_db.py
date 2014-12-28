@@ -75,7 +75,7 @@ def comments_provider():
         comments = open(comments_file, 'r') 
         with comments :
             for line in comments:
-                if entry == 0:
+                if not entry:
                     random_user = users_provider()
                     user_comments.append(
                         Issues.Comments(
