@@ -84,7 +84,7 @@ class Metrics(db.Document):
 
     meta = {
         'ordering': ['+timestamp'],
-        'indexes': ['timestamp']
+        'indexes': ['timestamp'],
     }
 
 
@@ -122,13 +122,22 @@ class Issues(db.Document):
     
     meta = {
         'ordering': ['+created'],
+        'indexes': ['created'],
     }
 
 
 class Customers(db.Document):
     '''Holds the client data'''
+    customerid = db.StringField(required=True)
     name = db.StringField(required=True)
     #could use tel for identifying a customer
     telephone = db.StringField(required=True)
     email= db.EmailField(required=True)
+    address = db.StringField(required=True)
+    contractno = db.StringField(required=True)
+    other_info = db.StringField(required=True)
     
+    meta = {
+        'ordering': ['+customerid'],
+        'indexes': ['customerid'],
+    }
