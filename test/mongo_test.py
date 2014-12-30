@@ -12,7 +12,6 @@ from viewpanel.collection.models import Users, Issues, Metrics
 def test_user_insert():
     
     user_rand = 'testuser_{}'.format(random.random())
-    
     avatar = os.path.join(
         os.path.sep,
         os.path.dirname(
@@ -23,7 +22,6 @@ def test_user_insert():
         'showcase',
         'person2.jpg',
     )
-    
     users = Users(
         userid=user_rand,
         email='victor@scifi.thecodeflavour.org',
@@ -33,7 +31,6 @@ def test_user_insert():
         full_name = 'Pi-Victor',
         avatar = avatar,
     )
-    
     users.save()
     db_user = Users.objects(userid=user_rand).get()
     assert db_user.get_id() == users.get_id()
@@ -67,26 +64,22 @@ def test_issues_insert():
                    "aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit " \
                    "qui in ea voluptate velit esse quam nihil molestiae consequatur, " \
                    "vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
-    
     comment1 = Issues.Comments(
         userid = 'Victor123',
         fullname = 'Victor P',
         content = long_comment,
     )
-
     comment2 = Issues.Comments(
         userid = 'Victor12222',
         fullname = 'Victor P',
         content = long_comment,
     )
-    
     issue = Issues(
         owner = 'Victor123',
         status = 'Open',
         severity = 'Critical',
         comments =  [comment1, comment2]
     )
-    
     issue.save()
     resultset = Issues.objects(owner='Victor123').first()
     assert resultset.owner == issue.owner
