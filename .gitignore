@@ -69,3 +69,5 @@ tmp/
 *out
 #*#
 *.db
+bower_components
+node_modules

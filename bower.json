@@ -1,0 +1,28 @@
+{
+    "name": "servicedeskaid",
+    "version": "0.0.1",
+    "homepage": "http://servicedeskaid.thecodeflavour.org",
+    "authors": [
+      "Victor Palade"
+  ],
+    "description": "Servicedesk Aid a tool for operations and call centers",
+    "main": "server.js",
+    "keywords": [
+      "servicedesk",
+      "call",
+      "center",
+      "operations"
+  ],
+    "license": "BSD",
+    "private": true,
+    "ignore": [
+      "**/.*",
+      "node_modules",
+      "bower_components",
+      "test",
+      "tests"
+  ],
+    "dependencies": {
+	"bootstrap": "~3.3.2"
+    }
+}

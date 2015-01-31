@@ -1,7 +1,8 @@
 from flask import g, request, render_template, flash, abort, redirect, url_for
+from flask.ext.login import login_user
+from forms import LoginForm
 from viewpanel import pages
 from viewpanel.collection.models import Users 
-from forms import LoginForm
 from viewpanel import loginman, opid
 
 
@@ -19,10 +20,10 @@ def get_user(user, password):
 def user_login():
     form = LoginForm(request.form)
     user = get_user(form.loginname.data, form.loginpass.data)
-    print "i got here"
     if request.method == 'POST' and form.validate() and user is not None:
-        g.user = user.userid
-        return render_template('viewpanel.html')
+        login_user(user)
+        print dir(loginman)
+        return url_for('viewpanel')
     elif request.method == 'GET':
         return render_template('login.html', error='')
     else:
