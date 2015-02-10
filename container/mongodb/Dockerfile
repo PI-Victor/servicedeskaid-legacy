@@ -24,5 +24,7 @@ RUN chown mongodb /data/db
 #defines the working directory
 WORKDIR /data
 
+EXPOSE 27017
+
 # Define default command.
-CMD ["mongod"]
+CMD ["mongod", "--noprealloc"]
