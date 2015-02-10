@@ -8,11 +8,9 @@ application = app_factory()
 manager = Manager(application)
 
 manager.add_command('runserver', Server(
-    '''Entry point for the application
-    '''
-    use_debugger=True,
-    use_reloader=True,
-    host=DEFAULTHOST,
+    use_debugger = True,
+    use_reloader = True,
+    host = DEFAULTHOST,
 ))
 
 if __name__ == '__main__':
