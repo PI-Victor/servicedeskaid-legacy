@@ -11,8 +11,11 @@ import mongoengine
 from viewpanel.collection.models import Users, Metrics, Issues
 
 def drop_db():
-    dbdrop = raw_input("Do you want to drop the database? [y/n]")
-    return [False, True][dbdrop == 'y']
+    if len(os.argv[1]) < 2:
+        dbdrop = raw_input("Do you want to drop the database? [y/n]")
+        return [False, True][dbdrop == 'y']
+    else:
+        return True
 
 
 def get_workdir():
