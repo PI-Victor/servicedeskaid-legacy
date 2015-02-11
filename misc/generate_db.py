@@ -11,7 +11,7 @@ import mongoengine
 from viewpanel.collection.models import Users, Metrics, Issues
 
 def drop_db():
-    if len(os.argv[1]) < 2:
+    if len(sys.argv) < 2:
         dbdrop = raw_input("Do you want to drop the database? [y/n]")
         return [False, True][dbdrop == 'y']
     else:
