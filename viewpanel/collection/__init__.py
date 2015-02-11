@@ -20,5 +20,5 @@ if ckdbhost is None:
     DBPORT = 27017
 else:
     DBHOST = ckdbhost
-    DBPORT = ckdbport
+    DBPORT = int(ckdbport)
 
