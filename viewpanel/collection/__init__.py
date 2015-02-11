@@ -3,7 +3,7 @@ from . import *
 
 
 #check to see if we are running a linked container mongodb 
-ckdbhost = os.getenv("MONGODBHOST")
+ckdbhost = os.getenv("MONGODB_PORT_27017_TCP")
 
 #environment paths
 WORKDIR = os.path.join(os.path.sep,
