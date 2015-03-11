@@ -3,7 +3,7 @@
     "version": "0.0.1",
     "homepage": "http://servicedeskaid.thecodeflavour.org",
     "authors": [
-      "Victor Palade"
+      "Palade Ionut Victor"
   ],
     "description": "Servicedesk Aid a tool for operations and call centers",
     "main": "server.js",
@@ -23,6 +23,8 @@
       "tests"
   ],
     "dependencies": {
+	"jquery": "~2.1.3",
+	"handlebars": "~3.0",
 	"bootstrap": "~3.3.2"
     }
 }
