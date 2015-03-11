@@ -1,30 +1,32 @@
 {
-    "name": "servicedeskaid",
-    "version": "0.0.1",
-    "homepage": "http://servicedeskaid.thecodeflavour.org",
-    "authors": [
-      "Palade Ionut Victor"
+  "name": "servicedeskaid",
+  "version": "0.0.1",
+  "homepage": "http://servicedeskaid.thecodeflavour.org",
+  "authors": [
+    "Palade Ionut Victor"
   ],
-    "description": "Servicedesk Aid a tool for operations and call centers",
-    "main": "server.js",
-    "keywords": [
-      "servicedesk",
-      "call",
-      "center",
-      "operations"
+  "description": "Servicedesk Aid a tool for operations and call centers",
+  "main": "server.js",
+  "keywords": [
+    "servicedesk",
+    "call",
+    "center",
+    "operations"
   ],
-    "license": "BSD",
-    "private": true,
-    "ignore": [
-      "**/.*",
-      "node_modules",
-      "bower_components",
-      "test",
-      "tests"
+  "license": "BSD",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
   ],
-    "dependencies": {
-	"jquery": "~2.1.3",
-	"handlebars": "~3.0",
-	"bootstrap": "~3.3.2"
-    }
+  "dependencies": {
+    "jquery": "~2.1.3",
+    "handlebars": "~3.0",
+    "bootstrap": "~3.3.2",
+    "ember": "~1.10.0",
+    "ember-data": "~0.0.14"
+  }
 }
