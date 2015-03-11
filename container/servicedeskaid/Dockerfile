@@ -1,15 +1,18 @@
 #servicedesk aid git cloning
 
-
-FROM opensuse
+FROM centos:latest
 
 MAINTAINER Victor@http://github.com/pi-victor
 
-RUN zypper ar http://download.opensuse.org/repositories/server:database/openSUSE_13.1/server:database.repo
+RUN rpm -Uvh http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-5.noarch.rpm
 
-RUN zypper --no-gpg-check ref
-RUN zypper --non-interactive --no-gpg-check up -y
-RUN zypper --non-interactive in gcc libopenssl0_9_8 python-devel python-virtualenv git
+RUN yum update -y
+
+RUN yum install git gcc make gcc-c++ \
+    kernel-devel python-virtualenv \
+    python-devel -y
+
+#RUN zypper --non-interactive in gcc libopenssl0_9_8 python-devel python-virtualenv git
 
 #change dir to clone to opt
 WORKDIR /opt
@@ -20,7 +23,7 @@ WORKDIR /opt/servicedeskaid
 
 RUN virtualenv .venv
 
-RUN source .venv/bin/activate && pip install -r requirements.txt
+RUN .venv/bin/pip install -r requirements.txt
 
 ENTRYPOINT [".venv/bin/python", "server.py", "runserver"]
 
