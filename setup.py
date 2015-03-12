@@ -3,6 +3,7 @@ try:
 except ImportError:
     import distutils.core as s
 
+
 config = {
     'name': 'ServiceDeskAid',
     'include_package_data': True,
