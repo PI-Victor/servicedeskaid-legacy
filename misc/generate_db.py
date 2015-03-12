@@ -1,14 +1,12 @@
-
-'''generated bogus data and inserts into mongodb 
-for testing
-'''
-
-
 import sys
 import random
 import os
 import mongoengine
 from viewpanel.collection.models import Users, Metrics, Issues
+
+#generated bogus data and inserts into mongodb 
+#for testing
+
 
 def drop_db():
     if len(sys.argv) < 2:
@@ -23,7 +21,6 @@ def get_workdir():
 
 
 def insert_users():
-    
     users = {
         'John': 'john@testcase.com' ,
         'Anna': 'anna@testcase.com',
@@ -36,7 +33,6 @@ def insert_users():
         'Liam': 'liam@testcase.com',
         'Jordan': 'jordan@testcase.com',
     }
-    
     print "Generating users... "
     
     for person, email in users.items():
@@ -50,18 +46,17 @@ def insert_users():
         )
         users.save()
 
+
 def users_provider():
     user_list = []
     for user in Users.objects:
         user_list.append(user.userid)
-        
     return user_list[random.randint(0, 9)]
 
 
 def get_fullname(userid):
     user = Users.objects(userid=userid).get()
     return user.fullname
-
 
 
 def comments_provider():
@@ -72,8 +67,8 @@ def comments_provider():
         get_workdir(),
         'comments_data.txt'
     )
-    
     user_comments = []
+    
     try:
         comments = open(comments_file, 'r') 
         with comments :
@@ -96,12 +91,11 @@ def comments_provider():
         print "There was a problem opening the comments file! - {}".format(e)
 
     return user_comments
-        
+
+
 def insert_tickets():
     records = 10
-    
     print "Generating {} ticket entries... ".format(records)
-    
     issue_status = [
         'Open',
         'Pending',
@@ -127,8 +121,6 @@ def insert_tickets():
 
     
 if __name__ == '__main__':
-
-    
     if len(sys.argv) < 2:
         print "You can send the number of records to be generated as parameter \n \
         Generating 10 records by default, you can run the script again and specify \
@@ -140,7 +132,6 @@ if __name__ == '__main__':
             records = int(sys.argv[1])
         except Exception as e:
             print "Can not convert to int reverting to 10 records", e
-
 
     if drop_db():
         print "Dropping the database"
