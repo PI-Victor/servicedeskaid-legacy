@@ -53,7 +53,6 @@ def timezones():
 
 @pages.route('/users')
 def show_users():
-
     return render_template('users.html', Users=Users)
 
 

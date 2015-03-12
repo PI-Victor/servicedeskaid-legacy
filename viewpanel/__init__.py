@@ -9,6 +9,7 @@ import collection
 
 pages = flask.Blueprint('pages', __name__)
 
+
 def app_factory(config=None):
     app = flask.Flask(__name__)
     app.config['WORK_DIR'] = collection.WORKDIR
