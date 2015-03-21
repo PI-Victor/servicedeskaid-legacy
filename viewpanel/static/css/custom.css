@@ -8,35 +8,25 @@
         padding-left:2px;
 }
 
-#chatbar {
-    position: absolute;
-    top: 660;
-    rows: 3;
-    resize: none;
-    bottom: 0;
-    left: 0;
-    width: 900px;
-}
-
-
 #menubar {
     height: 15px;
 }
 
 .clock {
-position: relative !important;
-padding-top: 0px;
-margin-left: -194px;
-height:90px;
-width: 100px;
-/zoom: .3;/
-transform: scale(.14);
--ms-transform: scale(.14); /* IE 9 /
+    position: relative !important;
+    padding-top: 0px;
+    margin-left: -194px;
+    height:90px;
+    width: 100px;
+    /zoom: .3;/
+	    transform: scale(.14);
+    -ms-transform: scale(.14); /* IE 9 /
 -webkit-transform: scale(.14); / Safari and Chrome /
 -o-transform: scale(.14); / Opera /
 -moz-transform: scale(.14); / Firefox */
-
+    
 }
+
 .flip-clock-wrapper {
-position: relative;
+    position: relative;
 }

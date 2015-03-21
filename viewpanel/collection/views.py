@@ -22,7 +22,6 @@ def user_login():
     user = get_user(form.loginname.data, form.loginpass.data)
     if request.method == 'POST' and form.validate() and user is not None:
         login_user(user)
-        print dir(loginman)
         return url_for('viewpanel')
     elif request.method == 'GET':
         return render_template('login.html', error='')
@@ -46,14 +45,8 @@ def viewpanel():
     return render_template('viewpanel.html')
 
 
-@pages.route('/timezones')
-def timezones():
-    return render_template('timezones.html')
-
-
 @pages.route('/users')
 def show_users():
-
     return render_template('users.html', Users=Users)
 
 

@@ -1,8 +1,3 @@
-'''Configuration shouldn't be kept in dictionaries since it's
-a pain in the ass to sort them
-'''
-
-
 def menu_factory(menu=''):
     pass
 

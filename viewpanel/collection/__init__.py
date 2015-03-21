@@ -17,8 +17,11 @@ SECRETKEY = 't3st Patience'   #this should easy to configure
 
 #use a temporary workaround for docker container binding
 if ckbindip is None:
-    DEFAULTHOST = ([(s.connect(('8.8.8.8', 80)), s.getsockname()[0],
-                     s.close()) for s in [socket.socket(socket.AF_INET, socket.SOCK_DGRAM)]][0][1])
+    try:
+        DEFAULTHOST = ([(s.connect(('8.8.8.8', 80)), s.getsockname()[0],
+                         s.close()) for s in [socket.socket(socket.AF_INET, socket.SOCK_DGRAM)]][0][1])
+    except socket.error as e:
+        DEFAULTHOST = '0.0.0.0'
 else:
     DEFAULTHOST = ckbindip
 

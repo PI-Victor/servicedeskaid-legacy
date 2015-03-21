@@ -1,7 +1,7 @@
 Service Desk Aid
 ==============
-Master Branch Build : [![Build Status](https://travis-ci.org/PI-Victor/servicedeskaid.svg?branch=master)](https://travis-ci.org/PI-Victor/servicedeskaid)  
-Develop Branch Build: [![Build Status](https://travis-ci.org/PI-Victor/servicedeskaid.svg?branch=develop)](https://travis-ci.org/PI-Victor/servicedeskaid)    
+Master Branch Build : [![Build Status](https://travis-ci.org/thecodeflavour/servicedeskaid.svg?branch=master)](https://travis-ci.org/PI-Victor/servicedeskaid)  
+Develop Branch Build: [![Build Status](https://travis-ci.org/thecodeflavour/servicedeskaid.svg?branch=develop)](https://travis-ci.org/PI-Victor/servicedeskaid)    
 
 
 A live demo version of the latest build from the develop branch can be found [here](http://servicedeskaid.thecodeflavour.org)

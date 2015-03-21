@@ -1,9 +1,0 @@
-{% extends 'base.html' %}
-{% include 'config.py' %}
-<div class="navbar navbar-default" role="navigation">
-  {% block body %}
-  {% for entry in  main_menu.items() %}
-  {entry}
-  {% endfor %}
-  {% endblock %}
-</div>

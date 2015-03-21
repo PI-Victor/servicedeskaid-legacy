@@ -10,27 +10,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon"  href="{{ url_for('static', filename='img/favicon.ico') }}"/>
         <!--styles-->
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}"/>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}"/>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/flipclock.css') }}"/>
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/custom.css') }}"/>
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/flipclock.css') }}"/>
     </head>
 
     <body>
         {% block body %}
         {% endblock %}
-	{% block footer %}
-	<div class="navbar navbar-default navbar-fixed-bottom">
-	  <div class="container-fluid">
-            <div class="col-md-5 col-md-offset-5">
-              <div class="clock"></div>
-            </div>
-	  </div>
-	</div>
-	{% endblock %}
         <!--scripts-->
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) Added at the end so the page loads faster-->
-        <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.js') }}"></script>
-        <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
         <script type="text/javascript" src="{{ url_for('static', filename='js/flipclock.min.js') }}"></script>
         <script type="text/javascript" src="{{ url_for('static', filename='js/clock.js') }}"></script>
     </body>

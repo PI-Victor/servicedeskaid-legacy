@@ -1,5 +1,4 @@
-'''Test application and database settings
-'''
+#Test application and database settings
 
 from flask import Flask
 from flask.ext.mongoengine import MongoEngine

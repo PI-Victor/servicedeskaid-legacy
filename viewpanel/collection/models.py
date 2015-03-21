@@ -1,7 +1,6 @@
-''' ODM for Mongo, this is the sketch structure of the collections docs
-'''
 import datetime as dt
 from viewpanel import db
+#ODM for Mongo, this is the sketch structure of the collections docs
 
 
 class Users(db.Document):
@@ -28,26 +27,18 @@ class Users(db.Document):
         required=True,
         unique=True,
     )
-
-
     
     def is_authenticated(self):
         return True
-
-
     
     def is_active(self):
         return True
-
-
     
     def is_anonymous(self):
         return False
 
-    
     def get_id(self):
         return self.userid
-
     
     meta = {
         'ordering': ['+userid'],
@@ -73,7 +64,6 @@ class Metrics(db.Document):
         min_value=0,
         required=True,
     )
-
 
     def get_dataseries(self):
         return {
@@ -107,7 +97,7 @@ class Issues(db.Document):
         db.DateTimeField(dt.datetime.utcnow())
     )
     closed = db.DateTimeField()
-
+    
     class Comments(db.EmbeddedDocument):
         '''Comments embedded doc'''
         posted = db.DateTimeField(
