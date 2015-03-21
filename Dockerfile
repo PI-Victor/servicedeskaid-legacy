@@ -10,9 +10,7 @@ RUN yum update -y
 
 RUN yum install git gcc make gcc-c++ \
     kernel-devel python-virtualenv \
-    python-devel -y
-
-#RUN zypper --non-interactive in gcc libopenssl0_9_8 python-devel python-virtualenv git
+    python-devel npm -y
 
 #change dir to clone to opt
 WORKDIR /opt
@@ -24,6 +22,10 @@ WORKDIR /opt/servicedeskaid
 RUN virtualenv .venv
 
 RUN .venv/bin/pip install -r requirements.txt
+
+RUN npm install -g bower
+
+RUN bower install --allow-root
 
 ENTRYPOINT [".venv/bin/python", "server.py", "runserver"]
 
