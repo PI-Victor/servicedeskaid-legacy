@@ -21,7 +21,7 @@ if ckbindip is None:
         DEFAULTHOST = ([(s.connect(('8.8.8.8', 80)), s.getsockname()[0],
                          s.close()) for s in [socket.socket(socket.AF_INET, socket.SOCK_DGRAM)]][0][1])
     except socket.error as e:
-        DEFAULTHOST = '127.0.0.1'
+        DEFAULTHOST = '0.0.0.0'
 else:
     DEFAULTHOST = ckbindip
 
