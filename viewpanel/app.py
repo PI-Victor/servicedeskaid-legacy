@@ -7,17 +7,27 @@ from flask.ext.openid import OpenID
 
 pages = flask.Blueprint('pages', __name__)
 
+ckbindip = os.getenv("BINDIP") 
+#environment paths
+WORKDIR = os.path.join(os.path.sep, os.path.dirname(os.path.realpath(__file__)))
+TMPDIR = 
+LOGDIR = os.path.join(os.path.sep, WORKDIR, 'log')
+DBNAME = 'deskdb'
+SECRETKEY = 't3st Patience'
+
+DEFAULTHOST = ckbindip
+
+
 def app_factory(config=None):
     app = flask.Flask(__name__)
-    app.bootstrap_config(app)
-    app.config['WORK_DIR'] = collection.WORKDIR
-    app.config['TMP_DIR'] = collection.TMPDIR
-    app.config['LOG_DIR'] = collection.LOGDIR
-    app.config['SECRET_KEY'] = collection.SECRETKEY
+    app.config = {
+        'WORK_DIR': WORKDIR,
+        'TMP_DIR': TMPDIR,
+        'LOGDIR': os.path.join(os.path.sep, WORKDIR, 'tmp')
+    }
+
     app.register_blueprint(pages)
     return app 
-
-
 
 app = app_factory()
 db = db_factory()
