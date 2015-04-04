@@ -1,3 +1,4 @@
+#-*- coding: utf-8 -*-
 import os
 
 
@@ -6,6 +7,7 @@ class Config(object):
     TMPDIR = os.path.join(os.path.sep, WORKDIR, 'tmp')
     LOGDIR = os.path.join(os.path.sep, WORKDIR, 'log')
     DATABASE = 'deskdb'
+    DATABASE_URI = 'postgresql://'
     DEBUG = False
     TESTING = False
     CSRF_ENABLED = True
