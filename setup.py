@@ -8,7 +8,7 @@ config = {
     'name': 'ServiceDeskAid',
     'include_package_data': True,
     'version': '0.1',
-    'author': 'thecodeflavour.org',
+    'author': 'Victor Palade',
     'url': 'http://github.com/codeflavour/servicedeskaid',
     'long_description': open('README.md').read(),
     'zip_safe': False,
