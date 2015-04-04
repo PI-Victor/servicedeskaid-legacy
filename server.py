@@ -1,7 +1,7 @@
 from flask.ext.script import Manager
 from flask.ext.script import Server
 from viewpanel import app_factory
-from viewpanel.collection import views, DEFAULTHOST
+from viewpanel.collection import DEFAULTHOST
 
 
 application = app_factory()

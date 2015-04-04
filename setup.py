@@ -12,7 +12,7 @@ config = {
     'url': 'http://github.com/codeflavour/servicedeskaid',
     'long_description': open('README.md').read(),
     'zip_safe': False,
-    'packages': s.find_packages(),
+    'packages': ['viewpanel'],
     'install_requires':[
         'flask',
         'flask-login',
@@ -20,6 +20,7 @@ config = {
         'flask-script',
         'flask-wtf',
         'uwsgi',
+        'sqlalchemy',
     ],
 }
 
