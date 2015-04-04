@@ -1,8 +1,10 @@
-import datetime as dt
-from viewpanel import db
-#ODM for Mongo, this is the sketch structure of the collections docs
 
 
+
+
+
+#keep old mongodb structure for refrence
+"""
 class Users(db.Document):
     ''' User information document'''
     user_roles = (
@@ -131,3 +133,4 @@ class Customers(db.Document):
         'ordering': ['+customerid'],
         'indexes': ['customerid'],
     }
+"""
