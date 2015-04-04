@@ -7,7 +7,7 @@ except ImportError:
 config = {
     'name': 'ServiceDeskAid',
     'include_package_data': True,
-    'version': 'unversioned',
+    'version': '0.1',
     'author': 'thecodeflavour.org',
     'url': 'http://github.com/codeflavour/servicedeskaid',
     'long_description': open('README.md').read(),
@@ -15,14 +15,10 @@ config = {
     'packages': s.find_packages(),
     'install_requires':[
         'flask',
-        'flask-mongoengine',
         'flask-login',
         'flask-openid',
         'flask-script',
         'flask-wtf',
-        'jinja2',
-        'pygal',
-        'pillow',
         'uwsgi',
     ],
 }
