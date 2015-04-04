@@ -9,10 +9,11 @@ config = {
     'include_package_data': True,
     'version': '0.1',
     'author': 'Victor Palade',
+    'license': 'BSD',
     'url': 'http://github.com/codeflavour/servicedeskaid',
     'long_description': open('README.md').read(),
     'zip_safe': False,
-    'packages': ['servicedeskaid'],
+    'packages': ['viewpanel'],
     'install_requires':[
         'flask',
         'flask-login',
