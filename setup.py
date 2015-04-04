@@ -22,6 +22,7 @@ config = {
         'flask-wtf',
         'uwsgi',
         'sqlalchemy',
+        'psycopg2',
     ],
 }
 
