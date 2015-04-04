@@ -8,8 +8,8 @@ from viewpanel.app import app_factory
 application = app_factory()
 manager = Manager(application)
 manager.add_command('runserver', Server(
-    use_debugger = True,
-    use_reloader = True,
+    use_debugger = application.config['DEBUG'],
+    use_reloader = application.config['RELOAD'],
     host = application.config['HOST']
 ))
 
