@@ -14,6 +14,7 @@ class Config(object):
     DATABASE = 'deskdb'
     DATABASE_URI = 'postgresql://'
     DEBUG = False
+    RELOAD = False
     TESTING = False
     CSRF_ENABLED = True
     SECRET_KEY = 'aPAcheHel!c0ptEr'
@@ -21,7 +22,7 @@ class Config(object):
 
 
 class ProductionConfig(Config):
-    DEBUG = False
+    HOST = '0.0.0.0'
 
 
 class StagingConfig(Config):
@@ -32,6 +33,7 @@ class StagingConfig(Config):
 class DevelopmentConfig(Config):
     DEVELOPMENT = True
     DEBUG = True
+    RELOAD = True
     HOST = '0.0.0.0'
 
 
