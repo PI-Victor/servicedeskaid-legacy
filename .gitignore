@@ -67,6 +67,7 @@ ac
 *.pyo
 tmp/
 *out
+.#*
 #*#
 *.db
 bower_components
