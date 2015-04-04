@@ -1,14 +1,11 @@
-import os
-import sys
+import logging
 import flask
-from flask.ext.login import LoginManager
-from flask.ext.openid import OpenID
-from config import ProductionConfig
-pages = flask.Blueprint('pages', __name__)
+from .config import config
+from .views import pages
 
 
-def app_factory(config=None):
+def app_factory():
     app = flask.Flask(__name__)
-    app.config.from_object(ProductionConfig)
+    app.config.from_object(config.DevelopmentConfig)
     app.register_blueprint(pages)
-    return app 
+    return app
