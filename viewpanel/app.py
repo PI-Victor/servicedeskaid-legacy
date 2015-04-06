@@ -1,5 +1,7 @@
 import logging
+
 import flask
+
 from .config import config
 from .views import pages
 
