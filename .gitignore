@@ -65,7 +65,6 @@ ac
 *dist
 *.sublime-*
 *.pyo
-tmp/
 *out
 .#*
 #*#
