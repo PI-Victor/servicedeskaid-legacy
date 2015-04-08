@@ -1,36 +1,36 @@
 import logging
 import os
+import sys
 
 from flask.ext.script import Manager
 from flask.ext.script import Server
 
+from viewpanel.config import config
 from viewpanel.app import app_factory
 
 
 application = app_factory()
-#the manager requires a single argument, either a flask instance or
-#a factory pattern that returns a flask instance, however uwsgi
-#needs an instance called application
 manager = Manager(application)
 
 config_options = {
-    'production': 'config.ProductionConfig',
-    'staging' : 'config.StagingConfig',
-    'devlopment': 'config.DevelopmentConfig',
-    'testing': 'config.TestingConfig'
+    'production': config.ProductionConfig,
+    'staging' : config.StagingConfig,
+    'development': config.DevelopmentConfig,
+    'testing': config.TestingConfig ,
 }
 
 @manager.command
 def runserver(environment):
     if environment in config_options.keys():
-#        os.environ['APP_SETTINGS'] = config_options.get(environment)
-#        application.config.from_object(os.environ['APP_SETTINGS'])
+        application.config.from_object(config_options.get(environment))
     else:
-        print([i for i in config_options.keys()])
+        print('Config not found! Available: ', [i for i in config_options.keys()])
+        sys.exit(1)
         
-    Server(use_debugger = application.config['DEBUG'],
-           use_reloader = application.config['RELOAD'],
-           host = application.config['HOST'],
+    application.run(
+        use_debugger = application.config['DEBUG'],
+        use_reloader = application.config['RELOAD'],
+        host = application.config['HOST']
     )
 
 if __name__ == '__main__':

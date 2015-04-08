@@ -7,10 +7,10 @@ logging.basicConfig(format='%(asctime)s %(levelname)s %(name)s %(message)s',
                     level=logging.DEBUG)
 
 class Config(object):
-    DIALECT = 'postgres'
-    WORKDIR =  os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__)))))
+    WORKDIR =  os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
     TMPDIR = os.path.join(os.path.sep, WORKDIR, 'tmp')
     LOGDIR = os.path.join(os.path.sep, WORKDIR, 'log')
+    DB_DIALECT = 'postgres'
     DATABASE = 'deskdb'
     DATABASE_URI = 'postgresql://'
     DEBUG = False
@@ -22,7 +22,10 @@ class Config(object):
 
 
 class ProductionConfig(Config):
-    
+    try:
+        HOST = os.environ['BINDHOSTIP']
+    except:
+        pass
 
 
 class StagingConfig(Config):
@@ -42,5 +45,5 @@ class TestingConfig(Config):
 
 class DockerConfig(Config):
     '''Docker container configuration'''
-    DATABASE_URI = os.environ['DATABASE_URI']
+    DATABASE_URI = ''
     
