@@ -15,7 +15,7 @@ config_options = {
     'production': config.ProductionConfig,
     'staging' : config.StagingConfig,
     'development': config.DevelopmentConfig,
-    'testing': config.TestingConfig ,
+    'testing': config.TestingConfig, 
 }
 
 @manager.command
