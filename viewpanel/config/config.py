@@ -1,4 +1,3 @@
-#-*- coding: utf-8 -*-
 import os
 import logging
 
@@ -21,29 +20,29 @@ class Config(object):
     HOST = '0.0.0.0'
 
 
-class ProductionConfig(Config):
+class Production(Config):
     try:
         HOST = os.environ['BINDHOSTIP']
     except:
         pass
 
 
-class StagingConfig(Config):
+class Staging(Config):
     DEVELOPMENT = True
     DEBUG = True
 
 
-class DevelopmentConfig(Config):
+class Development(Config):
     DEVELOPMENT = True
     DEBUG = True
     RELOAD = True
 
 
-class TestingConfig(Config):
+class Testing(Config):
     TESTING = True
 
 
-class DockerConfig(Config):
+class Docker(Config):
     '''Docker container configuration'''
     DATABASE_URI = ''
     

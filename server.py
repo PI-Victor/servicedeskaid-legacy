@@ -3,6 +3,7 @@ import sys
 
 from flask.ext.script import Manager
 from flask.ext.script import Server
+from flask.ext.sqlalchemy import SQLAlchemy
 
 from viewpanel.config import config
 from viewpanel.app import app_factory
@@ -12,10 +13,10 @@ application = app_factory()
 manager = Manager(application)
 
 config_options = {
-    'production': config.ProductionConfig,
-    'staging' : config.StagingConfig,
-    'development': config.DevelopmentConfig,
-    'testing': config.TestingConfig, 
+    'production': config.Production,
+    'staging' : config.Staging,
+    'development': config.Development,
+    'testing': config.Testing,
 }
 
 @manager.command
