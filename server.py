@@ -23,6 +23,7 @@ config_options = {
 def runserver(environment):
     if environment in config_options.keys():
         application.config.from_object(config_options.get(environment))
+        db = SQLAlchemy(application)
     else:
         print('Config not found! Available: ', [i for i in config_options.keys()])
         sys.exit(1)
