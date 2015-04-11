@@ -9,8 +9,10 @@ from viewpanel.config import config
 from viewpanel.app import app_factory
 
 
-application = app_factory()
-manager = Manager(application)
+#first the app needs to be configured and only then instantiate Manager
+manager = Manager()
+
+
 
 config_options = {
     'production': config.Production,
@@ -23,6 +25,7 @@ config_options = {
 def runserver(environment):
     if environment in config_options.keys():
         application.config.from_object(config_options.get(environment))
+        application = app_factory()
         db = SQLAlchemy(application)
     else:
         print('Config not found! Available: ', [i for i in config_options.keys()])
