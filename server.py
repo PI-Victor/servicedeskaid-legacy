@@ -1,17 +1,11 @@
 import os
 import sys
 
-from flask.ext.script import Manager
-from flask.ext.script import Server
-from flask.ext.sqlalchemy import SQLAlchemy
+#import SQLAlchemy
+import click
 
 from viewpanel.config import config
 from viewpanel.app import app_factory
-
-
-#first the app needs to be configured and only then instantiate Manager
-manager = Manager()
-
 
 
 config_options = {
@@ -21,12 +15,12 @@ config_options = {
     'testing': config.Testing,
 }
 
-@manager.command
-def runserver(environment):
-    if environment in config_options.keys():
-        application.config.from_object(config_options.get(environment))
-        application = app_factory()
-        db = SQLAlchemy(application)
+@click.command()
+@click.option('--config', help='Configuration load options')
+def runserver(config):
+    if config in config_options.keys():
+        application = app_factory(config_options.get(config))
+#        db = SQLAlchemy(application)
     else:
         print('Config not found! Available: ', [i for i in config_options.keys()])
         sys.exit(1)
@@ -38,4 +32,4 @@ def runserver(environment):
     )
 
 if __name__ == '__main__':
-    manager.run()
+    runserver()
