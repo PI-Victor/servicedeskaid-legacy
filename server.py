@@ -1,12 +1,14 @@
 import os
 import sys
+import logging
 
-#import SQLAlchemy
 import click
 
 from viewpanel.config import config
 from viewpanel.app import app_factory
 
+
+logger = logging.getLogger(__name__)
 
 config_options = {
     'production': config.Production,
@@ -16,13 +18,20 @@ config_options = {
 }
 
 @click.command()
-@click.option('--config', help='Configuration load options')
-def runserver(config):
+@click.option('--config',
+              help='Configuration load options. If unspecified, defaults to: development',
+              default='development',
+              type=click.Choice([i for i in config_options.keys()]))
+@click.option('--envfile', help='Aditional configuration file.')
+def runserver(config, envfile):
+    '''Start the application with the configuration sepcified
+    as a parameter. 
+    '''
     if config in config_options.keys():
-        application = app_factory(config_options.get(config))
-#        db = SQLAlchemy(application)
+        application = app_factory(config_options.get(config), envfile)
+        logger.info('Loaded application with %s configuration.' %config)
     else:
-        print('Config not found! Available: ', [i for i in config_options.keys()])
+        print('Config not found! Use --help')
         sys.exit(1)
         
     application.run(
