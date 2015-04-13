@@ -1,9 +1,19 @@
-from sqlalchemy import (create_engine, Column, Integer, string, select, case, func)
-from sqlalchemy.orm import Session, aliased
-from sqlalchemy import event
+from .app import db
 
+class Users(db.Model):
+    __tablename__ = 'users'
 
-class User()
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String)
+    fullname = db.Column(db.String)
+    email = db.Column(db.String)
+
+    def __init__(self, username, fullname):
+        self.username = username
+        self.fullname = fullname
+
+    def __repr__(self):
+        return '<id {}>'.format(self.id)
 
 
 
