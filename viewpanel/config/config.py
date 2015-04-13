@@ -11,14 +11,16 @@ class Config(object):
     LOGDIR = os.path.join(os.path.sep, WORKDIR, 'log')
     DB_DIALECT = 'postgres'
     DATABASE = 'deskdb'
-    DATABASE_URI = 'postgresql://'
+    DATABASE_URI = 'postgresql://postgres:123123@127.0.0.1:5432'
+    DATABASE_USER = 'postgres'
+    DATABASE_PASSWORD = 'password'
     DEBUG = False
     RELOAD = False
     TESTING = False
     CSRF_ENABLED = True
     SECRET_KEY = 'aPAcheHel!c0ptEr'
     HOST = '0.0.0.0'
-
+    
 
 class Production(Config):
     try:
@@ -44,5 +46,6 @@ class Testing(Config):
 
 class Docker(Config):
     '''Docker container configuration'''
-    DATABASE_URI = ''
-    
+    DATABASE_URI = 'postgresql://deskuser:123123@127.0.0.1:5432'
+    DATABASE_PASSWORD = '123123'
+    DB_DIALECT = 'postgres'
