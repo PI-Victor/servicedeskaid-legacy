@@ -20,8 +20,8 @@ config = {
         'flask-openid',
         'flask-script',
         'flask-wtf',
+        'flask-SQLAlchemy',
         'uwsgi',
-        'sqlalchemy',
         'psycopg2',
     ],
 }
