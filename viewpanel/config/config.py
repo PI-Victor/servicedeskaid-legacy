@@ -11,7 +11,7 @@ class Config(object):
     LOGDIR = os.path.join(os.path.sep, WORKDIR, 'log')
     DB_DIALECT = 'postgres'
     DATABASE = 'deskdb'
-    DATABASE_URI = 'postgresql://postgres:123123@127.0.0.1:5432'
+    DATABASE_URI = 'postgresql://127.0.0.1:5432'
     DATABASE_USER = 'postgres'
     DATABASE_PASSWORD = 'password'
     DEBUG = False
@@ -38,6 +38,11 @@ class Development(Config):
     DEVELOPMENT = True
     DEBUG = True
     RELOAD = True
+    DB_DIALECT = 'potgres'
+    DATABASE = 'deskdb'
+    DATABASE_URI = 'postgresql://127.0.0.1:5432'
+    DATABASE_USER = 'deskuser'
+    DATABASE_PASSWORD = '123123'
 
 
 class Testing(Config):
