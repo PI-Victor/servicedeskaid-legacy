@@ -35,9 +35,9 @@ def runserver(config, envfile):
         sys.exit(1)
         
     application.run(
-        use_debugger = application.config['DEBUG'],
+        use_debugger = application.debug,
         use_reloader = application.config['RELOAD'],
-        host = application.config['HOST']
+        host = application.config['HOST'],
     )
 
 if __name__ == '__main__':
