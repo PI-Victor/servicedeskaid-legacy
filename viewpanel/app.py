@@ -17,6 +17,7 @@ def app_factory(config, envfile=''):
     logging.debug(envfile)
     #load aditional configuration if specified
     if envfile:
+        envfile = os.path.join(os.path.sep, app.config['WORKDIR'], envfile)
         try:
             app.config.from_pyfile(envfile)
         except Exception as e:
