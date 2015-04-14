@@ -13,7 +13,7 @@ config = {
     'url': 'http://github.com/codeflavour/servicedeskaid',
     'long_description': open('README.md').read(),
     'zip_safe': False,
-    'packages': ['viewpanel'],
+    'packages': ['servicedeskaid'],
     'install_requires':[
         'flask',
         'flask-login',
