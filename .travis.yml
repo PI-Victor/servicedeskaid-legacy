@@ -1,17 +1,18 @@
 language: python
 
 python:
-  - "2.7"
+  - "3.4"
 
 branches: 
     - develop
     - master
+    - api-prototype
 
 install:
     pip install -r requirements.txt
 
 services:
-    - mongodb
+    - postgres: "9.3"
     - sleep 15
 
 script: py.test
