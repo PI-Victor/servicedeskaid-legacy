@@ -4,8 +4,8 @@ import logging
 
 import click
 
-from viewpanel.config import config
-from viewpanel.app import app_factory
+from servicedesk.config import config
+from servicedesk.app import app_factory
 
 
 logger = logging.getLogger(__name__)
