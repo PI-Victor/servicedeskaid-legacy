@@ -4,8 +4,8 @@ import logging
 
 import click
 
-from servicedesk.config import config
-from servicedesk.app import app_factory
+from servicedeskaid.config import config
+from servicedeskaid.app import app_factory
 
 
 logger = logging.getLogger(__name__)
