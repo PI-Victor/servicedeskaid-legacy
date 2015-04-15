@@ -16,8 +16,9 @@ config_options = {
 
 
 @click.command()
-@click.option('--conf', help='Configuration load options. If unspecified, defaults to: development',
-              default='development', type=click.Choice([i for i in config_options.keys()]))
+@click.option('--conf', help='Configuration load options. Default: development.',
+              default='development',
+              type=click.Choice([i for i in config_options.keys()]))
 @click.option('--envfile', help='Additional configuration file.')
 def runserver(conf, envfile):
     """Start the application with the configuration specified
