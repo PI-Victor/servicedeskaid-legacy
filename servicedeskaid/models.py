@@ -1,5 +1,6 @@
 from .app import db
 
+
 class Users(db.Model):
     __tablename__ = 'users'
 
@@ -16,9 +17,7 @@ class Users(db.Model):
         return '<id {}>'.format(self.id)
 
 
-
-
-#keep old mongodb structure for refrence
+# keep old mongodb structure for reference.
 """
 class Users(db.Document):
     ''' User information document'''
