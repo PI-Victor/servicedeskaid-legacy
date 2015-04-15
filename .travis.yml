@@ -9,8 +9,8 @@ branches:
     - api-prototype
 
 install:
-    pip install -r requirements.txt
-    bower install --allow-root
+    - pip install -r requirements.txt
+    - bower install --allow-root
 
 services:
     - postgres: "9.3"
