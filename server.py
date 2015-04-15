@@ -1,12 +1,11 @@
-import logging
-
 import click
 
-from servicedeskaid.config import config
-from servicedeskaid.app import app_factory
+from servicedeskaid.config import logger
+from servicedeskaid import config
+from servicedeskaid import app_factory
 
 
-logger = logging.getLogger(__name__)
+log = logger.getlogger(__name__)
 
 config_options = {
     'production': config.Production,
@@ -17,17 +16,16 @@ config_options = {
 
 
 @click.command()
-@click.option('--config',
-              help='Configuration load options. If unspecified, defaults to: development',
-              default='development',
-              type=click.Choice([i for i in config_options.keys()]))
-@click.option('--envfile', help='Aditional configuration file.')
-def runserver(config, envfile):
+@click.option('--conf', help='Configuration load options. If unspecified, defaults to: development',
+              default='development', type=click.Choice([i for i in config_options.keys()]))
+@click.option('--envfile', help='Additional configuration file.')
+def runserver(conf, envfile):
     """Start the application with the configuration specified
-    as a parameter. 
+    as a parameter. If no configuration parameter was specified on start
+    it uses the development configuration as default.
     """
-    application = app_factory(config_options.get(config), envfile)
-    logger.info('Loaded %s configuration.' % config)
+    application = app_factory(config_options.get(conf), envfile)
+    log.info('Loaded %s configuration.' % conf)
     application.run(
         use_debugger=application.debug,
         use_reloader=application.config['RELOAD'],

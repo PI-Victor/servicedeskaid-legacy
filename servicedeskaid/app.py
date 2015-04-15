@@ -1,21 +1,19 @@
-import logging
 import os
 import logging
 
 import flask
 from flask.ext.sqlalchemy import SQLAlchemy
 
-from .config import config
 from .views import pages
 
 logger = logging.getLogger(__name__)
 
 
 def app_factory(config, envfile=''):
-    app = flask.Flask(__name__)
+    app = flask.Flask('servicedeskaid')
     app.config.from_object(config)
     logging.debug(envfile)
-    #load aditional configuration if specified
+    # load the additional configuration file if specified
     if envfile:
         envfile = os.path.join(os.path.sep, app.config['WORKDIR'], envfile)
         try:

@@ -1,9 +1,8 @@
 import os
-import logging
 
 
-logging.basicConfig(format='%(asctime)s %(levelname)s %(name)s %(message)s',
-                    level=logging.DEBUG)
+__all__ = ['Production', 'Development', 'Testing', 'Staging', 'Docker']
+
 
 class Config(object):
     WORKDIR =  os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
@@ -25,7 +24,7 @@ class Config(object):
 class Production(Config):
     try:
         HOST = os.environ['BINDHOSTIP']
-    except:
+    except KeyError as e:
         pass
 
 
@@ -50,7 +49,7 @@ class Testing(Config):
 
 
 class Docker(Config):
-    '''Docker container configuration'''
+    """Docker container configuration"""
     DATABASE_URI = 'postgresql://deskuser:123123@127.0.0.1:5432'
     DATABASE_PASSWORD = '123123'
     DB_DIALECT = 'postgres'

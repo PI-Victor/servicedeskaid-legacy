@@ -1,11 +1,10 @@
-#Test application and database settings
-
 from flask import Flask
 
-from servicedeskaid.app import app_factory
-from servicedeskaid.config import config
+from servicedeskaid import app_factory
+from servicedeskaid.config import Testing
 
 
 def test_app():
-    app = app_factory(config.Testing)
+    app = app_factory(Testing)
     assert isinstance(app, Flask)
+    assert app.import_name is 'servicedeskaid'
