@@ -10,7 +10,7 @@ class Config(object):
     LOGDIR = os.path.join(os.path.sep, WORKDIR, 'log')
     DB_DIALECT = 'postgres'
     DATABASE = 'deskdb'
-    DATABASE_URI = 'postgresql://127.0.0.1:5432'
+    SQLALCHEMY_DATABASE_URI = 'postgresql://127.0.0.1:5432'
     DATABASE_USER = 'postgres'
     DATABASE_PASSWORD = 'password'
     DEBUG = False

@@ -1,7 +1,9 @@
-from .app import db
+from sqlalchemy.ext import declarative
 
 
-class Users(db.Model):
+Base = declarative.declarative_base()
+
+class Users(Base):
     __tablename__ = 'users'
 
     id = db.Column(db.Integer, primary_key=True)
