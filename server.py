@@ -19,11 +19,13 @@ config_options = {
 @click.option('--conf', help='Configuration load options. Default: development.',
               default='development',
               type=click.Choice([i for i in config_options.keys()]))
-@click.option('--envfile', help='Additional configuration file.')
+@click.option('--envfile', help='Instance directory configuration file')
 def runserver(conf, envfile):
     """Start the application with the configuration specified
     as a parameter. If no configuration parameter was specified on start
     it uses the development configuration as default.
+    Additionally on deployment it can read a passed file as a parameter
+    from the instance directory.
     """
     application = app_factory(config_options.get(conf), envfile)
     log.info('Loaded %s configuration.' % conf)
