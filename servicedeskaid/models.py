@@ -1,15 +1,15 @@
 from sqlalchemy.ext import declarative
 
-
 Base = declarative.declarative_base()
+
 
 class Users(Base):
     __tablename__ = 'users'
 
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String)
-    fullname = db.Column(db.String)
-    email = db.Column(db.String)
+    id = Base.Column(Base.Integer, primary_key=True)
+    username = Base.Column(Base.String)
+    fullname = Base.Column(Base.String)
+    email = Base.Column(Base.String)
 
     def __init__(self, username, fullname):
         self.username = username

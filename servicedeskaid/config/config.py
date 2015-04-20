@@ -19,7 +19,8 @@ class Config(object):
     CSRF_ENABLED = True
     SECRET_KEY = 'aPAcheHel!c0ptEr'
     HOST = '0.0.0.0'
-    
+    SILENT_IMPORT = True
+
 
 class Production(Config):
     try:
@@ -42,6 +43,7 @@ class Development(Config):
     DATABASE_URI = 'postgresql://127.0.0.1:5432'
     DATABASE_USER = 'deskuser'
     DATABASE_PASSWORD = '123123'
+    SILENT_IMPORT = False
 
 
 class Testing(Config):
