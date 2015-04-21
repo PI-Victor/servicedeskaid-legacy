@@ -5,14 +5,16 @@ __all__ = ['Production', 'Development', 'Testing', 'Staging', 'Docker']
 
 
 class Config(object):
-    WORKDIR =  os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
+    WORKDIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
     TMPDIR = os.path.join(os.path.sep, WORKDIR, 'tmp')
     LOGDIR = os.path.join(os.path.sep, WORKDIR, 'log')
     DB_DIALECT = 'postgres'
     DATABASE = 'deskdb'
-    SQLALCHEMY_DATABASE_URI = 'postgresql://127.0.0.1:5432'
+    SQLALCHEMY_DATABASE_URI = 'postgresql://deskuser:123123@127.0.0.1/test'
     DATABASE_USER = 'postgres'
     DATABASE_PASSWORD = 'password'
+    SQLALCHEMY_ECHO = True
+    SQLALCHEMY_RECORD_QUERIES = True
     DEBUG = False
     RELOAD = False
     TESTING = False
@@ -38,7 +40,7 @@ class Development(Config):
     DEVELOPMENT = True
     DEBUG = True
     RELOAD = True
-    DB_DIALECT = 'potgres'
+    DB_DIALECT = 'postgres'
     DATABASE = 'deskdb'
     DATABASE_URI = 'postgresql://127.0.0.1:5432'
     DATABASE_USER = 'deskuser'

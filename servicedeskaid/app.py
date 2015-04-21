@@ -20,7 +20,7 @@ def app_factory(config, envfile=''):
         try:
             app.config.from_pyfile(envfile, silent=app.config['SILENT_IMPORT'])
         except Exception as e:
-            logging.info('Unable to load config file. Using defaults!', e)
+            logging.warning('Unable to load config file. Using defaults!', e)
     db, engine = engine_factory(app)
     engine.connect()
     db.init_app(app)
@@ -30,7 +30,7 @@ def app_factory(config, envfile=''):
 
 
 def engine_factory(app):
-    db = SQLAlchemy(app.config['SQLALCHEMY_DATABASE_URI'])
+    db = SQLAlchemy(app)
     logger.debug(app)
     engine = create_engine(app.config['SQLALCHEMY_DATABASE_URI'])
     return db, engine
