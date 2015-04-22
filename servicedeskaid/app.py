@@ -3,7 +3,7 @@ import logging
 
 import flask
 from flask.ext.sqlalchemy import SQLAlchemy
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, MetaData
 
 from .views import pages
 
@@ -31,6 +31,8 @@ def app_factory(config, envfile=''):
 
 def engine_factory(app):
     db = SQLAlchemy(app)
-    logger.debug(app)
     engine = create_engine(app.config['SQLALCHEMY_DATABASE_URI'])
+    meta = MetaData(bind=engine, reflect=True)
+    meta.bind = engine
+    meta.create_all()
     return db, engine

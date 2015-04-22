@@ -5,12 +5,13 @@ __all__ = ['Production', 'Development', 'Testing', 'Staging', 'Docker']
 
 
 class Config(object):
+
     WORKDIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
     TMPDIR = os.path.join(os.path.sep, WORKDIR, 'tmp')
     LOGDIR = os.path.join(os.path.sep, WORKDIR, 'log')
     DB_DIALECT = 'postgres'
     DATABASE = 'deskdb'
-    SQLALCHEMY_DATABASE_URI = 'postgresql://deskuser:123123@127.0.0.1/test'
+    SQLALCHEMY_DATABASE_URI = 'postgresql://deskuser:123123@127.0.0.1/deskdb'
     DATABASE_USER = 'postgres'
     DATABASE_PASSWORD = 'password'
     SQLALCHEMY_ECHO = True
@@ -25,6 +26,7 @@ class Config(object):
 
 
 class Production(Config):
+
     try:
         HOST = os.environ['BINDHOSTIP']
     except KeyError as e:
@@ -32,11 +34,13 @@ class Production(Config):
 
 
 class Staging(Config):
+
     DEVELOPMENT = True
     DEBUG = True
 
 
 class Development(Config):
+
     DEVELOPMENT = True
     DEBUG = True
     RELOAD = True
