@@ -1,5 +1,4 @@
 import os
-import logging
 
 
 __all__ = ['Production', 'Development', 'Testing', 'Staging', 'Docker']
@@ -50,7 +49,7 @@ class Development(Config):
     DEVELOPMENT = True
     DEBUG = True
     RELOAD = True
-    SQLALCHEMY_DATABASE_URI = 'postgres://deskuser:123123@127.0.0.1:5432/deskdb'
+    SQLALCHEMY_DATABASE_URI = 'postgres://deskuser:123123@0.0.0.0:5432/deskdb'
     SILENT_IMPORT = False
 
 
@@ -66,4 +65,4 @@ class Docker(Config):
      Or they can be specified at container runtime.
     """
 
-    SQLALCHEMY_DATABASE_URI = 'postgres://deskuser:123123@0.0.0.1:5432/deskdb'
+    SQLALCHEMY_DATABASE_URI = 'postgres://deskuser:123123@0.0.0.0:5432/deskdb'
