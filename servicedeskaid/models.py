@@ -10,6 +10,8 @@ class Users(Base):
     username = Base.Column(Base.String)
     fullname = Base.Column(Base.String)
     email = Base.Column(Base.String)
+    role = Base.Column(Base.String)
+    avatar = Base.Column(Base.String)
 
     def __init__(self, username, fullname):
         self.username = username
@@ -17,6 +19,21 @@ class Users(Base):
 
     def __repr__(self):
         return '<id {}>'.format(self.id)
+
+    def is_authenticated(self):
+        return True
+
+    def is_activete(self):
+        return True
+
+    def is_anonymous(self):
+        return False
+    
+
+class Issues(Base):
+    __tablename__ = 'issues'
+
+    id = Base.Column(Base.Integer, primary_key=True)
 
 
 # keep old mongodb structure for reference.
