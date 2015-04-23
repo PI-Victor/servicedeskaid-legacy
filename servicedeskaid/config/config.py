@@ -16,17 +16,7 @@ class Config(object):
     TMPDIR = os.path.join(os.path.sep, WORKDIR, 'tmp')
     LOGDIR = os.path.join(os.path.sep, WORKDIR, 'log')
     DATABASE_DIALECT = 'postgres'
-    DATABASE = 'deskdb'
-    DATABASE_USER = 'deskuser'
-    DATABASE_PASSWORD = '123123'
-    DATABASE_IP = '0.0.0.0'
-    SQLALCHEMY_DATABASE_URI = '{}://{}:{}@{}/{}'.format(
-        DATABASE_DIALECT,
-        DATABASE_USER,
-        DATABASE_PASSWORD,
-        DATABASE_IP,
-        DATABASE
-    )
+    SQLALCHEMY_DATABASE_URI = 'postgres://deskuser:123123@127.0.0.1:5432/deskdb'
     SQLALCHEMY_ECHO = True
     SQLALCHEMY_RECORD_QUERIES = True
     DEBUG = False
@@ -34,9 +24,8 @@ class Config(object):
     TESTING = False
     CSRF_ENABLED = True
     SECRET_KEY = 'aPAcheHel!c0ptEr'
-    HOST = '0.0.0.0'
     SILENT_IMPORT = True
-    BINDHOSTIP = '0.0.0.0'
+    HOST = '0.0.0.0'
 
 
 class Production(Config):
@@ -45,15 +34,11 @@ class Production(Config):
     because of python namespaces.
     """
 
-    try:
-        HOST = os.environ['BINDHOSTIP']
-    except KeyError as e:
-        HOST = '127.0.0.1'
-        logging.warning("No BINDHOSTIP specified: Production config will run on 127.0.0.1")
+    HOST = '127.0.0.1'
 
 
 class Staging(Config):
-    """No use scenario yet"""
+    """No use case scenario yet"""
 
     DEVELOPMENT = True
     DEBUG = True
@@ -65,11 +50,7 @@ class Development(Config):
     DEVELOPMENT = True
     DEBUG = True
     RELOAD = True
-    DB_DIALECT = 'postgres'
-    DATABASE = 'deskdb'
-    DATABASE_URI = 'postgresql://127.0.0.1:5432'
-    DATABASE_USER = 'deskuser'
-    DATABASE_PASSWORD = '123123'
+    SQLALCHEMY_DATABASE_URI = 'postgres://deskuser:123123@127.0.0.1:5432/deskdb'
     SILENT_IMPORT = False
 
 
@@ -85,6 +66,4 @@ class Docker(Config):
      Or they can be specified at container runtime.
     """
 
-    DATABASE_URI = 'postgresql://deskuser:123123@127.0.0.1:5432'
-    DATABASE_PASSWORD = '123123'
-    DB_DIALECT = 'postgres'
+    SQLALCHEMY_DATABASE_URI = 'postgres://deskuser:123123@0.0.0.1:5432/deskdb'
