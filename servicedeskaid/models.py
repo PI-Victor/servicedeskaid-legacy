@@ -3,6 +3,9 @@ from sqlalchemy.ext import declarative
 Base = declarative.declarative_base()
 
 
+# TODO :Remember to change column data types accordingly
+
+
 class Users(Base):
     __tablename__ = 'users'
 
@@ -28,13 +31,26 @@ class Users(Base):
 
     def is_anonymous(self):
         return False
-    
+
 
 class Issues(Base):
     __tablename__ = 'issues'
 
     id = Base.Column(Base.Integer, primary_key=True)
+    id_user = Base.Column(Base.Integer)
+    opened = Base.Column(Base.String)
+    closed = Base.Column(Base.String)
 
+
+class Updates(Base):
+    __tablename__ = 'updates'
+    """This should be a json object under issues, that has
+    just multiple entries for each time a user updates an issue.
+    """
+
+    id = Base.Column(Base.Integer, primary_key=True)
+    id_issue = Base.Column(Base.Integer)
+    comment = Base.Column(Base.String)
 
 # keep old mongodb structure for reference.
 """
