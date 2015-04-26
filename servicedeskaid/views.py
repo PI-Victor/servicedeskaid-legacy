@@ -7,3 +7,8 @@ pages = flask.Blueprint('pages', __name__)
 @pages.route('/')
 def index():
     return flask.render_template('wall.html')
+
+
+@pages.route('/signup')
+def sign_up():
+    return flask.render_template('signup.html')
