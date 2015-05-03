@@ -1,5 +1,5 @@
 from wtforms import Form, BooleanField, TextField, PasswordField, validators
-from models import Users
+from .models import Users
 
 
 class LoginForm(Form):
