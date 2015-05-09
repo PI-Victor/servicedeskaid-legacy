@@ -3,13 +3,14 @@ Servicedesk Aid
 Master Branch Build : [![Build Status](https://travis-ci.org/thecodeflavour/servicedeskaid.svg?branch=master)](https://travis-ci.org/PI-Victor/servicedeskaid)    
 Develop Branch Build: [![Build Status](https://travis-ci.org/thecodeflavour/servicedeskaid.svg?branch=develop)](https://travis-ci.org/PI-Victor/servicedeskaid)  
 
+https://sourcegraph.com/api/repos/github.com/thecodeflavour/servicedeskaid/.counters/views.svg
 
 #### Updates:  
 The app is going through a major re-writing to implement at least basic functionality of a backend in python with a frontend more oriented to js.  
- - changed to python3
- - scraped mongodb for postgresql
- - changed from bootstrap css to materialize css framework
- - scraped flipclock
+ - changed to python3  
+ - replaced mongodb with postgresql  
+ - changed from bootstrap css to materialize css framework  
+ - removed flipclock  
 
 An outdated demo version of the latest build from the develop branch can be found [here](http://servicedeskaid.thecodeflavour.org)  
 
