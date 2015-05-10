@@ -1,6 +1,7 @@
-from sqlalchemy.ext import declarative
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Column, Integer, String
 
-Base = declarative.declarative_base()
+Base = declarative_base()
 
 
 # TODO :Remember to change column data types accordingly
@@ -9,12 +10,12 @@ Base = declarative.declarative_base()
 class Users(Base):
     __tablename__ = 'users'
 
-    id = Base.Column(Base.Integer, primary_key=True)
-    username = Base.Column(Base.String)
-    fullname = Base.Column(Base.String)
-    email = Base.Column(Base.String)
-    role = Base.Column(Base.String)
-    avatar = Base.Column(Base.String)
+    id = Column(Integer, primary_key=True)
+    username = Column(String)
+    fullname = Column(String)
+    email = Column(String)
+    role = Column(String)
+    avatar = Column(String)
 
     def __init__(self, username, fullname):
         self.username = username
@@ -36,10 +37,10 @@ class Users(Base):
 class Issues(Base):
     __tablename__ = 'issues'
 
-    id = Base.Column(Base.Integer, primary_key=True)
-    id_user = Base.Column(Base.Integer)
-    opened = Base.Column(Base.String)
-    closed = Base.Column(Base.String)
+    id = Column(Integer, primary_key=True)
+    id_user = Column(Integer)
+    opened = Column(String)
+    closed = Column(String)
 
 
 class Updates(Base):
@@ -48,9 +49,9 @@ class Updates(Base):
     just multiple entries for each time a user updates an issue.
     """
 
-    id = Base.Column(Base.Integer, primary_key=True)
-    id_issue = Base.Column(Base.Integer)
-    comment = Base.Column(Base.String)
+    id = Column(Integer, primary_key=True)
+    id_issue = Column(Integer)
+    comment = Column(String)
 
 # keep old mongodb structure for reference.
 """
