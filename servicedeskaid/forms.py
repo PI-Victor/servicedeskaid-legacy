@@ -16,3 +16,9 @@ class RegisterForm(Form):
                          [validators.Length(min=6, max=25)])
     email = TextField('Email Address',
                       [validators.Length(min=6, max=35)])
+
+    
+class AddIssue(Form):
+    description = TextField('issue',
+                      [validators.Length(min=10, max=25)])
+    
