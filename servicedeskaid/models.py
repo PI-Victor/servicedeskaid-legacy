@@ -38,6 +38,7 @@ class Issues(Base):
     __tablename__ = 'issues'
 
     id = Column(Integer, primary_key=True)
+    id_client = Column(Integer)
     id_user = Column(Integer)
     opened = Column(String)
     closed = Column(String)
