@@ -12,14 +12,16 @@ pages = flask.Blueprint('pages', __name__)
 
 @pages.route('/')
 def index():
- #   if not flask.g.user.is_authenticated:
-        return flask.render_template('login.html')
-    
- #   return flask.render_template('wall.html')
-    
-@pages.route('/login')
+	return flask.render_template('viewpanel.html')	
+
+
+@pages.route('/login', methods=['GET', 'POST'])
 def login():
-    pass
+    form = LoginForm()
+    if form.validate_on_submit():
+    	flask.flash('Submitted')
+    	return redirect('viewpanel.html')
+    return flask.render_template('login.html', form=form)
 
 
 @pages.route('/signup')
