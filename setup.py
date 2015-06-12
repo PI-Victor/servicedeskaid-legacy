@@ -5,25 +5,24 @@ except ImportError:
 
 
 config = {
-    'name': 'ServiceDeskAid',
+    'name': 'ServicedeskAid',
     'include_package_data': True,
-    'version': 'unversioned',
-    'author': 'thecodeflavour.org',
-    'url': 'http://github.com/codeflavour/servicedeskaid',
+    'version': '0.1',
+    'author': 'Victor Palade',
+    'license': 'BSD',
+    'url': 'http://github.com/thecodeflavour/servicedeskaid',
     'long_description': open('README.md').read(),
     'zip_safe': False,
-    'packages': s.find_packages(),
+    'packages': ['servicedeskaid'],
     'install_requires':[
         'flask',
-        'flask-mongoengine',
         'flask-login',
         'flask-openid',
         'flask-script',
         'flask-wtf',
-        'jinja2',
-        'pygal',
-        'pillow',
+        'flask-SQLAlchemy',
         'uwsgi',
+        'psycopg2',
     ],
 }
 

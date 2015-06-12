@@ -1,17 +1,24 @@
 language: python
 
 python:
-  - "2.7"
+  - "3.4"
 
 branches: 
-    - develop
-    - master
+  - develop
+  - master
+  - api-prototype
 
 install:
-    pip install -r requirements.txt
+  - pip install -r requirements.txt
+  - npm install -g bower
+  - bower install --allow-root
 
 services:
-    - mongodb
-    - sleep 15
+  - postgres: "9.3"
+  - sleep 15
 
+before_script:
+  - psql -c 'create database deskdb;' -U postgres
+  - psql -c "CREATE USER deskuser password '123123'" -U postgres -d deskdb
+  
 script: py.test

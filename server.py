@@ -1,17 +1,39 @@
-from flask.ext.script import Manager
-from flask.ext.script import Server
-from viewpanel import app_factory
-from viewpanel.collection import views, DEFAULTHOST
+import click
+
+from servicedeskaid.config import logger
+from servicedeskaid import config
+from servicedeskaid import app_factory
 
 
-application = app_factory()
-manager = Manager(application)
+log = logger.getlogger(__name__)
 
-manager.add_command('runserver', Server(
-    use_debugger = True,
-    use_reloader = True,
-    host = DEFAULTHOST,
-))
+config_options = {
+    'production': config.Production,
+    'staging': config.Staging,
+    'development': config.Development,
+    'testing': config.Testing,
+}
+
+
+@click.command()
+@click.option('--conf', help='Configuration load options. Default: development.',
+              default='development',
+              type=click.Choice([i for i in config_options.keys()]))
+@click.option('--envfile', help='Instance directory configuration file')
+def runserver(conf, envfile):
+    """Start the application with the configuration specified
+    as a parameter. If no configuration parameter was specified on start
+    it uses the development configuration as default.
+    Additionally on deployment it can read a passed file as a parameter
+    from the instance directory.
+    """
+    application = app_factory(config_options.get(conf), envfile)
+    log.info('Loaded %s configuration.' % conf)
+    application.run(
+        use_debugger=application.debug,
+        use_reloader=application.config['RELOAD'],
+        host=application.config['HOST'],
+    )
 
 if __name__ == '__main__':
-    manager.run()
+    runserver()

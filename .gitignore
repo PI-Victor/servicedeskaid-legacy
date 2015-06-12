@@ -65,9 +65,10 @@ ac
 *dist
 *.sublime-*
 *.pyo
-tmp/
 *out
+.#*
 #*#
 *.db
 bower_components
 node_modules
+.idea

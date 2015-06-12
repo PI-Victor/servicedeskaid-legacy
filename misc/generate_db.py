@@ -1,23 +1,12 @@
 import sys
 import random
 import os
-import mongoengine
-from viewpanel.collection.models import Users, Metrics, Issues
+import click
 
-#generated bogus data and inserts into mongodb 
-#for testing
-
-
+@click.command
 def drop_db():
-    if len(sys.argv) < 2:
-        dbdrop = raw_input("Do you want to drop the database? [y/n]")
-        return [False, True][dbdrop == 'y']
-    else:
-        return True
-
-
-def get_workdir():
-    return os.path.dirname(os.path.realpath(__file__))
+    dbdrop = raw_input("Do you want to drop the database? [y/n]")
+    return [False, True][dbdrop == 'y']
 
 
 def insert_users():
@@ -121,13 +110,9 @@ def insert_tickets():
 
     
 if __name__ == '__main__':
-    if len(sys.argv) < 2:
-        print "You can send the number of records to be generated as parameter \n \
-        Generating 10 records by default, you can run the script again and specify \
-        the number of records then."
-    else:
-        print "Generating {} of records"
-        
+#        print "You can send the number of records to be generated as parameter \n \
+#        Generating 10 records by default, you can run the script again and specify \
+#        the number of records then."
         try:
             records = int(sys.argv[1])
         except Exception as e:
@@ -135,12 +120,5 @@ if __name__ == '__main__':
 
     if drop_db():
         print "Dropping the database"
-        con = mongoengine.connect('deskdb')
-        #using it because it's good to know
-        db = mongoengine.connection._get_db()  
-        db.connection.drop_database(db)
-    else:
-        print "Continuing as normal"
-        
     insert_users()
     insert_tickets()
