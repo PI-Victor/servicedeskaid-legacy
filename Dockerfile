@@ -20,14 +20,14 @@ RUN git clone -b develop https://github.com/pi-victor/servicedeskaid.git
 
 WORKDIR /opt/servicedeskaid
 
-RUN virtualenv .venv
+RUN virtualenv -p python3 .venv
 
-RUN .venv/bin/pip install -r requirements.txt
+RUN .venv/bin/pip3 install -r requirements.txt
 
 RUN npm install -g bower
 
 RUN bower install --allow-root
 
-ENTRYPOINT [".venv/bin/python", "server.py", "runserver"]
+ENTRYPOINT [".venv/bin/python", "server.py" ]
 
 EXPOSE 5000
