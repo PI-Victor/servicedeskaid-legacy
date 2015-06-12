@@ -15,7 +15,7 @@ class Config(object):
     TMPDIR = os.path.join(os.path.sep, WORKDIR, 'tmp')
     LOGDIR = os.path.join(os.path.sep, WORKDIR, 'log')
     DATABASE_DIALECT = 'postgres'
-    SQLALCHEMY_DATABASE_URI = 'postgres://deskuser:123123@127.0.0.1:5432/deskdb'
+    SQLALCHEMY_DATABASE_URI = 'postgres://postgres@127.0.0.1:5432/deskdb'
     SQLALCHEMY_ECHO = True
     SQLALCHEMY_RECORD_QUERIES = True
     DEBUG = False
@@ -49,7 +49,7 @@ class Development(Config):
     DEVELOPMENT = True
     DEBUG = True
     RELOAD = True
-    SQLALCHEMY_DATABASE_URI = 'postgres://deskuser:123123@0.0.0.0:5432/deskdb'
+    SQLALCHEMY_DATABASE_URI = 'postgres://postgres@127.0.0.1:5432/deskdb'
     SILENT_IMPORT = False
 
 
@@ -65,4 +65,6 @@ class Docker(Config):
      Or they can be specified at container runtime.
     """
 
-    SQLALCHEMY_DATABASE_URI = 'postgres://deskuser:123123@0.0.0.0:5432/deskdb'
+    SQLALCHEMY_DATABASE_URI = 'postgres://postgres@0.0.0.0:5432/deskdb'
+#    POSTGRES_PORT_5432_TCP_ADDR = 
+#    POSTGRES_PORT_5432_TCP_PORT =
