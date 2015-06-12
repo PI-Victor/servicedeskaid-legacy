@@ -32,7 +32,8 @@ def app_factory(config, envfile=''):
 def engine_factory(app):
     db = SQLAlchemy(app)
     engine = create_engine(
-        'postgresql://postgres@{}:{}/deskdb'.format(
+        'postgresql://postgres:{}@{}:{}/deskdb'.format(
+            os.getenv('POSTGRES_PASSWORD'),
             os.getenv('POSTGRES_PORT_5432_TCP_ADDR'),
             os.getenv('POSTGRES_PORT_5432_TCP_PORT')
         )
