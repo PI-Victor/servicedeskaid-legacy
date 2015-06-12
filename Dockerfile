@@ -9,6 +9,7 @@ RUN rpm -Uvh http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-5.no
 RUN yum update -y
 
 RUN yum install git gcc make gcc-c++ \
+    postgresql-devel \
     kernel-devel python-virtualenv \
     python-devel npm -y
 
