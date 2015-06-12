@@ -31,7 +31,12 @@ def app_factory(config, envfile=''):
 
 def engine_factory(app):
     db = SQLAlchemy(app)
-    engine = create_engine(app.config['SQLALCHEMY_DATABASE_URI'])
+    engine = create_engine(
+        'postgresql://postgres@{}:{}/deskdb'.format(
+            os.getenv('POSTGRES_PORT_5432_TCP_ADDR'),
+            os.getenv('POSTGRES_PORT_5432_TCP_PORT')
+        )
+    )
     meta = MetaData(bind=engine, reflect=True)
     meta.bind = engine
     meta.create_all()
