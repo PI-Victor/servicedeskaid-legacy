@@ -1,20 +1,16 @@
 {
-  "name": "servicedeskaid",
-  "version": "0.0.1",
-  "homepage": "http://servicedeskaid.thecodeflavour.org",
+  "name": "js_interface",
+  "version": "0.0.0",
+  "homepage": "https://github.com/PI-Victor/js_playground",
   "authors": [
-    "Palade Ionut Victor"
+    "Victor Palade"
   ],
-  "description": "Servicedesk Aid a tool for operations and call centers",
-  "main": "server.js",
+  "description": "a dashboard interface",
+  "main": "dashboard.js",
   "keywords": [
-    "servicedesk",
-    "call",
-    "center",
-    "operations"
+    "dashboard"
   ],
   "license": "BSD",
-  "private": true,
   "ignore": [
     "**/.*",
     "node_modules",
@@ -23,10 +19,9 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "~2.1.3",
-    "handlebars": "^1.0",
-    "ember": "^1.0",
-    "d3": "~3.5.5",
-    "materialize": "~0.96.1"
+    "bootstrap": "~3.3.5",
+    "handlebars": "~3.0.3",
+    "ember": "~1.13.5",
+    "jquery": "~2.1.4"
   }
 }
