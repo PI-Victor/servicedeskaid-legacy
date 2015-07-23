@@ -4,7 +4,7 @@
   "description": "a dashboard interface",
   "main": "rest-api.js",
   "scripts": {
-    "start": "NODE_PATH=./config:./controllers: PORT=3030 node rest-api.js",
+    "start": "NODE_PATH=./config:./controllers: PORT=3030 HOST='127.0.0.1' node rest-api.js",
     "test": "NODE_PATH=./config:./controllers: PORT=3030 mocha --timeout 5000 -R spec --ui tdd tests/*_test.js"
   },
   "repository": {
